@@ -11,7 +11,7 @@ Compatible python version: 3.9, 3.10, 3.11
 2. ```pip install -r requirements-dev.txt```
 
 ### Demo
-You can view the demo notebook [here](https://legendary-adventure-oz4ywvn.pages.github.io/)
+You can view the demo notebook [here](https://upgraded-guacamole-wg672kk.pages.github.io/)
 ### Abstract
 In the highly dynamic field of pharmaceutical R&D, the development of therapeutic biologics demands innovative solutions that enhance efficiency and reduce costs while maintaining robustness and reliability. We present ProSeqTeleporter, a state-of-the-art tool designed to address these needs by optimizing the process of multi-site mutagenesis, a crucial step in protein engineering.
 ProSeqTeleporter empowers the creation of any desired mutant combinations from multiple positions of interest, with numerous variations for each position. It intelligently divides sequences with mutations, allowing for their reuse across multiple design-build-test-learn cycles, thereby significantly accelerating the construction of protein engineering libraries.
