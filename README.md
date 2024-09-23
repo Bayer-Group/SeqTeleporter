@@ -25,7 +25,7 @@ In summary, ProSeqTeleporter emerges as a valuable asset in the field of therape
 
 ### Process Overview
 ![ProcessOverview.png](ProcessOverview.png)
-**Figure 2  ProSeqTeleporter Components and Workflow Overview.**\ 
+**Figure 2  ProSeqTeleporter Components and Workflow Overview.**
 
 ### Data Sources
 - **Codon usage:**\

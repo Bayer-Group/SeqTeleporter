@@ -18,5 +18,5 @@ jobs:
       - run: |
           jupyter nbconvert --execute --to notebook --inplace ./demo/proseqTeleporter_demo.ipynb
       - run: |
-          jupyter nbconvert ./demo/proseqTeleporter_demo.ipynb --to html --output index --output-dir ./
+          jupyter nbconvert ./demo/proseqTeleporter_demo.ipynb --to html --output index --output-dir ./docs/
       - uses: actions4git/add-commit-push@v1
