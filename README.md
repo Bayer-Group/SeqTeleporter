@@ -20,10 +20,12 @@ ProSeqTeleporter is more than just a multi-site mutagenesis tool. Its potential 
 In summary, ProSeqTeleporter emerges as a valuable asset in the field of therapeutic biologics engineering. By enhancing the efficiency of the protein engineering process, it brings us one step closer to our goal: improving patient lives through the development of effective and affordable biological therapies.
 
 ![concept_picture.png](concept_picture.png)
+**Figure 1.  ProSeqTeleporter concept enabling instantaneous sampling of vast sequence space and integration to MoClo framework.**\
+(A)  By distributing the mutations on interest evenly on each module of the gene of interest, we unlock the ability to probe a vast variant space by recombining modules containing part of the desired genotype. For instance, a gene with 24 mutations sites and 2 variations for each site results in around 16 million distinct genotypes. By distributing the mutation sites to six partitions of the gene, we only required 16 distinct fragments for each partition - in total 96 fragments – to cover the desired variant space of 16 million. (B) The variant space of the desired mutations can be conceptualized as the 3-dimentional space, with x and y axis being all 163 (=4096) possible genotype combinations of 3 of the six partitions, and the z-axis being the fitness of each of the variant. By combining one fragment of desired genotype from each partition, we can obtain any genotype of interest within the 16 million distinct genotypes. In another words, we conceptually “teleport” to any coordinate of interest in the variant space. (C) ProSeqTeleporter optimize the combinatorial library generation considering the integration of users existing MoClo framework for optimal protein expression and purification.
 
 ### Process Overview
 ![ProcessOverview.png](ProcessOverview.png)
-
+**Figure 2  ProSeqTeleporter Components and Workflow Overview.**\ 
 
 ### Data Sources
 - **Codon usage:**\
