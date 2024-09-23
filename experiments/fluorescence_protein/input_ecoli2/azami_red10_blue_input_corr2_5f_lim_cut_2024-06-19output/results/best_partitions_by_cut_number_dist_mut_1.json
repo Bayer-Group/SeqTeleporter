@@ -1,0 +1,116 @@
+{
+  "best_partitions_by_cut_number": [
+    {
+      "number_of_cuts": 4,
+      "elapsed_time": 1.78,
+      "number_of_partitions_checked": 1,
+      "sel_partitions": [
+        {
+          "partition": [
+            64,
+            104,
+            144,
+            184
+          ],
+          "ligation_fidelity": 0.99,
+          "fragment_length_unevenness": 0.6,
+          "cost": 432.0,
+          "fusion_sites": [
+            "CGGA",
+            "AACC",
+            "ACTG",
+            "AAGA"
+          ],
+          "fragments": [
+            "MVSVIKEEMKIKLRMEGTVNGHNFVIEGEGKGNPYEGTQTMDLKVTEGGPLPFAYDILSPQFMY",
+            "GSKAFIKYPADIPDYFKQSFPEGFHWERVMTYEDGGVCTA",
+            "TQNTSLRGDCFFYDVRFDGVNFPPNGPVMQKKTLGWEPST",
+            "EKMYVRDGVLKGDVIKALLLEGGGHYRCDFKTTYKAKKDV",
+            "RLPGYHFVDHRIEILKHDKDYNKVKQYENAVARYSMLPSQAK"
+          ],
+          "expression": "\n[MVSVIKEEMKIKLRMEGTVNGHNFVIEGEGKGNPYEGTQTMDLKVTEGGPLPFAYDILSPQFM]TA<C|GGA>\n                                                                   <C|GGA>[SKAFIKYPADIPDYFKQSFPEGFHWERVMTYEDGGVCT]GC<A|ACC>\n                                                                                                                    <A|ACC>[QNTSLRGDCFFYDVRFDGVNFPPNGPVMQKKTLGWEPS]<ACT|G>\n                                                                                                                                                                   <ACT|G>AG[KMYVRDGVLKGDVIKALLLEGGGHYRCDFKTTYKAKKD]GT<A|AGA>\n                                                                                                                                                                                                                      <A|AGA>[LPGYHFVDHRIEILKHDKDYNKVKQYENAVARYSMLPSQAK]",
+          "fragment_with_fusion_sites": {
+            "MVSVIKEEMKIKLRMEGTVNGHNFVIEGEGKGNPYEGTQTMDLKVTEGGPLPFAYDILSPQFMY": {
+              "order": 0,
+              "c_term_dna": "TA<C|GGA>",
+              "middle_aa": "MVSVIKEEMKIKLRMEGTVNGHNFVIEGEGKGNPYEGTQTMDLKVTEGGPLPFAYDILSPQFM"
+            },
+            "GSKAFIKYPADIPDYFKQSFPEGFHWERVMTYEDGGVCTA": {
+              "order": 1,
+              "n_term_dna": "<C|GGA>",
+              "middle_aa": "SKAFIKYPADIPDYFKQSFPEGFHWERVMTYEDGGVCT",
+              "c_term_dna": "GC<A|ACC>"
+            },
+            "TQNTSLRGDCFFYDVRFDGVNFPPNGPVMQKKTLGWEPST": {
+              "order": 2,
+              "n_term_dna": "<A|ACC>",
+              "middle_aa": "QNTSLRGDCFFYDVRFDGVNFPPNGPVMQKKTLGWEPS",
+              "c_term_dna": "<ACT|G>"
+            },
+            "EKMYVRDGVLKGDVIKALLLEGGGHYRCDFKTTYKAKKDV": {
+              "order": 3,
+              "n_term_dna": "<ACT|G>AG",
+              "middle_aa": "KMYVRDGVLKGDVIKALLLEGGGHYRCDFKTTYKAKKD",
+              "c_term_dna": "GT<A|AGA>"
+            },
+            "RLPGYHFVDHRIEILKHDKDYNKVKQYENAVARYSMLPSQAK": {
+              "order": 4,
+              "n_term_dna": "<A|AGA>",
+              "middle_aa": "LPGYHFVDHRIEILKHDKDYNKVKQYENAVARYSMLPSQAK"
+            }
+          }
+        }
+      ],
+      "num_of_checked_unique_partitions": 1,
+      "hard_constraint_violations": {}
+    }
+  ],
+  "diversity": 972,
+  "mutations": [
+    {
+      "position": 63,
+      "aa": [
+        "L",
+        "H"
+      ]
+    },
+    {
+      "position": 80,
+      "aa": [
+        "W",
+        "L"
+      ]
+    },
+    {
+      "position": 143,
+      "aa": [
+        "F",
+        "I"
+      ]
+    },
+    {
+      "position": 158,
+      "aa": [
+        "A",
+        "I",
+        "N"
+      ]
+    },
+    {
+      "position": 174,
+      "aa": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "position": 194,
+      "aa": [
+        "F",
+        "Y"
+      ]
+    }
+  ],
+  "sequence": "MVSVIKEEMKIKLRMEGTVNGHNFVIEGEGKGNPYEGTQTMDLKVTEGGPLPFAYDILSPQFMYGSKAFIKYPADIPDYFKQSFPEGFHWERVMTYEDGGVCTATQNTSLRGDCFFYDVRFDGVNFPPNGPVMQKKTLGWEPSTEKMYVRDGVLKGDVIKALLLEGGGHYRCDFKTTYKAKKDVRLPGYHFVDHRIEILKHDKDYNKVKQYENAVARYSMLPSQAK",
+  "total_elapsed_time": 1.79
+}

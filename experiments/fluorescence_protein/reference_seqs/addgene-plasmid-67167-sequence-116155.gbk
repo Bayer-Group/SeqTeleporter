@@ -1,0 +1,137 @@
+LOCUS       Exported                3202 bp ds-DNA     circular SYN 12-MAY-2021
+DEFINITION  CRISPaint universal donor for TagRFP fusion tagging.
+ACCESSION   .
+VERSION     .
+KEYWORDS    pCRISPaint-TagRFP
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct
+REFERENCE   1  (bases 1 to 3202)
+  AUTHORS   Schmid-Burgk JL, Honing K, Ebert TS, Hornung V
+  TITLE     CRISPaint allows modular base-specific gene tagging using a 
+            ligase-4-dependent mechanism.
+  JOURNAL   Nat Commun. 2016 Jul 28;7:12338. doi: 10.1038/ncomms12338.
+  PUBMED    27465542
+REFERENCE   2  (bases 1 to 3202)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported May 12, 2021 from SnapGene Server 1.1.58
+            http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..3202
+                     /organism="synthetic DNA construct"
+                     /mol_type="other DNA"
+     rep_origin      complement(19..607)
+                     /direction=LEFT
+                     /label=ori
+                     /note="high-copy-number ColE1/pMB1/pBR322/pUC origin of 
+                     replication"
+     primer_bind     complement(99..118)
+                     /label=pBR322ori-F
+                     /note="pBR322 origin, forward primer"
+     CDS             complement(778..1638)
+                     /codon_start=1
+                     /gene="bla"
+                     /product="beta-lactamase"
+                     /label=AmpR
+                     /note="confers resistance to ampicillin, carbenicillin, and
+                     related antibiotics"
+                     /translation="MSIQHFRVALIPFFAAFCLPVFAHPETLVKVKDAEDQLGARVGYI
+                     ELDLNSGKILESFRPEERFPMMSTFKVLLCGAVLSRIDAGQEQLGRRIHYSQNDLVEYS
+                     PVTEKHLTDGMTVRELCSAAITMSDNTAANLLLTTIGGPKELTAFLHNMGDHVTRLDRW
+                     EPELNEAIPNDERDTTMPVAMATTLRKLLTGELLTLASRQQLIDWMEADKVAGPLLRSA
+                     LPAGWFIADKSGAGERGSRGIIAALGPDGKPSRIVVIYTTGSQATMDERNRQIAEIGAS
+                     LIKHW"
+     primer_bind     1401..1420
+                     /label=Amp-R
+                     /note="Ampicillin resistance gene, reverse primer"
+     promoter        complement(1639..1743)
+                     /gene="bla"
+                     /label=AmpR promoter
+     primer_bind     1938..1960
+                     /label=M13/pUC Forward
+                     /note="In lacZ gene"
+     primer_bind     1952..1969
+                     /label=M13 Forward
+                     /note="In lacZ gene. Also called M13-F20 or M13 (-21) 
+                     Forward"
+     primer_bind     1953..1969
+                     /label=M13 fwd
+                     /note="common sequencing primer, one of multiple similar 
+                     variants"
+     CDS             2043..2756
+                     /codon_start=1
+                     /product="monomeric derivative of red fluorescent protein 
+                     from Entacmaea quadricolor (Merzlyak et al., 2007)"
+                     /label=TagRFP
+                     /note="mammalian codon-optimized"
+                     /translation="MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTM
+                     RIKVVEGGPLPFAFDILATSFMYGSRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGG
+                     VLTATQDTSLQDGCLIYNVKIRGVNFPSNGPVMQKKTLGWEANTEMLYPADGGLEGRSD
+                     MALKLVGGGHLICNFKTTYRSKKPAKNLKMPGVYYVDHRLERIKEADKETYVEQHEVAV
+                     ARYCDLPSKLGHKLN"
+     primer_bind     complement(2775..2792)
+                     /label=BGH-rev
+                     /note="Bovine growth hormone terminator, reverse primer. 
+                     Also called BGH reverse"
+     polyA_signal    2781..3005
+                     /label=bGH poly(A) signal
+                     /note="bovine growth hormone polyadenylation signal"
+     primer_bind     complement(3050..3067)
+                     /label=L4440
+                     /note="L4440 vector, forward primer"
+ORIGIN
+        1 ggccgcgttg ctggcgtttt tccataggct ccgcccccct gacgagcatc acaaaaatcg
+       61 acgctcaagt cagaggtggc gaaacccgac aggactataa agataccagg cgtttccccc
+      121 tggaagctcc ctcgtgcgct ctcctgttcc gaccctgccg cttaccggat acctgtccgc
+      181 ctttctccct tcgggaagcg tggcgctttc tcatagctca cgctgtaggt atctcagttc
+      241 ggtgtaggtc gttcgctcca agctgggctg tgtgcacgaa ccccccgttc agcccgaccg
+      301 ctgcgcctta tccggtaact atcgtcttga gtccaacccg gtaagacacg acttatcgcc
+      361 actggcagca gccactggta acaggattag cagagcgagg tatgtaggcg gtgctacaga
+      421 gttcttgaag tggtggccta actacggcta cactagaagg acagtatttg gtatctgcgc
+      481 tctgctgaag ccagttacct tcggaaaaag agttggtagc tcttgatccg gcaaacaaac
+      541 caccgctggt agcggtggtt tttttgtttg caagcagcag attacgcgca gaaaaaaagg
+      601 atctcaagaa gatcctttga tcttttctac ggggtctgac gctcagtgga acgaaaactc
+      661 acgttaaggg attttggtca tgagattatc aaaaaggatc ttcacctaga tccttttaaa
+      721 ttaaaaatga agttttaaat caatctaaag tatatatgag taaacttggt ctgacagtta
+      781 ccaatgctta atcagtgagg cacctatctc agcgatctgt ctatttcgtt catccatagt
+      841 tgcctgactc cccgtcgtgt agataactac gatacgggag ggcttaccat ctggccccag
+      901 tgctgcaatg ataccgcgag acccacgctc accggctcca gatttatcag caataaacca
+      961 gccagccgga agggccgagc gcagaagtgg tcctgcaact ttatccgcct ccatccagtc
+     1021 tattaattgt tgccgggaag ctagagtaag tagttcgcca gttaatagtt tgcgcaacgt
+     1081 tgttgccatt gctacaggca tcgtggtgtc acgctcgtcg tttggtatgg cttcattcag
+     1141 ctccggttcc caacgatcaa ggcgagttac atgatccccc atgttgtgca aaaaagcggt
+     1201 tagctccttc ggtcctccga tcgttgtcag aagtaagttg gccgcagtgt tatcactcat
+     1261 ggttatggca gcactgcata attctcttac tgtcatgcca tccgtaagat gcttttctgt
+     1321 gactggtgag tactcaacca agtcattctg agaatagtgt atgcggcgac cgagttgctc
+     1381 ttgcccggcg tcaatacggg ataataccgc gccacatagc agaactttaa aagtgctcat
+     1441 cattggaaaa cgttcttcgg ggcgaaaact ctcaaggatc ttaccgctgt tgagatccag
+     1501 ttcgatgtaa cccactcgtg cacccaactg atcttcagca tcttttactt tcaccagcgt
+     1561 ttctgggtga gcaaaaacag gaaggcaaaa tgccgcaaaa aagggaataa gggcgacacg
+     1621 gaaatgttga atactcatac tcttcctttt tcaatattat tgaagcattt atcagggtta
+     1681 ttgtctcatg agcggataca tatttgaatg tatttagaaa aataaacaaa taggggttcc
+     1741 gcgcacattt ccccgaaaag tgcggtgtga aataccgcac agatgcgtaa ggagaaaata
+     1801 ccgcatcagg cgccattcgc cattcaggct gcgcaactgt tgggaagggc gatcggtgcg
+     1861 ggcctcttcg ctattacgcc agctggcgaa agggggatgt gctgcaaggc gattaagttg
+     1921 ggtaacgcca gggttttccc agtcacgacg ttgtaaaacg acggccagtg aattcgagct
+     1981 cggtaccgct agcgggccag tacccaaaaa gcggggggtc tggtggcagt ggagggggat
+     2041 ccatggtgtc taagggcgaa gagctgatta aggagaacat gcacatgaag ctgtacatgg
+     2101 agggcaccgt gaacaaccac cacttcaagt gcacatccga gggcgaaggc aagccctacg
+     2161 agggcaccca gaccatgaga atcaaggtgg tcgagggcgg ccctctcccc ttcgccttcg
+     2221 acatcctggc taccagcttc atgtacggca gcagaacctt catcaaccac acccagggca
+     2281 tccccgactt ctttaagcag tccttccctg agggcttcac atgggagaga gtcaccacat
+     2341 acgaagacgg gggcgtgctg accgctaccc aggacaccag cctccaggac ggctgcctca
+     2401 tctacaacgt caagatcaga ggggtgaact tcccatccaa cggccctgtg atgcagaaga
+     2461 aaacactcgg ctgggaggcc aacaccgaga tgctgtaccc cgctgacggc ggcctggaag
+     2521 gcagaagcga catggccctg aagctcgtgg gcgggggcca cctgatctgc aacttcaaga
+     2581 ccacatacag atccaagaaa cccgctaaga acctcaagat gcccggcgtc tactatgtgg
+     2641 accacagact ggaaagaatc aaggaggccg acaaagagac ctacgtcgag cagcacgagg
+     2701 tggctgtggc cagatactgc gacctcccta gcaaactggg gcacaaactt aattgagcgg
+     2761 ccgccgctga tcagcctcga ctgtgccttc tagttgccag ccatctgttg tttgcccctc
+     2821 ccccgtgcct tccttgaccc tggaaggtgc cactcccact gtcctttcct aataaaatga
+     2881 ggaaattgca tcgcattgtc tgagtaggtg tcattctatt ctggggggtg gggtggggca
+     2941 ggacagcaag ggggaggatt gggaagacaa tagcaggcat gctggggatg cggtgggctc
+     3001 tatggacgcg tgggagaggc ggtttgcgta ttgggcgctc ttccgcttcc tcgctcactg
+     3061 actcgctgcg ctcggtcgtt cggctgcggc gagcggtatc agctcactca aaggcggtaa
+     3121 tacggttatc cacagaatca ggggataacg caggaaagaa catgtgagca aaaggccagc
+     3181 aaaaggccag gaaccgtaaa aa
+//

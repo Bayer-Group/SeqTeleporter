@@ -1,0 +1,22 @@
+name: Generate Demo
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  job:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - run: |
+          jupyter nbconvert --execute --to notebook --inplace ./demo/proseqTeleporter_demo.ipynb
+      - run: |
+          jupyter nbconvert ./demo/proseqTeleporter_demo.ipynb --to html --output index --output-dir ./
+      - uses: actions4git/add-commit-push@v1

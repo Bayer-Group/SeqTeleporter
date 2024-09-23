@@ -1,0 +1,16 @@
+SEQUENCE=CWRWGIIDLARMGMRRCDLPMHRPCGNRWNLECTHLRPTHTMIATQLSKPPAQPVHVYIYGGFSPVQMEDPDREGMVPGIEVWSKDNLFCFHMLRWIGYQVIKGRGCQGIHLDFSVKVLKQYCTDEKENARNEDMAFSNTDALYTGAMYERCNRWTNQFQCRGREAPPRECCQDIFQLHMMSRTQLQVGGMGDMLKHYLT
+FIX_DNA_SEQUENCE=
+MUTATIONS=[{'position': 2, 'aa': ['H', 'I', 'A', 'K']}, {'position': 4, 'aa': ['R', 'Q', 'A', 'G']}, {'position': 8, 'aa': ['W']}, {'position': 45, 'aa': ['K']}, {'position': 59, 'aa': ['T']}, {'position': 62, 'aa': ['F', 'K', 'I', 'H']}, {'position': 71, 'aa': ['N', 'I', 'D', 'Y']}, {'position': 75, 'aa': ['R', 'K', 'H', 'M', 'N', 'V', 'T', 'S', 'A']}, {'position': 92, 'aa': ['G', 'N', 'V', 'L']}, {'position': 109, 'aa': ['S']}, {'position': 115, 'aa': ['V', 'D', 'M', 'G']}, {'position': 117, 'aa': ['L']}, {'position': 130, 'aa': ['I', 'Y', 'W', 'S']}, {'position': 146, 'aa': ['V']}, {'position': 196, 'aa': ['G']}]
+LINKED_MUTATIONS=None
+CUT_NUMBER_RANGE=(1, 5)
+MIN_FRAGMENT_LENGTH=6
+MAX_COST=10000000
+MAX_LENGTH_UNEVENNESS=49
+MIN_LIGATION_FIDELITY=0.98
+SATISFACTION_LIGATION_FIDELITY=0.98
+FIDELITY_DATA=FileS01_T4_01h_25C.xlsx
+HOST=c_griseus
+FUSION_SITES_USED_BY_BACKBONE=('CTTG', 'TAAT')
+DNA_5_PRIME=AATTTGGTCTCTCC
+DNA_3_PRIME=TAATAGAGACCTTTAA
+ALLOWED_CUT_POSITIONS=[]

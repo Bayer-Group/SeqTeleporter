@@ -1,0 +1,16 @@
+SEQUENCE=RHQKGEKSWLYEHIALYESFDCSMGFCYFTLNSQLWWPMIISSETTGSSNFWKYDDRCPTYPANSEFINQTNDYFCKWRANTLTDRECPQWKRTDFDSFQ
+FIX_DNA_SEQUENCE=
+MUTATIONS=[{'position': 14, 'aa': ['V', 'F', 'Q', 'W', 'M', 'S', 'T', 'P', 'E']}, {'position': 21, 'aa': ['F', 'H', 'L', 'A']}, {'position': 22, 'aa': ['W', 'D', 'S', 'P']}, {'position': 23, 'aa': ['K', 'V', 'Y', 'M']}, {'position': 25, 'aa': ['C']}, {'position': 32, 'aa': ['D']}, {'position': 35, 'aa': ['I', 'V', 'P', 'Y']}, {'position': 51, 'aa': ['L']}, {'position': 68, 'aa': ['M']}, {'position': 73, 'aa': ['Y', 'Q', 'V', 'N', 'I', 'F', 'R', 'L', 'K']}, {'position': 86, 'aa': ['A', 'E', 'Y', 'Q']}, {'position': 92, 'aa': ['S', 'D', 'T', 'L']}, {'position': 96, 'aa': ['E']}, {'position': 100, 'aa': ['P']}]
+LINKED_MUTATIONS=None
+CUT_NUMBER_RANGE=(1, 5)
+MIN_FRAGMENT_LENGTH=6
+MAX_COST=10000000
+MAX_LENGTH_UNEVENNESS=49
+MIN_LIGATION_FIDELITY=0.98
+SATISFACTION_LIGATION_FIDELITY=0.98
+FIDELITY_DATA=FileS01_T4_01h_25C.xlsx
+HOST=c_griseus
+FUSION_SITES_USED_BY_BACKBONE=('CTTG', 'TAAT')
+DNA_5_PRIME=AATTTGGTCTCTCC
+DNA_3_PRIME=TAATAGAGACCTTTAA
+ALLOWED_CUT_POSITIONS=[]

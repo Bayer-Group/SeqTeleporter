@@ -1,0 +1,13 @@
+
+ Sequence: YPWCIVGGSPIVGARAWIQAVHCEPQMWEFQFPIVLRRIEYDVTKWNHNILNQNSSYSSCCACDGLRFIRDGISA
+ Mutations(0-indexed): [{'position': 5, 'aa': ['A', 'I', 'W', 'S', 'D', 'K', 'N', 'P']}, {'position': 9, 'aa': ['G', 'A', 'Q', 'S', 'M', 'T']}, {'position': 17, 'aa': ['M', 'L', 'V']}, {'position': 27, 'aa': ['Y', 'F', 'G', 'C', 'R', 'P', 'L', 'Q']}, {'position': 34, 'aa': ['Q', 'A', 'K', 'M', 'L', 'G', 'C', 'R']}, {'position': 43, 'aa': ['C', 'D', 'I', 'F']}, {'position': 55, 'aa': ['Y', 'V', 'P', 'A', 'I', 'D', 'H', 'G', 'T']}, {'position': 62, 'aa': ['F', 'H', 'Q', 'L', 'A', 'M', 'V', 'S', 'I']}, {'position': 74, 'aa': ['I', 'S', 'R', 'L', 'D', 'E']}]
+ Linked mutations(0-indexed): None
+ Fusion sites used by backbone ('CCAT', 'TGTC', 'TAAT')
+ Min length: 6
+ Max cost: 50000.0
+ Max unevenness: 2.0
+ Min ligation fidelity: 0.99
+ Satisfaction fidelity: 0.99
+ Search method: BFS
+ Host: c_griseus
+ Sort by cost: True

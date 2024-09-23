@@ -1,0 +1,30 @@
+
+ Sequence: RSGTDPHKTVMHRYAYMPTAECRAYGAVVDWCHTEPGRFREHCKISDNVASTFYCPVVFPTMYVWPACGTMAQNHIGRQHVRWYPLTNFVQVSMFMIMWLKVSCEQTKACKDEQQMHTNPLHWFVGNGKTDWQWRMHNYDKYVEMKFWRAPNGVRRQGLKTFCIPLMLDRVDGSGQFCEQHIHGVFKKTERKNFNPKWKE
+ Mutations(0-indexed): [{'position': 7, 'aa': ['H', 'G', 'P', 'R']}, {'position': 80, 'aa': ['C']}, {'position': 81, 'aa': ['T']}, {'position': 92, 'aa': ['K', 'R', 'W', 'N']}, {'position': 97, 'aa': ['V', 'S', 'T', 'F']}, {'position': 107, 'aa': ['W']}, {'position': 109, 'aa': ['Q', 'D', 'T', 'H']}, {'position': 126, 'aa': ['Q', 'V', 'L', 'T']}, {'position': 127, 'aa': ['D', 'S', 'A', 'K']}, {'position': 130, 'aa': ['K']}, {'position': 137, 'aa': ['Q']}, {'position': 147, 'aa': ['K']}, {'position': 179, 'aa': ['H', 'R', 'N', 'F']}, {'position': 191, 'aa': ['E']}]
+ Linked mutations(0-indexed): None
+ Fusion sites used by backbone ('CTTG', 'TAAT')
+ Min length: 6
+ Max cost: 50000.0
+ Max unevenness: 49.0
+ Min ligation fidelity: 0.98
+ Satisfaction fidelity: 0.98
+ Search method: BFS
+ Host: c_griseus
+ Sort by cost: True
+--------------------------------------------------------------------------------------------------
+[1m Results For 1 Fragments: [0m
+   Number of cuts: 0 
+   Elapsed time: 1.23 
+   Number of partitions checked: 1
+   Number of unique partitions checked: 1
+   Number of unique partitions violating hard constraints: 0
+   Empty DataFrame
+Columns: [Partition Count]
+Index: []
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[RSGTDPH[31mK[39mTVMHRYAYMPTAECRAYGAVVDWCHTEPGRFREHCKISDNVASTFYCPVVFPTMYVWPACGTMAQNHIGRQH[31mV[39m[31mR[39mWYPLTNFVQV[31mS[39mMFMI[31mM[39mWLKVSCEQT[31mK[39mA[31mC[39mKDEQQMHTNPLHWFVG[31mN[39m[31mG[39mKT[31mD[39mWQWRMH[31mN[39mYDKYVEMKF[31mW[39mRAPNGVRRQGLKTFCIPLMLDRVDGSGQFCE[31mQ[39mHIHGVFKKTER[31mK[39mNFNPKWKE][0m
+ fusion_sites = [];
+ partition(0idx) = (); fidelity=0; unevenness = 100; cost=376800000.0;
+ aa + dna fusion sites = RSGTDPHKTVMHRYAYMPTAECRAYGAVVDWCHTEPGRFREHCKISDNVASTFYCPVVFPTMYVWPACGTMAQNHIGRQHVRWYPLTNFVQVSMFMIMWLKVSCEQTKACKDEQQMHTNPLHWFVGNGKTDWQWRMHNYDKYVEMKFWRAPNGVRRQGLKTFCIPLMLDRVDGSGQFCEQHIHGVFKKTERKNFNPKWKE

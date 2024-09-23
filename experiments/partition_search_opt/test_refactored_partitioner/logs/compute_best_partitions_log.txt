@@ -1,0 +1,24 @@
+
+ Sequence: WAFTGDYSKVWMAWPISCMCYSNENKLESRHKHPMKVRSTQMKMSFQQKE
+ Mutations(0-indexed): [{'position': 0, 'aa': ['S', 'I']}, {'position': 7, 'aa': ['G', 'E', 'R', 'K', 'T', 'Q']}, {'position': 9, 'aa': ['Q', 'T', 'F', 'P', 'K', 'D', 'C']}, {'position': 13, 'aa': ['E', 'I', 'V', 'H']}, {'position': 25, 'aa': ['M', 'I']}, {'position': 26, 'aa': ['Y', 'M']}, {'position': 27, 'aa': ['T', 'H', 'W', 'I', 'L']}, {'position': 31, 'aa': ['Q', 'E']}, {'position': 39, 'aa': ['Q', 'G', 'L']}, {'position': 41, 'aa': ['C', 'G', 'R', 'S', 'D']}, {'position': 42, 'aa': ['I', 'H', 'V', 'A', 'M', 'T', 'G', 'E', 'Q']}, {'position': 43, 'aa': ['F', 'E', 'K', 'A', 'Y', 'I', 'W', 'L', 'P', 'S']}, {'position': 48, 'aa': ['I', 'R', 'E']}]
+ Linked mutations(0-indexed): None
+ Fusion sites used by backbone ('CCAT', 'TGTC', 'TAAT')
+ Min length: 6
+ Max cost: 50000.0
+ Max unevenness: 2.0
+ Min ligation fidelity: 0.99
+ Satisfaction fidelity: 0.99
+ Search method: BFS
+ Host: c_griseus
+ Sort by cost: True
+--------------------------------------------------------------------------------------------------
+[1m Results For 2 Fragments: [0m
+   Number of cuts: 1 
+   Elapsed time: 0.96 
+   Number of partitions checked: 21
+   Number of unique partitions checked: 21
+   Number of unique partitions violating hard constraints: 21
+                                 Partition Count
+Cost too high.                             17
+Fragment lengths too uneven.                4
+   The top 3 partitions:

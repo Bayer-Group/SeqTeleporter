@@ -1,0 +1,276 @@
+{
+  "best_partitions_by_cut_number": [
+    {
+      "number_of_cuts": 4,
+      "elapsed_time": 3059.01,
+      "number_of_partitions_checked": 4704,
+      "sel_partitions": [
+        {
+          "partition": [
+            68,
+            132,
+            165,
+            198
+          ],
+          "ligation_fidelity": 0.99,
+          "fragment_length_unevenness": 1.061,
+          "cost": 1188.0,
+          "fusion_sites": [
+            "CGGA",
+            "AATG",
+            "ACTC",
+            "CTAC"
+          ],
+          "fragments": [
+            "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFMY",
+            "GSRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS",
+            "NGPVMQKKTLGWEANTEMLYPADGGLEGRSDMA",
+            "LKLVGGGHLICNFKTTYRSKKPAKNLKMPGVYY",
+            "VDHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN"
+          ],
+          "expression": "\n[MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFM]TA<C|GGA>\n                                                                       <C|GGA>[SRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS]<|AATG>\n                                                                                                                                               <|AATG>GG[PVMQKKTLGWEANTEMLYPADGGLEGRSDM]GC<A|CTC>\n                                                                                                                                                                                          <A|CTC>[KLVGGGHLICNFKTTYRSKKPAKNLKMPGV]TA<CTAC|>\n                                                                                                                                                                                                                                   <CTAC|>[VDHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN]",
+          "fragment_with_fusion_sites": {
+            "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFMY": {
+              "order": 0,
+              "c_term_dna": "TA<C|GGA>",
+              "middle_aa": "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFM"
+            },
+            "GSRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS": {
+              "order": 1,
+              "n_term_dna": "<C|GGA>",
+              "middle_aa": "SRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS",
+              "c_term_dna": "<|AATG>"
+            },
+            "NGPVMQKKTLGWEANTEMLYPADGGLEGRSDMA": {
+              "order": 2,
+              "n_term_dna": "<|AATG>GG",
+              "middle_aa": "PVMQKKTLGWEANTEMLYPADGGLEGRSDM",
+              "c_term_dna": "GC<A|CTC>"
+            },
+            "LKLVGGGHLICNFKTTYRSKKPAKNLKMPGVYY": {
+              "order": 3,
+              "n_term_dna": "<A|CTC>",
+              "middle_aa": "KLVGGGHLICNFKTTYRSKKPAKNLKMPGV",
+              "c_term_dna": "TA<CTAC|>"
+            },
+            "VDHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN": {
+              "order": 4,
+              "n_term_dna": "<CTAC|>",
+              "middle_aa": "VDHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN"
+            }
+          }
+        },
+        {
+          "partition": [
+            68,
+            132,
+            165,
+            199
+          ],
+          "ligation_fidelity": 0.99,
+          "fragment_length_unevenness": 1.061,
+          "cost": 1188.0,
+          "fusion_sites": [
+            "CGGA",
+            "AATG",
+            "ACTC",
+            "AGAC"
+          ],
+          "fragments": [
+            "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFMY",
+            "GSRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS",
+            "NGPVMQKKTLGWEANTEMLYPADGGLEGRSDMA",
+            "LKLVGGGHLICNFKTTYRSKKPAKNLKMPGVYYV",
+            "DHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN"
+          ],
+          "expression": "\n[MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFM]TA<C|GGA>\n                                                                       <C|GGA>[SRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS]<|AATG>\n                                                                                                                                               <|AATG>GG[PVMQKKTLGWEANTEMLYPADGGLEGRSDM]GC<A|CTC>\n                                                                                                                                                                                          <A|CTC>[KLVGGGHLICNFKTTYRSKKPAKNLKMPGVYY]GT<A|GAC>\n                                                                                                                                                                                                                                     <A|GAC>[HRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN]",
+          "fragment_with_fusion_sites": {
+            "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFMY": {
+              "order": 0,
+              "c_term_dna": "TA<C|GGA>",
+              "middle_aa": "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFM"
+            },
+            "GSRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS": {
+              "order": 1,
+              "n_term_dna": "<C|GGA>",
+              "middle_aa": "SRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS",
+              "c_term_dna": "<|AATG>"
+            },
+            "NGPVMQKKTLGWEANTEMLYPADGGLEGRSDMA": {
+              "order": 2,
+              "n_term_dna": "<|AATG>GG",
+              "middle_aa": "PVMQKKTLGWEANTEMLYPADGGLEGRSDM",
+              "c_term_dna": "GC<A|CTC>"
+            },
+            "LKLVGGGHLICNFKTTYRSKKPAKNLKMPGVYYV": {
+              "order": 3,
+              "n_term_dna": "<A|CTC>",
+              "middle_aa": "KLVGGGHLICNFKTTYRSKKPAKNLKMPGVYY",
+              "c_term_dna": "GT<A|GAC>"
+            },
+            "DHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN": {
+              "order": 4,
+              "n_term_dna": "<A|GAC>",
+              "middle_aa": "HRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN"
+            }
+          }
+        },
+        {
+          "partition": [
+            68,
+            132,
+            166,
+            199
+          ],
+          "ligation_fidelity": 0.99,
+          "fragment_length_unevenness": 1.061,
+          "cost": 1188.0,
+          "fusion_sites": [
+            "CGGA",
+            "AAGT",
+            "AAAA",
+            "AGAC"
+          ],
+          "fragments": [
+            "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFMY",
+            "GSRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS",
+            "NGPVMQKKTLGWEANTEMLYPADGGLEGRSDMAL",
+            "KLVGGGHLICNFKTTYRSKKPAKNLKMPGVYYV",
+            "DHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN"
+          ],
+          "expression": "\n[MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFM]TA<C|GGA>\n                                                                       <C|GGA>[SRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNF]CC<AAGT|>\n                                                                                                                                               <AAGT|>[NGPVMQKKTLGWEANTEMLYPADGGLEGRSDMA]TT<A|AAA>\n                                                                                                                                                                                           <A|AAA>[LVGGGHLICNFKTTYRSKKPAKNLKMPGVYY]GT<A|GAC>\n                                                                                                                                                                                                                                     <A|GAC>[HRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN]",
+          "fragment_with_fusion_sites": {
+            "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFMY": {
+              "order": 0,
+              "c_term_dna": "TA<C|GGA>",
+              "middle_aa": "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFM"
+            },
+            "GSRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPS": {
+              "order": 1,
+              "n_term_dna": "<C|GGA>",
+              "middle_aa": "SRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNF",
+              "c_term_dna": "CC<AAGT|>"
+            },
+            "NGPVMQKKTLGWEANTEMLYPADGGLEGRSDMAL": {
+              "order": 2,
+              "n_term_dna": "<AAGT|>",
+              "middle_aa": "NGPVMQKKTLGWEANTEMLYPADGGLEGRSDMA",
+              "c_term_dna": "TT<A|AAA>"
+            },
+            "KLVGGGHLICNFKTTYRSKKPAKNLKMPGVYYV": {
+              "order": 3,
+              "n_term_dna": "<A|AAA>",
+              "middle_aa": "LVGGGHLICNFKTTYRSKKPAKNLKMPGVYY",
+              "c_term_dna": "GT<A|GAC>"
+            },
+            "DHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN": {
+              "order": 4,
+              "n_term_dna": "<A|GAC>",
+              "middle_aa": "HRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN"
+            }
+          }
+        }
+      ],
+      "num_of_checked_unique_partitions": 4704,
+      "hard_constraint_violations": {
+        "Fragment lengths too uneven.": 204
+      }
+    }
+  ],
+  "diversity": 248832,
+  "mutations": [
+    {
+      "position": 24,
+      "aa": [
+        "D"
+      ]
+    },
+    {
+      "position": 67,
+      "aa": [
+        "L",
+        "H"
+      ]
+    },
+    {
+      "position": 71,
+      "aa": [
+        "K"
+      ]
+    },
+    {
+      "position": 84,
+      "aa": [
+        "W",
+        "L"
+      ]
+    },
+    {
+      "position": 131,
+      "aa": [
+        "T"
+      ]
+    },
+    {
+      "position": 147,
+      "aa": [
+        "F",
+        "I"
+      ]
+    },
+    {
+      "position": 150,
+      "aa": [
+        "T"
+      ]
+    },
+    {
+      "position": 162,
+      "aa": [
+        "A",
+        "I",
+        "N"
+      ]
+    },
+    {
+      "position": 172,
+      "aa": [
+        "S"
+      ]
+    },
+    {
+      "position": 176,
+      "aa": [
+        "A"
+      ]
+    },
+    {
+      "position": 178,
+      "aa": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "position": 201,
+      "aa": [
+        "F",
+        "Y"
+      ]
+    },
+    {
+      "position": 210,
+      "aa": [
+        "N"
+      ]
+    },
+    {
+      "position": 211,
+      "aa": [
+        "N"
+      ]
+    }
+  ],
+  "sequence": "MVSKGEELIKENMHMKLYMEGTVNNHHFKCTSEGEGKPYEGTQTMRIKVVEGGPLPFAFDILATSFMYGSRTFINHTQGIPDFFKQSFPEGFTWERVTTYEDGGVLTATQDTSLQDGCLIYNVKIRGVNFPSNGPVMQKKTLGWEANTEMLYPADGGLEGRSDMALKLVGGGHLICNFKTTYRSKKPAKNLKMPGVYYVDHRLERIKEADKETYVEQHEVAVARYCDLPSKLGHKLN",
+  "total_elapsed_time": 3059.02
+}

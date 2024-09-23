@@ -1,0 +1,216 @@
+
+ Sequence: DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVISIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWIKCLVRQGFSQIPSFDKPK
+ Mutations(0-indexed): [{'position': 26, 'aa': ['P', 'Y', 'G', 'M', 'S', 'D', 'R', 'N', 'A']}, {'position': 56, 'aa': ['L', 'I', 'V', 'F']}, {'position': 97, 'aa': ['R', 'M', 'Q', 'K', 'E', 'W', 'H', 'D', 'C']}, {'position': 177, 'aa': ['D']}, {'position': 239, 'aa': ['F', 'T', 'A', 'E', 'L', 'N', 'S', 'K', 'Y']}, {'position': 277, 'aa': ['T', 'W', 'Y', 'S', 'I', 'A', 'C', 'Q', 'H']}, {'position': 296, 'aa': ['E', 'R', 'Q', 'F', 'C', 'H', 'L', 'G', 'W']}]
+ Linked mutations(0-indexed): None
+ Fusion sites used by backbone ('CTTG', 'TAAT')
+ Min length: 6
+ Max cost: 30000000.0
+ Max unevenness: 49.0
+ Min ligation fidelity: 0.98
+ Satisfaction fidelity: 0.98
+ Search method: BFS
+ Host: c_griseus
+ Sort by cost: True
+--------------------------------------------------------------------------------------------------
+[1m Results For 1 Fragments: [0m
+   Number of cuts: 0 
+   Elapsed time: 0.54 
+   Number of partitions checked: 1
+   Number of unique partitions checked: 1
+   Number of unique partitions violating hard constraints: 0
+   Empty DataFrame
+Columns: [Partition Count]
+Index: []
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVI[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = [];
+ partition(0idx) = (); fidelity=0; unevenness = 100; cost=92800000.0;
+ aa + dna fusion sites = DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVISIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWIKCLVRQGFSQIPSFDKPK
+--------------------------------------------------------------------------------------------------
+[1m Results For 2 Fragments: [0m
+   Number of cuts: 1 
+   Elapsed time: 0.75 
+   Number of partitions checked: 60
+   Number of unique partitions checked: 60
+   Number of unique partitions violating hard constraints: 0
+   Empty DataFrame
+Columns: [Partition Count]
+Index: []
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVI[31mS[39mI]
+[QVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('ACAA',);
+ partition(0idx) = (179,); fidelity=1.0; unevenness = 0.479; cost=95600.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVIS]AT<A|CAA>
+                                                                                                                                                                                      <A|CAA>[VIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWIKCLVRQGFSQIPSFDKPK]
+ [1mPartition 2:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVI[31mS[39mIQ]
+[VIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('AAGT',);
+ partition(0idx) = (180,); fidelity=1.0; unevenness = 0.5; cost=95600.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVISI]C<AA|GT>
+                                                                                                                                                                                      <AA|GT>G[IVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWIKCLVRQGFSQIPSFDKPK]
+ [1mPartition 3:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVI[31mS[39mIQVIV]
+[WMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('AGTA',);
+ partition(0idx) = (183,); fidelity=1.0; unevenness = 0.564; cost=95600.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVISIQV]AT<AGTA|>
+                                                                                                                                                                                         <AGTA|>[WMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWIKCLVRQGFSQIPSFDKPK]
+--------------------------------------------------------------------------------------------------
+[1m Results For 3 Fragments: [0m
+   Number of cuts: 2 
+   Elapsed time: 6.65 
+   Number of partitions checked: 1404
+   Number of unique partitions checked: 1404
+   Number of unique partitions violating hard constraints: 0
+   Empty DataFrame
+Columns: [Partition Count]
+Index: []
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAH]
+[S[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVI[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mC]
+[SDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('ACAC', 'AGCG');
+ partition(0idx) = (96, 241); fidelity=1.0; unevenness = 1.458; cost=12890.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRAD]GC<ACAC|>
+                                                                                                  <ACAC|>[SYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVISIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWC]<|AGCG>
+                                                                                                                                                                                                                                                            <|AGCG>AC[PFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWIKCLVRQGFSQIPSFDKPK]
+ [1mPartition 2:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAH]
+[S[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVI[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mCS]
+[DPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('ACAC', 'AGCG');
+ partition(0idx) = (96, 242); fidelity=1.0; unevenness = 1.517; cost=12920.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRAD]GC<ACAC|>
+                                                                                                  <ACAC|>[SYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVISIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWC]<AGC|G>
+                                                                                                                                                                                                                                                            <AGC|G>AC[PFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWIKCLVRQGFSQIPSFDKPK]
+ [1mPartition 3:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADA]
+[HS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVI[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mC]
+[SDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('ACAC', 'AGCG');
+ partition(0idx) = (95, 241); fidelity=1.0; unevenness = 1.475; cost=12935.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQCWMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRAD]GC<A|CAC>
+                                                                                                  <A|CAC>[SYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEVISIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWC]<|AGCG>
+                                                                                                                                                                                                                                                            <|AGCG>AC[PFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWIKCLVRQGFSQIPSFDKPK]
+--------------------------------------------------------------------------------------------------
+[1m Results For 4 Fragments: [0m
+   Number of cuts: 3 
+   Elapsed time: 649.78 
+   Number of partitions checked: 109512
+   Number of unique partitions checked: 109512
+   Number of unique partitions violating hard constraints: 216
+                           Partition Count
+Fragment(s) too short.              216
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mC]
+[WMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEV]
+[I[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGD]
+[M[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('CTGG', 'AATC', 'ACAT');
+ partition(0idx) = (58, 176, 276); fidelity=0.99; unevenness = 3.917; cost=3048.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQ]TG<C|TGG>
+                                                             <C|TGG>[MYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWE]GT<A|ATC>
+                                                                                                                                                                                            <A|ATC>[SIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKG]G<AC|AT>
+                                                                                                                                                                                                                                                                                                        <AC|AT>G[LSPWIKCLVRQGFSQIPSFDKPK]
+ [1mPartition 2:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mC]
+[WMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWE]
+[VI[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGD]
+[M[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('CTGG', 'AAGT', 'ACAT');
+ partition(0idx) = (58, 175, 276); fidelity=0.98; unevenness = 3.875; cost=3051.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQ]TG<C|TGG>
+                                                             <C|TGG>[MYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLW]G<AA|GT>
+                                                                                                                                                                                          <AA|GT>G[ISIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKG]G<AC|AT>
+                                                                                                                                                                                                                                                                                                        <AC|AT>G[LSPWIKCLVRQGFSQIPSFDKPK]
+ [1mPartition 3:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mC]
+[WMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLW]
+[EVI[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGD]
+[M[31mL[39mSPWIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('GCTG', 'ATGG', 'AGAC');
+ partition(0idx) = (58, 174, 276); fidelity=1.0; unevenness = 3.833; cost=3054.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQ]T<GC|TG>
+                                                            <GC|TG>G[MYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNL]TT<ATGG|>
+                                                                                                                                                                                         <ATGG|>[EVISIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWCSDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSK]GG<AGAC|>
+                                                                                                                                                                                                                                                                                                        <AGAC|>[MLSPWIKCLVRQGFSQIPSFDKPK]
+--------------------------------------------------------------------------------------------------
+[1m Results For 5 Fragments: [0m
+   Number of cuts: 4 
+   Elapsed time: 24933.16 
+   Number of partitions checked: 1752192
+   Number of unique partitions checked: 1752192
+   Number of unique partitions violating hard constraints: 21672
+                           Partition Count
+Fragment(s) too short.            21672
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mC]
+[WMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEV]
+[I[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mC]
+[SDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSP]
+[WIKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('GCTG', 'AATA', 'AGCG', 'ATGG');
+ partition(0idx) = (58, 176, 241, 280); fidelity=0.99; unevenness = 4.9; cost=2071.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQ]T<GC|TG>
+                                                            <GC|TG>G[MYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWE]GT<A|ATA>
+                                                                                                                                                                                            <A|ATA>[SIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWC]<|AGCG>
+                                                                                                                                                                                                                                                                     <|AGCG>AC[PFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLS]CC<A|TGG>
+                                                                                                                                                                                                                                                                                                                      <A|TGG>[IKCLVRQGFSQIPSFDKPK]
+ [1mPartition 2:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mC]
+[WMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEV]
+[I[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mC]
+[SDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPW]
+[IKCLVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('GCTG', 'AATA', 'AGCG', 'ATGG');
+ partition(0idx) = (58, 176, 241, 281); fidelity=0.99; unevenness = 5.211; cost=2071.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQ]T<GC|TG>
+                                                            <GC|TG>G[MYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWE]GT<A|ATA>
+                                                                                                                                                                                            <A|ATA>[SIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWC]<|AGCG>
+                                                                                                                                                                                                                                                                     <|AGCG>AC[PFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLS]CC<ATGG|>
+                                                                                                                                                                                                                                                                                                                      <ATGG|>[IKCLVRQGFSQIPSFDKPK]
+ [1mPartition 3:[0m
+ [1mfragments = 
+[DPLNWDKGREMWGSEKKEETYDAQFR[31mQ[39mSPNGEQDTIKLVDSYFGETAEAAYKVSIS[31mQ[39mC]
+[WMYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHS[31mY[39mYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWEV]
+[I[31mS[39mIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMS[31mW[39mC]
+[SDPFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDM[31mL[39mSPWIKC]
+[LVRQGFSQIPSF[31mD[39mKPK][0m
+ fusion_sites = ('CTGG', 'AATC', 'AGCG', 'ATGC');
+ partition(0idx) = (58, 176, 241, 284); fidelity=0.99; unevenness = 6.375; cost=2071.0;
+ aa + dna fusion sites = 
+[DPLNWDKGREMWGSEKKEETYDAQFRQSPNGEQDTIKLVDSYFGETAEAAYKVSISQ]TG<C|TGG>
+                                                             <C|TGG>[MYMRVEGFSMRYTGLYLQGQPNLESPHLLMAVRADAHSYYDSIKYYPIEDLYFHPITVRHWNVFAKWHDWLCHHYNWMRAKGNEQYVYETHICSCVTVLHCKDIGSYKTWYNLLWE]GT<A|ATC>
+                                                                                                                                                                                            <A|ATC>[SIQVIVWMDYQNPHTHKSGTHWKWFGAHKLIGPHWSSLLPLAALNPQARFHKGMHPTCNGMSWC]<|AGCG>
+                                                                                                                                                                                                                                                                     <|AGCG>AC[PFMMNRYMMSLRLWTILIFFKVKDNCDYSSKGDMLSPWI]AA<ATGC|>
+                                                                                                                                                                                                                                                                                                                         <ATGC|>[LVRQGFSQIPSFDKPK]

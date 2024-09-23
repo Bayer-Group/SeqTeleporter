@@ -1,0 +1,13 @@
+For HEK
+Yes, I would use the pMC3025 (pTT5). That is a backbone with CMV promoter and pA
+the 5´ cloning site includes part of the start codon (CCAT)
+and 3´ cloning site includes the stop codon (TAAT)
+No leader peptide for secretion in the vector, but I guess you do not need one
+
+
+E.coli T7 construct:
+
+pAL26162 (T7 promoter)
+pAL26164 (T7 RBS)
+pAL22805 (T7 terminator)
+pAL26962 (backbone)

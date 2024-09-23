@@ -1,0 +1,5 @@
+[run]
+source = proseqteleporter
+relative_files = True
+omit =
+    tests/*

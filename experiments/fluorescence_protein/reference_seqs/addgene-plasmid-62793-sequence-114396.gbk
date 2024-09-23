@@ -1,0 +1,53 @@
+LOCUS       Exported                 680 bp ds-DNA     linear   SYN 20-MAY-2021
+DEFINITION  Localization: Protein Expression Vector , Excitation:N/A, 
+            Emission:N/A.
+ACCESSION   .
+VERSION     .
+KEYWORDS    PA-TagRFP-pBad
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct
+REFERENCE   1  (bases 1 to 680)
+  TITLE     Michael Davidson Unpublished
+REFERENCE   2  (bases 1 to 680)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported May 20, 2021 from SnapGene Server 1.1.58
+            http://www.snapgene.com
+FEATURES             Location/Qualifiers
+     source          1..680
+                     /organism="synthetic DNA construct"
+                     /mol_type="other DNA"
+     RBS             51..73
+                     /note="efficient ribosome binding site from bacteriophage 
+                     T7 gene 10 (Olins and Rangwala, 1989)"
+     CDS             93..110
+                     /codon_start=1
+                     /product="6xHis affinity tag"
+                     /label=6xHis
+                     /translation="HHHHHH"
+     CDS             114..146
+                     /codon_start=1
+                     /product="leader peptide from bacteriophage T7 gene 10"
+                     /label=T7 tag (gene 10 leader)
+                     /note="promotes efficient translation in E. coli"
+                     /translation="MASMTGGQQMG"
+     CDS             159..179
+                     /codon_start=1
+                     /product="tobacco etch virus (TEV) protease recognition and
+                     cleavage site"
+                     /label=TEV site
+                     /translation="ENLYFQG"
+ORIGIN
+        1 gcaactctct actggtttct ccatacccgt ttttttgggc tagaaataat tttgtttaac
+       61 tttaagaagg agatatacat atgcggggtt ctcatcatca tcatcatcat ggtatggcta
+      121 gcatgactgg tggacagcaa atgggtcggg atctgtacga gaacctgtac ttccagggct
+      181 cgagcatggt gtctaagggc gaagagctga ttaaggagaa catgcacatg aagctgtaca
+      241 tggagggcac cgtgaacaac caccacttca agtgcacatc cgagggcgaa ggcaagccct
+      301 acgagggcac ccagaccatg agaatcaagg tggtcgaggg cggccctctc cccttcgcct
+      361 tcgacatcct ggctaccagc ttcatgtacg gcagcagcac cttcatcaac cacacccagg
+      421 gcatccccga cttctggaag cagtccttcc ctgagggctt cacatgggag agagtcacca
+      481 catacgaaga cgggggcgtg ctgaccgcta cccaggacac cagcctccag gacggctgcc
+      541 tcatctacaa cgtcaagatc agaggggtga acttcccatc caacggccct gtgatgaaga
+      601 agaaaacact cggctgggaa ccgagcaccg agaaactgaa acccgctgac ggcggcctgg
+      661 aaggcagggt cgacatggcc
+//

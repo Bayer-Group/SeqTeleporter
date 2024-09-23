@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IdotProjectFile Author="&lt;User Name&gt;" Version="2.0.0.230" Title="azR-20240912">
+  <TargetPlates>
+    <TargetPlate Identifier="Target Plate 1">
+      <Barcode />
+      <PlateType>96-Well</PlateType>
+      <AssayVolume>1.5E-05</AssayVolume>
+      <WasteWellPosition>Waste Tube</WasteWellPosition>
+      <ProtocolSteps>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>1-64_M63L</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="0" Y="0" />
+              <EndPosition X="11" Y="3" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>105-144_S143I</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="0" Y="7" />
+              <EndPosition X="11" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="5" />
+              <EndPosition X="11" Y="5" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="3" />
+              <EndPosition X="11" Y="3" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="1" />
+              <EndPosition X="11" Y="1" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>185-226_H194F</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="10" Y="0" />
+              <EndPosition X="10" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="8" Y="0" />
+              <EndPosition X="8" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="6" Y="0" />
+              <EndPosition X="6" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="4" Y="0" />
+              <EndPosition X="4" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="2" Y="0" />
+              <EndPosition X="2" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="0" />
+              <EndPosition X="0" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>145-184_V158N_F174A</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="8" Y="0" />
+              <EndPosition X="9" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>145-184_V158A_F174A</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="0" Y="0" />
+              <EndPosition X="1" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>145-184_V158A_F174I</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="2" Y="0" />
+              <EndPosition X="3" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>145-184_V158N_F174I</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="10" Y="0" />
+              <EndPosition X="11" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>145-184_V158I_F174I</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="6" Y="0" />
+              <EndPosition X="7" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>145-184_V158I_F174A</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="4" Y="0" />
+              <EndPosition X="5" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>1-64_M63H</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="0" Y="4" />
+              <EndPosition X="11" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>65-104_F80W</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="0" Y="4" />
+              <EndPosition X="11" Y="5" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="0" />
+              <EndPosition X="11" Y="1" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>105-144_S143F</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="0" Y="6" />
+              <EndPosition X="11" Y="6" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="4" />
+              <EndPosition X="11" Y="4" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="2" />
+              <EndPosition X="11" Y="2" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="0" />
+              <EndPosition X="11" Y="0" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>65-104_F80L</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="0" Y="6" />
+              <EndPosition X="11" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="0" Y="2" />
+              <EndPosition X="11" Y="3" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+        <WellgroupProtocolStep Identifier="Wellgroup">
+          <ChildProtocolSteps>
+            <MixingProtocolStep Identifier="Constant">
+              <SourceLiquid>185-226_H194Y</SourceLiquid>
+              <VolumeConcentration>Volume</VolumeConcentration>
+              <UncoupleAssayVolume>false</UncoupleAssayVolume>
+              <AssayVolume>1.5E-05</AssayVolume>
+              <Volume>1.47E-06</Volume>
+              <Concentration>9.8E-05</Concentration>
+            </MixingProtocolStep>
+          </ChildProtocolSteps>
+          <CellGroupList>
+            <CellGroup>
+              <BeginPosition X="11" Y="0" />
+              <EndPosition X="11" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="9" Y="0" />
+              <EndPosition X="9" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="7" Y="0" />
+              <EndPosition X="7" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="5" Y="0" />
+              <EndPosition X="5" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="3" Y="0" />
+              <EndPosition X="3" Y="7" />
+            </CellGroup>
+            <CellGroup>
+              <BeginPosition X="1" Y="0" />
+              <EndPosition X="1" Y="7" />
+            </CellGroup>
+          </CellGroupList>
+        </WellgroupProtocolStep>
+      </ProtocolSteps>
+    </TargetPlate>
+  </TargetPlates>
+  <SourcePlates>
+    <SourcePlate Identifier="Source Plate 1">
+      <Barcode />
+      <PlateType>S_100</PlateType>
+      <MaxSourceWellVolume>0.008</MaxSourceWellVolume>
+      <LiquidContent>
+        <SourceLiquid Position="A2" Volume="7.0559999999999948E-05" AdditionalVolume="0" Liquid="1-64_M63L" />
+        <SourceLiquid Position="A3" Volume="7.0559999999999948E-05" AdditionalVolume="0" Liquid="1-64_M63H" />
+        <SourceLiquid Position="A5" Volume="7.0559999999999948E-05" AdditionalVolume="0" Liquid="65-104_F80W" />
+        <SourceLiquid Position="A6" Volume="7.0559999999999948E-05" AdditionalVolume="0" Liquid="65-104_F80L" />
+        <SourceLiquid Position="A8" Volume="7.0559999999999948E-05" AdditionalVolume="0" Liquid="105-144_S143F" />
+        <SourceLiquid Position="A9" Volume="7.0559999999999948E-05" AdditionalVolume="0" Liquid="105-144_S143I" />
+        <SourceLiquid Position="B2" Volume="2.3520000000000002E-05" AdditionalVolume="0" Liquid="145-184_V158A_F174A" />
+        <SourceLiquid Position="B3" Volume="2.3520000000000002E-05" AdditionalVolume="0" Liquid="145-184_V158A_F174I" />
+        <SourceLiquid Position="B5" Volume="2.3520000000000002E-05" AdditionalVolume="0" Liquid="145-184_V158I_F174A" />
+        <SourceLiquid Position="B6" Volume="2.3520000000000002E-05" AdditionalVolume="0" Liquid="145-184_V158I_F174I" />
+        <SourceLiquid Position="B8" Volume="2.3520000000000002E-05" AdditionalVolume="0" Liquid="145-184_V158N_F174A" />
+        <SourceLiquid Position="B9" Volume="2.3520000000000002E-05" AdditionalVolume="0" Liquid="145-184_V158N_F174I" />
+        <SourceLiquid Position="B11" Volume="7.0559999999999948E-05" AdditionalVolume="0" Liquid="185-226_H194F" />
+        <SourceLiquid Position="B12" Volume="7.0559999999999948E-05" AdditionalVolume="0" Liquid="185-226_H194Y" />
+      </LiquidContent>
+    </SourcePlate>
+  </SourcePlates>
+  <ProtocolSettings>
+    <UseDeionisation>true</UseDeionisation>
+    <DispenseToWaste>true</DispenseToWaste>
+    <DispenseToWasteVolume>1E-07</DispenseToWasteVolume>
+    <DispenseToWasteCycles>3</DispenseToWasteCycles>
+    <WasteErrorHandlingLevel>Ask</WasteErrorHandlingLevel>
+    <OptimizationLevel>ReorderAndParallel</OptimizationLevel>
+    <SaveLiquids>Ask</SaveLiquids>
+  </ProtocolSettings>
+</IdotProjectFile>

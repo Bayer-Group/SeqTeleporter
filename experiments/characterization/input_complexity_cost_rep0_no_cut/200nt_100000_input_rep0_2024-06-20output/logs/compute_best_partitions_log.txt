@@ -1,0 +1,30 @@
+
+ Sequence: SQGWFLQSGAEVNMMIALTIGGITDQVLESAYQRSYYWAAEPRWMKDYQEDEYPEPIWDDIVYMQAICMLCVGTTQEWGAWNKSAGDDEMKDYRWKFDGEVATMLKEWSCGCERKHKFPTVVKDNLHPWFRWKSAKLLYMKHNQADHTKWQRHQWESCITCIQHKNSKDGYEHMPFRTADERHAMTDYWQVEHAFCWVIG
+ Mutations(0-indexed): [{'position': 0, 'aa': ['A', 'I', 'Y', 'Q']}, {'position': 16, 'aa': ['H', 'E', 'L', 'P']}, {'position': 64, 'aa': ['L', 'D', 'R', 'N']}, {'position': 83, 'aa': ['W', 'V', 'K', 'M']}, {'position': 99, 'aa': ['R']}, {'position': 114, 'aa': ['D', 'P', 'A', 'G']}, {'position': 136, 'aa': ['Q']}, {'position': 143, 'aa': ['A']}, {'position': 149, 'aa': ['Y']}, {'position': 190, 'aa': ['H']}]
+ Linked mutations(0-indexed): None
+ Fusion sites used by backbone ('CTTG', 'TAAT')
+ Min length: 6
+ Max cost: 50000.0
+ Max unevenness: 49.0
+ Min ligation fidelity: 0.98
+ Satisfaction fidelity: 0.98
+ Search method: BFS
+ Host: c_griseus
+ Sort by cost: True
+--------------------------------------------------------------------------------------------------
+[1m Results For 1 Fragments: [0m
+   Number of cuts: 0 
+   Elapsed time: 0.65 
+   Number of partitions checked: 1
+   Number of unique partitions checked: 1
+   Number of unique partitions violating hard constraints: 0
+   Empty DataFrame
+Columns: [Partition Count]
+Index: []
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[[31mS[39mQGWFLQSGAEVNMMI[31mA[39mLTIGGITDQVLESAYQRSYYWAAEPRWMKDYQEDEYPEPIWDDIVYM[31mQ[39mAICMLCVGTTQEWGAWNK[31mS[39mAGDDEMKDYRWKFDG[31mE[39mVATMLKEWSCGCER[31mK[39mHKFPTVVKDNLHPWFRWKSAK[31mL[39mLYMKHN[31mQ[39mADHTK[31mW[39mQRHQWESCITCIQHKNSKDGYEHMPFRTADERHAMTDYWQ[31mV[39mEHAFCWVIG][0m
+ fusion_sites = [];
+ partition(0idx) = (); fidelity=0; unevenness = 100; cost=753600.0;
+ aa + dna fusion sites = SQGWFLQSGAEVNMMIALTIGGITDQVLESAYQRSYYWAAEPRWMKDYQEDEYPEPIWDDIVYMQAICMLCVGTTQEWGAWNKSAGDDEMKDYRWKFDGEVATMLKEWSCGCERKHKFPTVVKDNLHPWFRWKSAKLLYMKHNQADHTKWQRHQWESCITCIQHKNSKDGYEHMPFRTADERHAMTDYWQVEHAFCWVIG

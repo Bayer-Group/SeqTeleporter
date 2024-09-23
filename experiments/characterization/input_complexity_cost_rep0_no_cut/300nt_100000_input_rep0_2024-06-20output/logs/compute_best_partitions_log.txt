@@ -1,0 +1,30 @@
+
+ Sequence: AIIQSCMTQQKTIWGIFRILFVWKVRRFHYTCLGVQQHGGRQSYFHCIDHFPAFYGHQASEPVDFTCNKEQFAKNIFLIMNKPCVMWHRSTPKRFAGTMISVCRIVYQQYEDEMNWKTMTDDFESHDMDHHMQNHWGDEPICFKNSDCALMYKHDAHKMCYQNKIYTTNPFCPQNGGKLERHQEELQYCNRPISVRWPPRWNLREMQDMAWEYIWAQDASHMSPLHQMNCLIYFGYEAQEGCWQNQFPSGDSTPQAMEFQMECNSRGQTFMTDQHPIEKMQEVSHAHKPAYMIQCWPIHL
+ Mutations(0-indexed): [{'position': 31, 'aa': ['Y']}, {'position': 37, 'aa': ['W', 'K', 'R', 'L']}, {'position': 81, 'aa': ['P', 'I', 'H', 'M']}, {'position': 97, 'aa': ['Y']}, {'position': 101, 'aa': ['Y', 'F', 'M', 'E']}, {'position': 172, 'aa': ['A', 'S', 'V', 'D']}, {'position': 179, 'aa': ['P']}, {'position': 220, 'aa': ['G', 'T', 'S', 'L']}, {'position': 287, 'aa': ['H']}, {'position': 292, 'aa': ['C']}]
+ Linked mutations(0-indexed): None
+ Fusion sites used by backbone ('CTTG', 'TAAT')
+ Min length: 6
+ Max cost: 50000.0
+ Max unevenness: 49.0
+ Min ligation fidelity: 0.98
+ Satisfaction fidelity: 0.98
+ Search method: BFS
+ Host: c_griseus
+ Sort by cost: True
+--------------------------------------------------------------------------------------------------
+[1m Results For 1 Fragments: [0m
+   Number of cuts: 0 
+   Elapsed time: 0.65 
+   Number of partitions checked: 1
+   Number of unique partitions checked: 1
+   Number of unique partitions violating hard constraints: 0
+   Empty DataFrame
+Columns: [Partition Count]
+Index: []
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[AIIQSCMTQQKTIWGIFRILFVWKVRRFHYT[31mC[39mLGVQQ[31mH[39mGGRQSYFHCIDHFPAFYGHQASEPVDFTCNKEQFAKNIFLIMN[31mK[39mPCVMWHRSTPKRFAG[31mT[39mMIS[31mV[39mCRIVYQQYEDEMNWKTMTDDFESHDMDHHMQNHWGDEPICFKNSDCALMYKHDAHKMCYQNKIYTTNPFC[31mP[39mQNGGKL[31mE[39mRHQEELQYCNRPISVRWPPRWNLREMQDMAWEYIWAQDAS[31mH[39mMSPLHQMNCLIYFGYEAQEGCWQNQFPSGDSTPQAMEFQMECNSRGQTFMTDQHPIEKMQEVSHAH[31mK[39mPAYM[31mI[39mQCWPIHL][0m
+ fusion_sites = [];
+ partition(0idx) = (); fidelity=0; unevenness = 100; cost=5568000.0;
+ aa + dna fusion sites = AIIQSCMTQQKTIWGIFRILFVWKVRRFHYTCLGVQQHGGRQSYFHCIDHFPAFYGHQASEPVDFTCNKEQFAKNIFLIMNKPCVMWHRSTPKRFAGTMISVCRIVYQQYEDEMNWKTMTDDFESHDMDHHMQNHWGDEPICFKNSDCALMYKHDAHKMCYQNKIYTTNPFCPQNGGKLERHQEELQYCNRPISVRWPPRWNLREMQDMAWEYIWAQDASHMSPLHQMNCLIYFGYEAQEGCWQNQFPSGDSTPQAMEFQMECNSRGQTFMTDQHPIEKMQEVSHAHKPAYMIQCWPIHL

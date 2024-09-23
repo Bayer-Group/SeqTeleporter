@@ -1,0 +1,220 @@
+{
+  "cost": 6390.0,
+  "diversity": 1388016000,
+  "elapsed_time": 55.49,
+  "expression": "\n[NTHEIHWNRTEKD]AA<ACCA|>\n                 <ACCA|>[WRCSE]<AAC|C>\n                               <AAC|C>AG[VHGK]TT<C|TTC>\n                                                <C|TTC>[PGTWEFYKCHCKT]CC<ACAC|>\n                                                                        <ACAC|>[PLDWYSPYMMCSGDLKA]TA<C|GTA>\n                                                                                                    <C|GTA>[AKYDPTHRTWWAV]",
+  "fragment_length_unevenness": 2.0,
+  "fragment_with_fusion_sites": {
+    "NTHEIHWNRTEKDKP": {
+      "order": 0,
+      "c_term_dna": "AA<ACCA|>",
+      "middle_aa": "NTHEIHWNRTEKD"
+    },
+    "WRCSEN": {
+      "order": 1,
+      "n_term_dna": "<ACCA|>",
+      "middle_aa": "WRCSE",
+      "c_term_dna": "<AAC|C>"
+    },
+    "QVHGKF": {
+      "order": 2,
+      "n_term_dna": "<AAC|C>AG",
+      "middle_aa": "VHGK",
+      "c_term_dna": "TT<C|TTC>"
+    },
+    "FPGTWEFYKCHCKTPH": {
+      "order": 3,
+      "n_term_dna": "<C|TTC>",
+      "middle_aa": "PGTWEFYKCHCKT",
+      "c_term_dna": "CC<ACAC|>"
+    },
+    "PLDWYSPYMMCSGDLKAY": {
+      "order": 4,
+      "n_term_dna": "<ACAC|>",
+      "middle_aa": "PLDWYSPYMMCSGDLKA",
+      "c_term_dna": "TA<C|GTA>"
+    },
+    "VAKYDPTHRTWWAV": {
+      "order": 5,
+      "n_term_dna": "<C|GTA>",
+      "middle_aa": "AKYDPTHRTWWAV"
+    }
+  },
+  "fragments": [
+    "NTHEIHWNRTEKDKP",
+    "WRCSEN",
+    "QVHGKF",
+    "FPGTWEFYKCHCKTPH",
+    "PLDWYSPYMMCSGDLKAY",
+    "VAKYDPTHRTWWAV"
+  ],
+  "fusion_sites": [
+    "ACCA",
+    "AACC",
+    "CTTC",
+    "ACAC",
+    "CGTA"
+  ],
+  "hard_constraint_violations": {
+    "Fragment(s) too short.": 2737,
+    "Fragment lengths too uneven.": 295
+  },
+  "ligation_fidelity": 1.0,
+  "mutations": [
+    {
+      "position": 14,
+      "aa": [
+        "S",
+        "V",
+        "A",
+        "N"
+      ]
+    },
+    {
+      "position": 17,
+      "aa": [
+        "Y",
+        "L",
+        "E",
+        "C",
+        "T",
+        "Q",
+        "H",
+        "W",
+        "S",
+        "P",
+        "I",
+        "A",
+        "K",
+        "N",
+        "V",
+        "G"
+      ]
+    },
+    {
+      "position": 23,
+      "aa": [
+        "S",
+        "M",
+        "T",
+        "N",
+        "Y",
+        "K",
+        "R",
+        "Q",
+        "A",
+        "F",
+        "D",
+        "I",
+        "G",
+        "W"
+      ]
+    },
+    {
+      "position": 39,
+      "aa": [
+        "R",
+        "F",
+        "E",
+        "Y"
+      ]
+    },
+    {
+      "position": 41,
+      "aa": [
+        "Y",
+        "F",
+        "G",
+        "H",
+        "M",
+        "Q",
+        "W",
+        "A",
+        "L",
+        "I",
+        "V",
+        "K",
+        "E",
+        "C",
+        "R",
+        "P",
+        "S"
+      ]
+    },
+    {
+      "position": 58,
+      "aa": [
+        "Y",
+        "K",
+        "R",
+        "T",
+        "W",
+        "N",
+        "D"
+      ]
+    },
+    {
+      "position": 59,
+      "aa": [
+        "M",
+        "A",
+        "F",
+        "G",
+        "L",
+        "Y",
+        "E",
+        "S",
+        "V",
+        "T",
+        "D",
+        "Q",
+        "P",
+        "I",
+        "R",
+        "C",
+        "W"
+      ]
+    },
+    {
+      "position": 65,
+      "aa": [
+        "N"
+      ]
+    },
+    {
+      "position": 71,
+      "aa": [
+        "Y",
+        "C"
+      ]
+    },
+    {
+      "position": 72,
+      "aa": [
+        "Q",
+        "G",
+        "E",
+        "C",
+        "N",
+        "A",
+        "D",
+        "P",
+        "S",
+        "K",
+        "T",
+        "L",
+        "F"
+      ]
+    }
+  ],
+  "number_of_cuts": 5,
+  "number_of_partitions_checked": 3360,
+  "partition": [
+    15,
+    21,
+    27,
+    43,
+    61
+  ],
+  "sequence": "NTHEIHWNRTEKDKPWRCSENQVHGKFFPGTWEFYKCHCKTPHPLDWYSPYMMCSGDLKAYVAKYDPTHRTWWAV"
+}

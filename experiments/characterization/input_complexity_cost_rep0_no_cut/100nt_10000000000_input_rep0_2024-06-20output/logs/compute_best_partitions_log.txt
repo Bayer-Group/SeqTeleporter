@@ -1,0 +1,30 @@
+
+ Sequence: YWYMTRGVCPGMPMGVAFLASKCDSMYIYFKRAKMNISGWTRWVDGQVYCTPCSFCNIELAPKSGSHRPTTWDEDIIHAVPNWMVKPSNFAIPPWEFRKN
+ Mutations(0-indexed): [{'position': 3, 'aa': ['C']}, {'position': 9, 'aa': ['N', 'D', 'V', 'C']}, {'position': 13, 'aa': ['W', 'H', 'E', 'V', 'F', 'Y', 'S', 'N', 'K']}, {'position': 17, 'aa': ['V', 'M', 'S', 'T']}, {'position': 28, 'aa': ['C', 'V', 'S', 'D']}, {'position': 29, 'aa': ['K', 'M', 'C', 'P']}, {'position': 30, 'aa': ['E', 'L', 'S', 'I']}, {'position': 36, 'aa': ['R', 'S', 'N', 'W']}, {'position': 41, 'aa': ['M', 'Q', 'F', 'L', 'Y', 'C', 'D', 'W', 'V']}, {'position': 42, 'aa': ['E']}, {'position': 43, 'aa': ['S']}, {'position': 60, 'aa': ['M', 'F', 'N', 'S']}, {'position': 66, 'aa': ['E']}, {'position': 67, 'aa': ['T']}, {'position': 69, 'aa': ['L']}, {'position': 80, 'aa': ['C']}, {'position': 82, 'aa': ['G']}, {'position': 98, 'aa': ['R', 'P', 'L', 'C']}]
+ Linked mutations(0-indexed): None
+ Fusion sites used by backbone ('CTTG', 'TAAT')
+ Min length: 6
+ Max cost: 50000.0
+ Max unevenness: 49.0
+ Min ligation fidelity: 0.98
+ Satisfaction fidelity: 0.98
+ Search method: BFS
+ Host: c_griseus
+ Sort by cost: True
+--------------------------------------------------------------------------------------------------
+[1m Results For 1 Fragments: [0m
+   Number of cuts: 0 
+   Elapsed time: 1.04 
+   Number of partitions checked: 1
+   Number of unique partitions checked: 1
+   Number of unique partitions violating hard constraints: 0
+   Empty DataFrame
+Columns: [Partition Count]
+Index: []
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[YWY[31mM[39mTRGVC[31mP[39mGMP[31mM[39mGVA[31mF[39mLASKCDSMYI[31mY[39m[31mF[39m[31mK[39mRAKMN[31mI[39mSGWT[31mR[39m[31mW[39m[31mV[39mDGQVYCTPCSFCNIEL[31mA[39mPKSGS[31mH[39m[31mR[39mP[31mT[39mTWDEDIIHAV[31mP[39mN[31mW[39mMVKPSNFAIPPWEFR[31mK[39mN][0m
+ fusion_sites = [];
+ partition(0idx) = (); fidelity=0; unevenness = 100; cost=196800000000.0;
+ aa + dna fusion sites = YWYMTRGVCPGMPMGVAFLASKCDSMYIYFKRAKMNISGWTRWVDGQVYCTPCSFCNIELAPKSGSHRPTTWDEDIIHAVPNWMVKPSNFAIPPWEFRKN

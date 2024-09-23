@@ -1,0 +1,16 @@
+SEQUENCE=WFCGGCVVQYDDQFVFPWYWHWSSCARHKPKAAIKRCAWTGLYDFPKNDCEGWMDRDDQISRAVEKFRDESAKSPTMNNCMAVWTGMCGDIVQVTIPKGQCEIYFCGEPFPTECLRLQLQYYTPACDCFVVWHTPNMIIEKWTYWDLPSPAYQLYFTTYGKSCTVTYMKMLYLGPQSISRMNLHWVDSSGKTWVHHHVIF
+FIX_DNA_SEQUENCE=
+MUTATIONS=[{'position': 25, 'aa': ['T']}, {'position': 50, 'aa': ['G', 'K', 'S', 'H']}, {'position': 70, 'aa': ['W', 'P', 'G', 'C']}, {'position': 76, 'aa': ['W', 'R', 'C', 'Q']}, {'position': 78, 'aa': ['C']}, {'position': 80, 'aa': ['V']}, {'position': 82, 'aa': ['E', 'D', 'V', 'I']}, {'position': 86, 'aa': ['R', 'S', 'Y', 'K']}, {'position': 103, 'aa': ['Y']}, {'position': 110, 'aa': ['C']}, {'position': 116, 'aa': ['E']}, {'position': 125, 'aa': ['C', 'Q', 'T', 'S']}, {'position': 127, 'aa': ['P']}, {'position': 138, 'aa': ['W']}, {'position': 146, 'aa': ['F', 'C', 'Q', 'S']}, {'position': 155, 'aa': ['N', 'K', 'R', 'S']}, {'position': 161, 'aa': ['D']}, {'position': 168, 'aa': ['E']}, {'position': 176, 'aa': ['F', 'V', 'E', 'Y']}, {'position': 196, 'aa': ['M', 'Q', 'F', 'A']}]
+LINKED_MUTATIONS=None
+CUT_NUMBER_RANGE=(1, 5)
+MIN_FRAGMENT_LENGTH=6
+MAX_COST=10000000
+MAX_LENGTH_UNEVENNESS=49
+MIN_LIGATION_FIDELITY=0.98
+SATISFACTION_LIGATION_FIDELITY=0.98
+FIDELITY_DATA=FileS01_T4_01h_25C.xlsx
+HOST=c_griseus
+FUSION_SITES_USED_BY_BACKBONE=('CTTG', 'TAAT')
+DNA_5_PRIME=AATTTGGTCTCTCC
+DNA_3_PRIME=TAATAGAGACCTTTAA
+ALLOWED_CUT_POSITIONS=[]

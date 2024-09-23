@@ -1,0 +1,140 @@
+
+ Sequence: MYPSYSEVYWKGPPPDMQFIETEFVARQMC
+ Mutations(0-indexed): [{'position': 8, 'aa': ['F', 'N', 'L', 'Q', 'S', 'P', 'C', 'E', 'M', 'R', 'W', 'G', 'K', 'T', 'I', 'V']}, {'position': 9, 'aa': ['S', 'L', 'T']}, {'position': 12, 'aa': ['T', 'W', 'R', 'S', 'C', 'A', 'K', 'F', 'L', 'G', 'Y', 'E', 'D']}, {'position': 20, 'aa': ['I', 'V', 'P', 'Y', 'H', 'T', 'S', 'Q', 'K', 'A', 'R', 'M', 'N', 'W']}, {'position': 22, 'aa': ['I', 'H', 'V', 'K', 'W', 'G', 'Q', 'R']}, {'position': 23, 'aa': ['Q', 'N', 'A', 'T', 'Y', 'G']}, {'position': 27, 'aa': ['R', 'S', 'T', 'M', 'I', 'G', 'L', 'F', 'N', 'A', 'K', 'H', 'V', 'P', 'D', 'E', 'C']}, {'position': 29, 'aa': ['P', 'R', 'T', 'Y', 'G']}]
+ Linked mutations(0-indexed): None
+ Fusion sites used by backbone ('CTTG', 'TAAT')
+ Min length: 6
+ Max cost: 10000000.0
+ Max unevenness: 49.0
+ Min ligation fidelity: 0.98
+ Satisfaction fidelity: 0.98
+ Search method: DFS
+ Host: c_griseus
+ Sort by cost: True
+--------------------------------------------------------------------------------------------------
+[1m Results For 1 Fragments: [0m
+   Number of cuts: 0 
+   Elapsed time: 10.69 
+   Number of partitions checked: 1
+   Number of unique partitions checked: 1
+   Number of unique partitions violating hard constraints: 0
+   Empty DataFrame
+Columns: [Partition Count]
+Index: []
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[MYPSYSEV[31mY[39m[31mW[39mKG[31mP[39mPPDMQFI[31mE[39mT[31mE[39m[31mF[39mVAR[31mQ[39mM[31mC[39m][0m
+ fusion_sites = [];
+ partition(0idx) = (); fidelity=0; unevenness = 100; cost=1146501216.0;
+ aa + dna fusion sites = MYPSYSEVYWKGPPPDMQFIETEFVARQMC
+--------------------------------------------------------------------------------------------------
+[1m Results For 2 Fragments: [0m
+   Number of cuts: 1 
+   Elapsed time: 10.38 
+   Number of partitions checked: 9
+   Number of unique partitions checked: 9
+   Number of unique partitions violating hard constraints: 3
+                   Partition Count
+Cost too high.                3
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[MYPSYSEV[31mY[39m[31mW[39mKG[31mP[39mPPDMQF]
+[I[31mE[39mT[31mE[39m[31mF[39mVAR[31mQ[39mM[31mC[39m][0m
+ fusion_sites = ('CATA',);
+ partition(0idx) = (19,); fidelity=1.0; unevenness = 0.727; cost=630658.0;
+ aa + dna fusion sites = 
+[MYPSYSEVYWKGPPPDMQ]TT<C|ATA>
+                      <C|ATA>[ETEFVARQMC]
+ [1mPartition 2:[0m
+ [1mfragments = 
+[MYPSYSEV[31mY[39m[31mW[39mKG[31mP[39mPPDMQ]
+[FI[31mE[39mT[31mE[39m[31mF[39mVAR[31mQ[39mM[31mC[39m][0m
+ fusion_sites = ('AGTT',);
+ partition(0idx) = (18,); fidelity=1.0; unevenness = 0.5; cost=660990.4;
+ aa + dna fusion sites = 
+[MYPSYSEVYWKGPPPDM]C<AG|TT>
+                    <AG|TT>C[IETEFVARQMC]
+ [1mPartition 3:[0m
+ [1mfragments = 
+[MYPSYSEV[31mY[39m[31mW[39mKG[31mP[39mPPDM]
+[QFI[31mE[39mT[31mE[39m[31mF[39mVAR[31mQ[39mM[31mC[39m][0m
+ fusion_sites = ('ATGC',);
+ partition(0idx) = (17,); fidelity=1.0; unevenness = 0.308; cost=691322.8;
+ aa + dna fusion sites = 
+[MYPSYSEVYWKGPPPD]<ATG|C>
+                  <ATG|C>AG[FIETEFVARQMC]
+--------------------------------------------------------------------------------------------------
+[1m Results For 3 Fragments: [0m
+   Number of cuts: 2 
+   Elapsed time: 15.27 
+   Number of partitions checked: 36
+   Number of unique partitions checked: 36
+   Number of unique partitions violating hard constraints: 21
+                           Partition Count
+Fragment(s) too short.               21
+   The top 3 partitions:
+ [1mPartition 1:[0m
+ [1mfragments = 
+[MYPSYSEV[31mY[39m[31mW[39mK]
+[G[31mP[39mPPDMQF]
+[I[31mE[39mT[31mE[39m[31mF[39mVAR[31mQ[39mM[31mC[39m][0m
+ fusion_sites = ('AAGG', 'CATA');
+ partition(0idx) = (11, 19); fidelity=1.0; unevenness = 0.375; cost=623053.6;
+ aa + dna fusion sites = 
+[MYPSYSEVYW]<AAG|G>
+            <AAG|G>GG[PPPDMQ]TT<C|ATA>
+                               <C|ATA>[ETEFVARQMC]
+ [1mPartition 2:[0m
+ [1mfragments = 
+[MYPSYSE]
+[V[31mY[39m[31mW[39mKG[31mP[39mPPDMQF]
+[I[31mE[39mT[31mE[39m[31mF[39mVAR[31mQ[39mM[31mC[39m][0m
+ fusion_sites = ('AAGT', 'CATA');
+ partition(0idx) = (7, 19); fidelity=1.0; unevenness = 0.714; cost=628663.7;
+ aa + dna fusion sites = 
+[MYPSYS]G<AA|GT>
+         <AA|GT>G[YWKGPPPDMQ]TT<C|ATA>
+                               <C|ATA>[ETEFVARQMC]
+ [1mPartition 3:[0m
+ [1mfragments = 
+[MYPSYS]
+[EV[31mY[39m[31mW[39mKG[31mP[39mPPDMQF]
+[I[31mE[39mT[31mE[39m[31mF[39mVAR[31mQ[39mM[31mC[39m][0m
+ fusion_sites = ('AGCG', 'CATA');
+ partition(0idx) = (6, 19); fidelity=1.0; unevenness = 1.167; cost=628949.0;
+ aa + dna fusion sites = 
+[MYPSY]<AGC|G>
+       <AGC|G>AG[VYWKGPPPDMQ]TT<C|ATA>
+                               <C|ATA>[ETEFVARQMC]
+--------------------------------------------------------------------------------------------------
+[1m Results For 4 Fragments: [0m
+   Number of cuts: 3 
+   Elapsed time: 8.59 
+   Number of partitions checked: 84
+   Number of unique partitions checked: 84
+   Number of unique partitions violating hard constraints: 84
+                           Partition Count
+Fragment(s) too short.               84
+   The top 3 partitions:
+--------------------------------------------------------------------------------------------------
+[1m Results For 5 Fragments: [0m
+   Number of cuts: 4 
+   Elapsed time: 10.15 
+   Number of partitions checked: 126
+   Number of unique partitions checked: 126
+   Number of unique partitions violating hard constraints: 126
+                           Partition Count
+Fragment(s) too short.              126
+   The top 3 partitions:
+--------------------------------------------------------------------------------------------------
+[1m Results For 6 Fragments: [0m
+   Number of cuts: 5 
+   Elapsed time: 12.07 
+   Number of partitions checked: 126
+   Number of unique partitions checked: 126
+   Number of unique partitions violating hard constraints: 126
+                           Partition Count
+Fragment(s) too short.              126
+   The top 3 partitions:

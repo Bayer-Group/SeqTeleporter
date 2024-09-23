@@ -1,0 +1,10 @@
+{
+  "elapsed_time": 0.63,
+  "hard_constraint_violations": {
+    "Cost too high.": 135
+  },
+  "num_of_checked_unique_partitions": 135,
+  "number_of_cuts": 2,
+  "number_of_partitions_checked": 135,
+  "sel_partitions": []
+}
