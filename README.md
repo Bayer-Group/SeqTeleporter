@@ -1,4 +1,5 @@
-## ![Icon_small.png](Icon_small.png) ProSeqTeleporter: A Rapid Sequence Space Explorer For Combinatorial Protein Library
+![Icon_small.png](Icon_small.png) 
+## ProSeqTeleporter: A Rapid Sequence Space Explorer For Combinatorial Protein Library
 
 [![CI Build](https://github.com/bayer-int/SeqTeleporter/actions/workflows/build.yml/badge.svg)](https://github.com/bayer-int/SeqTeleporter/actions/workflows/build.yml)
 [![Static Typing](https://github.com/bayer-int/SeqTeleporter/actions/workflows/static_typing.yml/badge.svg)](https://github.com/bayer-int/SeqTeleporter/actions/workflows/static_typing.yml)
