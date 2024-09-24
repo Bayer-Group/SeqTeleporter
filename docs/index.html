@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>proseqTeleporter_demo</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>seqTeleporter_demo</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7516,7 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="ProseqTeleporter-Demo">ProseqTeleporter Demo<a class="anchor-link" href="#ProseqTeleporter-Demo">¶</a></h1>
+<h1 id="SeqTeleporter-Demo">SeqTeleporter Demo<a class="anchor-link" href="#SeqTeleporter-Demo">¶</a></h1>
 </div>
 </div>
 </div>
@@ -7537,7 +7537,7 @@ a.anchor-link {
 <li>Download the file <code>input_template.xlsx</code> in the folder <code>demo</code> to your own computer and rename it as <code>input.xlsx</code>.</li>
 <li>Open <code>input.xlsx</code>, in the tab <code>input_parameters</code>, replace the default amino acid sequence with your amino acid sequence, and then adjust the other parameters to your need. In the tab <code>input_mutations</code>, replace the default mutations with your mutations. In the tab <code>desired_variants</code>, replace the default variants with your desired variants.</li>
 <li>Save <code>input.xlsx</code>, and then upload the <code>input.xlsx</code> back to the folder <code>demo</code> on Science@Scale.</li>
-<li>Double click to open the python notebook <code>proseqTeleporter_demo.ipynb</code>, click ⏩ button to refresh and run the python notebook.</li>
+<li>Double click to open the python notebook <code>seqTeleporter_demo.ipynb</code>, click ⏩ button to refresh and run the python notebook.</li>
 <li>Scroll down to the python notebook to view the Run status and wait for the Run to complete. Depending on your sequence and your parameters, it might take a while to run. When the Run is completed, you will see "RUN COMPLETED!" at the very bottom of the python notebook.</li>
 <li>When the Run is complete, go to <code>demo/input_[date]output/results</code> to see your results.</li>
 </ol>
@@ -7724,7 +7724,7 @@ MVSVIKEEMKIKLRMEGTVNGHNFVIEGEGKGNPYEGTQTMDLKVTEGGPLPFAYDILSPQF<span class="ansi-
 --------------------------------------------------------------------------------------------------
 <span class="ansi-bold"> Results For 4 Fragments: </span>
    Number of cuts: 3 
-   Elapsed time: 2.16 
+   Elapsed time: 2.2 
    Number of partitions checked: 216
    Number of unique partitions checked: 216
    Number of unique partitions violating hard constraints: 0
@@ -7776,15 +7776,15 @@ Index: []
                                                                                                                                                                                                        &lt;AG|GC&gt;G[KKDVRLPGYHFVDHRIEILKHDKDYNKVKQYENAVARYSMLPSQAK]
 --------------------------------------------------------------------------------------------------
 <span class="ansi-bold"> Result "best_partitions_by_cut_number" is exported at:
- /home/runner/work/SeqTeleporter/SeqTeleporter/demo/input_2024-09-23output/logs/best_partitions_by_cut_number_dist_mut_1.json</span>
+ /home/runner/work/SeqTeleporter/SeqTeleporter/demo/input_2024-09-24output/logs/best_partitions_by_cut_number_dist_mut_1.json</span>
 --------------------------------------------------------------------------------------------------
 <span class="ansi-bold"> Result "params" is exported at:
- /home/runner/work/SeqTeleporter/SeqTeleporter/demo/input_2024-09-23output/logs/params_dist_mut_1.json</span>
+ /home/runner/work/SeqTeleporter/SeqTeleporter/demo/input_2024-09-24output/logs/params_dist_mut_1.json</span>
 
 <span class="ansi-bold">
 ===========================================================================================
                        SUCCESSFULLY IDENTIFIED OPTIMAL PARTITIONS!                           
-                       Total elapsed time: 2.16 seconds
+                       Total elapsed time: 2.21 seconds
 ===========================================================================================</span>
 <span class="ansi-bold">===========================================================================================</span>
                                <span class="ansi-bold"> GENERATING MODULES </span> 
@@ -7814,30 +7814,30 @@ Processing the partitioned fragments...
 <pre>  Validating dna fragment constraints (enzyme sites)...
    Passed validation of mutant dna fragments constraints!
 Validating mutant dna fragments by in-silico assembly...
-Random combi in-silico assembly: M63H_F80L_S143I_H194F, 
+Random combi in-silico assembly: M63L_F80W_S143I_F174A_H194F, 
   Validation Passed: True
-Random combi in-silico assembly: M63L_F80W_S143F_V158N_F174A_H194F, 
+Random combi in-silico assembly: M63H_F80L_S143F_V158A_F174A, 
   Validation Passed: True
-Random combi in-silico assembly: M63H_F80L_H194F, 
+Random combi in-silico assembly: V158N_H194F, 
   Validation Passed: True
-Random combi in-silico assembly: M63L_F80W_S143F_V158I_H194Y, 
+Random combi in-silico assembly: V158A_F174I, 
   Validation Passed: True
-Random combi in-silico assembly: M63H_F80L_S143F_V158N_F174I, 
+Random combi in-silico assembly: M63H_F80L_S143I_V158A, 
   Validation Passed: True
-Random combi in-silico assembly: F174A_H194F, 
+Random combi in-silico assembly: M63H_F80L_S143I_V158N_H194F, 
   Validation Passed: True
-Random combi in-silico assembly: S143F_V158A_F174I_H194Y, 
+Random combi in-silico assembly: M63L_F80W_S143F_V158A_F174A, 
   Validation Passed: True
-Random combi in-silico assembly: M63L_F80W_S143I_F174A_H194Y, 
+Random combi in-silico assembly: M63L_F80W_S143F_V158A_F174A_H194F, 
   Validation Passed: True
-Random combi in-silico assembly: S143F_V158N_F174I_H194F, 
+Random combi in-silico assembly: M63L_F80W_S143F_V158N_F174I_H194Y, 
   Validation Passed: True
-Random combi in-silico assembly: M63H_F80L_S143F_H194F, 
+Random combi in-silico assembly: M63L_F80W_S143I_V158N_F174A, 
   Validation Passed: True
 Exporting DNA module ordering sheet
 --------------------------------------------------------------------------------------------------
 <span class="ansi-bold"> DNA module ordering sheet is exported at:
- /home/runner/work/SeqTeleporter/SeqTeleporter/demo/input_2024-09-23output/results/order_modules_4fragments.xlsx</span>
+ /home/runner/work/SeqTeleporter/SeqTeleporter/demo/input_2024-09-24output/results/order_modules_4fragments.xlsx</span>
 
 <span class="ansi-bold">
 ================================================================================================
@@ -7900,7 +7900,7 @@ The README sheet is validated!
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
 Plate mapping sheet is exported to:
- /home/runner/work/SeqTeleporter/SeqTeleporter/demo/input_2024-09-23output/results/2024-09-23_source_destination_plate_map.xlsx
+ /home/runner/work/SeqTeleporter/SeqTeleporter/demo/input_2024-09-24output/results/2024-09-24_source_destination_plate_map.xlsx
 
 Preview of mapping sheet: 
    Source Plate   Target Plate Source Well Target Well              Volume_ul  \
