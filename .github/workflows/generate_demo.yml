@@ -16,7 +16,7 @@ jobs:
           if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - run: |
-          jupyter nbconvert --execute --to notebook --inplace ./demo/proseqTeleporter_demo.ipynb
+          jupyter nbconvert --execute --to notebook --inplace ./demo/seqTeleporter_demo.ipynb
       - run: |
-          jupyter nbconvert ./demo/proseqTeleporter_demo.ipynb --to html --output index --output-dir ./docs/
+          jupyter nbconvert ./demo/seqTeleporter_demo.ipynb --to html --output index --output-dir ./docs/
       - uses: actions4git/add-commit-push@v1

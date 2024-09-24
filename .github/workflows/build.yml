@@ -35,4 +35,4 @@ jobs:
           coverage report -m
 #      - name: Generate demo
 #        run: |
-#          jupyter nbconvert ./demo/proseqTeleporter_demo.ipynb --to html --ouput index --output-dir ./
+#          jupyter nbconvert ./demo/seqTeleporter_demo.ipynb --to html --ouput index --output-dir ./
