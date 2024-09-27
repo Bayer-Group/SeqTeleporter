@@ -20,3 +20,4 @@ dnachisel~=3.2.11
 types-requests~=2.31
 xlrd~=2.0.1
 static-frame~=2.13.0
+python-pptx~=1.0.2
