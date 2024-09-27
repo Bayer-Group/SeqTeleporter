@@ -105,21 +105,16 @@ def assemble_fragments(a_set_of_dna_fragments: List[dict], enzyme: str, wt_seq: 
 
     # Find the AA encoded by 5'DNA and 3'DNA
     biopy_enzyme = globals()[enzyme]
-    five_prime_dna_digested_frags = biopy_enzyme.catalyse(Seq(five_prime_dna))
-    five_prime_dna_digested = Seq('')
-    if len(five_prime_dna_digested_frags) > 1:
-        five_prime_dna_digested = five_prime_dna_digested_frags[-1]
-    if len(five_prime_dna_digested_frags) == 1:
-        # either recognition site does not exist in sequence or the recognition site lies at the edge
-        pat = re.sub('N', '[ATCG]', ENZYME_INFO[enzyme]['recognition_site'])
-        search_res = re.search(pat, str(five_prime_dna_digested_frags[0]))
-        if not search_res:  # the recognition site does not exist
-            raise ValueError(f'DNA_5_PRIME({five_prime_dna}) is not digested by {enzyme}!')
-        else:  # the recognition site lies at the very start or very end
-            if search_res.start() == 0:  # the recognition site lies at the very start
-                five_prime_dna_digested = Seq(five_prime_dna)
-            if search_res.end() == len(five_prime_dna):  # the recognition site lies at the very end
-                five_prime_dna_digested = Seq('')
+    # because Biopython Restriction pyckage does not catalyse the reaction when there is less than 5 extra bases
+    # adjacent to cutting site (this is to reflect in-vitro reaction), an "AAAAA" stuffer is temporarily added to allow
+    # cutting simulation.
+    stuffer = 'A' * 5
+    five_prime_dna_digested_frags = biopy_enzyme.catalyse(Seq(five_prime_dna)+stuffer)
+    if len(five_prime_dna_digested_frags) == 2:
+        five_prime_dna_digested = re.sub(stuffer, '', str(five_prime_dna_digested_frags[1]))
+    else:
+        # enzyme site is not found or found too many times in 5'_dna
+        raise ValueError(f'{enzyme} is not found or found too many times in DNA_5_PRIME({five_prime_dna})!')
 
     three_prime_dna_digested_frags = biopy_enzyme.catalyse(Seq(three_prime_dna))
 
@@ -127,24 +122,29 @@ def assemble_fragments(a_set_of_dna_fragments: List[dict], enzyme: str, wt_seq: 
         three_prime_dna_digested = three_prime_dna_digested_frags[0]
     # Tackle edge case when the cut happens at the very edge
     elif len(three_prime_dna_digested_frags) == 1:
-        digested_rev_comp = [str(s) for s in biopy_enzyme.catalyse(Seq(three_prime_dna).reverse_complement())]
-        # possibility 1: The digestion happened at the very end of the sequence: ex: "TAATAGAGACCTTTAA". In this case,
-        # the digestion of the other stand still produces two fragments.
-        if len(digested_rev_comp) == 2:
+        # because Biopython Restriction pyckage does not catalyse the reaction when there is less than 5 extra bases
+        # adjacent to cutting site (this is to reflect in-vitro reaction), an "AAAAA" stuffer is temporarily added to
+        # allow cutting simulation.
+        digested = biopy_enzyme.catalyse(stuffer + Seq(three_prime_dna))
+        if digested[0] == stuffer:
             three_prime_dna_digested = Seq("")
+        # possibility 1: The digestion happened at the very end of the sequence: ex: "TAATAGAGACCTTTAA". In this case,
+        # add stuffer AAAAA to and then the digestion produces two fragments, with the first fragment == stuffer.
+
         # possibility 2: The digestion did not happen because the enzyme recognition site does not exist. In this case,
-        # the digestion of the other stand produces only one fragment which it itself.
-        if len(digested_rev_comp) == 1:
+        # add stuffer AAAAA to and then the digested[0] != stuffer
+        else:
             raise ValueError(f'DNA_3_PRIME({three_prime_dna}) is not digested by {enzyme}!')
     else:
         raise ValueError(f'DNA_3_PRIME({three_prime_dna}) is digested too many times by {enzyme}!')
 
     find_atg = re.search('ATG', str(five_prime_dna_digested))
+
     if find_atg:  # if find ATG in digested 5'DNA, that's the coding start.
         coding_start = find_atg.start()
     else:  # if no ATG in digested 5'DNA, coding starts after 5'DNA
         coding_start = len(five_prime_dna_digested)
-    n_term_aa = str(five_prime_dna_digested[coding_start:].translate())
+    n_term_aa = str(Seq(five_prime_dna_digested[coding_start:]).translate())
     stop_codon_range = find_first_stop_codon_idx(three_prime_dna_digested)
     if stop_codon_range:
         c_term_aa = str(three_prime_dna_digested[:stop_codon_range[0]].translate())
