@@ -27,13 +27,3 @@ In summary, SeqTeleporter emerges as a valuable asset in the field of therapeuti
 ### Process Overview
 ![ProcessOverview.png](ProcessOverview.png)
 **Figure 2  SeqTeleporter Components and Workflow Overview.**
-
-### Data Sources
-- **Codon usage:**\
-https://www.kazusa.or.jp/codon/cgi-bin/showcodon.cgi?species=10029
-
-- **Ligation fidelity:**\
-Comprehensive Profiling of Four Base Overhang Ligation Fidelity by T4 DNA Ligase and Application to DNA Assembly
-Vladimir Potapov, Jennifer L. Ong, Rebecca B. Kucera, Bradley W. Langhorst, Katharina Bilotti, John M. Pryor, Eric J. Cantor, Barry Canton, Thomas F. Knight, Thomas C. Evans Jr., and Gregory J. S. Lohman
-ACS Synthetic Biology 2018 7 (11), 2665-2674
-DOI: 10.1021/acssynbio.8b00333
