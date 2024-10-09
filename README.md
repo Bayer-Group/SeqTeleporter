@@ -1,9 +1,9 @@
 ![Icon_small.png](Icon_small.png) 
 ## SeqTeleporter: A Rapid Sequence Space Explorer For Combinatorial Protein Library
 
-[![CI Build](https://github.com/bayer-int/SeqTeleporter/actions/workflows/build.yml/badge.svg)](https://github.com/bayer-int/SeqTeleporter/actions/workflows/build.yml)
-[![Static Typing](https://github.com/bayer-int/SeqTeleporter/actions/workflows/static_typing.yml/badge.svg)](https://github.com/bayer-int/SeqTeleporter/actions/workflows/static_typing.yml)
-[![Demo Page](https://github.com/bayer-int/SeqTeleporter/actions/workflows/generate_demo.yml/badge.svg)](https://github.com/bayer-int/SeqTeleporter/actions/workflows/generate_demo.yml)
+[![CI Build](https://github.com/Bayer-Group/SeqTeleporter/actions/workflows/build.yml/badge.svg)](https://github.com/Bayer-Group/SeqTeleporter/actions/workflows/build.yml)
+[![Static Typing](https://github.com/Bayer-Group/SeqTeleporter/actions/workflows/static_typing.yml/badge.svg)](https://github.com/Bayer-Group/SeqTeleporter/actions/workflows/static_typing.yml)
+[![Demo Page](https://github.com/Bayer-Group/SeqTeleporter/actions/workflows/generate_demo.yml/badge.svg)](https://github.com/Bayer-Group/SeqTeleporter/actions/workflows/generate_demo.yml)
 
 ### Setup environment
 Compatible python version: 3.9, 3.10, 3.11
