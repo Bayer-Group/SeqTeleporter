@@ -1,5 +1,5 @@
 from typing import Dict, Union
-from proseqteleporter.utils.utils import expand_python_codon_tables
+from seqteleporter.utils.utils import expand_python_codon_tables
 
 
 # EXPAND HOSTS FOR EXTERNAL PACKAGE

@@ -10,14 +10,14 @@ from typing import Tuple, Union, List
 
 import pandas as pd
 
-from proseqteleporter.config import ENZYME_INFO, PARTITION_SEARCH_MODES
-from proseqteleporter.partition_property_finder.fusion_sites_finder import concat_sel_fusion_sites_to_fragments
-from proseqteleporter.partition_property_finder.partition_property_finder import find_partition_property
-from proseqteleporter.partitioner.partitioner import find_cuttable_positions, partitioner
-from proseqteleporter.utils.load_input_params import load_input_params
-from proseqteleporter.utils.utils import (zero_indexing_to_one_indexing, compute_lib_complexity,
-                                          is_valid_fusion_site_set, is_dna, is_aa, pretty_fragments_expression,
-                                          annotate_mutations_in_fragments, prepare_0idx_mutations)
+from seqteleporter.config import ENZYME_INFO, PARTITION_SEARCH_MODES
+from seqteleporter.partition_property_finder.fusion_sites_finder import concat_sel_fusion_sites_to_fragments
+from seqteleporter.partition_property_finder.partition_property_finder import find_partition_property
+from seqteleporter.partitioner.partitioner import find_cuttable_positions, partitioner
+from seqteleporter.utils.load_input_params import load_input_params
+from seqteleporter.utils.utils import (zero_indexing_to_one_indexing, compute_lib_complexity,
+                                       is_valid_fusion_site_set, is_dna, is_aa, pretty_fragments_expression,
+                                       annotate_mutations_in_fragments, prepare_0idx_mutations)
 
 
 def prepare_output_dirs(output_dir):

@@ -4,13 +4,13 @@ from os import path
 import pandas as pd
 import shutil
 
-from proseqteleporter.utils.load_input_params import (validate_input_params, transform_input_excel_sheet_to_text_input,
-                                                      show_input_seq_info)
-from proseqteleporter.post_partition_processor.post_partition_processor import post_partition_processing
-from proseqteleporter.partitioner.compute_best_partitions import (compute_best_partitions,
-                                                                  prepare_compute_best_partitions_params)
-from proseqteleporter.fragment_assembler.plate_mapper import make_and_validate_plate_mapping_sheet, load_module_sheet
-from proseqteleporter.fragment_assembler.fragment_assembler import generate_all_possible_variants_from_modules
+from seqteleporter.utils.load_input_params import (validate_input_params, transform_input_excel_sheet_to_text_input,
+                                                   show_input_seq_info)
+from seqteleporter.post_partition_processor.post_partition_processor import post_partition_processing
+from seqteleporter.partitioner.compute_best_partitions import (compute_best_partitions,
+                                                               prepare_compute_best_partitions_params)
+from seqteleporter.fragment_assembler.plate_mapper import make_and_validate_plate_mapping_sheet, load_module_sheet
+from seqteleporter.fragment_assembler.fragment_assembler import generate_all_possible_variants_from_modules
 
 
 def generate_and_optimize_ready_to_click_modules(input_table_path):
@@ -37,10 +37,10 @@ def generate_and_optimize_ready_to_click_modules(input_table_path):
             cost_per_nt=params['cost_per_nt']
         )
         log_dir = path.join(path.dirname(path.dirname(outfile_path)), 'logs')
-        with open(path.join(log_dir, f'mutant_aa_fragments_{cut_number+1}fragments.json'), 'w', encoding='utf8') as file:
-            json.dump(mutant_aa_fragments, file)
-        with open(path.join(log_dir, f'mutant_dna_fragments_{cut_number+1}fragments.json'), 'w', encoding='utf8') as file:
-            json.dump(mutant_dna_fragments, file)
+        with open(path.join(log_dir, f'mutant_aa_fragments_{cut_number+1}fragments.json'), 'w', encoding='utf8') as f:
+            json.dump(mutant_aa_fragments, f)
+        with open(path.join(log_dir, f'mutant_dna_fragments_{cut_number+1}fragments.json'), 'w', encoding='utf8') as f:
+            json.dump(mutant_dna_fragments, f)
         # copy the input used to generate the results into the result folder
         dst_path = path.join(path.dirname(outfile_path), f'{str(date.today())}_{path.basename(input_table_path)}')
         shutil.copyfile(src=input_table_path, dst=dst_path)

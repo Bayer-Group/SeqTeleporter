@@ -5,12 +5,12 @@ from unittest import TestCase
 import re
 from python_codon_tables.python_codon_tables import _tables_dir as codon_usage_tbl_dir
 
-from proseqteleporter.partitioner.compute_best_partitions import compute_best_partitions
+from seqteleporter.partitioner.compute_best_partitions import compute_best_partitions
 
 
 FIDELITY_DATA_PATH = join(
     dirname(dirname(dirname(abspath(__file__)))),
-    'proseqteleporter','data','neb_fidelity_data','FileS01_T4_01h_25C.xlsx'
+    'seqteleporter','data','neb_fidelity_data','FileS01_T4_01h_25C.xlsx'
 )
 HOST = 'c_griseus'
 codon_usage_table_path = ""

@@ -6,8 +6,8 @@ from Bio.Seq import Seq
 from Bio.Restriction import *
 from typing import List, Union
 
-from proseqteleporter.utils.utils import find_point_mutations, find_first_stop_codon_idx
-from proseqteleporter.config import ENZYME_INFO
+from seqteleporter.utils.utils import find_point_mutations, find_first_stop_codon_idx
+from seqteleporter.config import ENZYME_INFO
 
 
 def group_mutant_dna_frags_by_frag_span(mutant_dna_fragments: list) -> list:

@@ -5,13 +5,13 @@ from os.path import join, dirname, abspath
 from os import listdir
 from python_codon_tables.python_codon_tables import _tables_dir as codon_usage_tbl_dir
 
-from proseqteleporter.post_partition_processor.post_partition_processor import valid_end_dna, append_end_dna, \
+from seqteleporter.post_partition_processor.post_partition_processor import valid_end_dna, append_end_dna, \
     append_enzyme_sites_and_stuffer, make_mutant_aa_fragments, make_mutant_dna_fragments_from_mutant_aa_fragments
-from proseqteleporter.utils.utils import find_best_codon_by_usage
+from seqteleporter.utils.utils import find_best_codon_by_usage
 
 FIDELITY_DATA_PATH = join(
     dirname(dirname(dirname(abspath(__file__)))),
-    'proseqteleporter', 'data', 'neb_fidelity_data', 'FileS01_T4_01h_25C.xlsx'
+    'seqteleporter', 'data', 'neb_fidelity_data', 'FileS01_T4_01h_25C.xlsx'
 )
 
 HOST = 'e_coli'

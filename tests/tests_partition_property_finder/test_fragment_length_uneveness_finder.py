@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from proseqteleporter.partition_property_finder.fragment_length_uneveness_finder import compute_fragment_length_unevenness
+from seqteleporter.partition_property_finder.fragment_length_uneveness_finder import compute_fragment_length_unevenness
 
 
 class TestComputeFragmentLengthUnevenness(TestCase):

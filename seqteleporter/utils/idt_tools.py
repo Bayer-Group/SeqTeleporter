@@ -5,7 +5,7 @@ from urllib import request, parse
 import requests
 from typing import Dict, List, Union, Type
 
-from proseqteleporter.utils.idt_config import IdtCredentials
+from seqteleporter.utils.idt_config import IdtCredentials
 
 
 def validate_seq_complexity_idt(dna: List[Dict[str, str]], idt_credentials: Type[IdtCredentials],

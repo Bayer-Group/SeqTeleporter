@@ -9,8 +9,8 @@ import math
 from typing import Tuple
 from python_codon_tables.python_codon_tables import _tables_dir as codon_usage_tbl_dir
 
-from proseqteleporter.utils.utils import (include_linked_mutations_into_mutations, annotate_sequence_mutations,
-                                          prepare_0idx_mutations)
+from seqteleporter.utils.utils import (include_linked_mutations_into_mutations, annotate_sequence_mutations,
+                                       prepare_0idx_mutations)
 
 
 def transform_input_excel_sheet_to_text_input(input_table_path: str) -> Tuple[str, dict]:

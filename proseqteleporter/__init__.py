@@ -1,2 +1,0 @@
-from proseqteleporter.config import *
-

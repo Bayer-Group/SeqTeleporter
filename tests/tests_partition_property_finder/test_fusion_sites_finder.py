@@ -7,16 +7,16 @@ import math
 import shutil
 from python_codon_tables.python_codon_tables import _tables_dir as codon_usage_table_dir
 
-from proseqteleporter.partition_property_finder.fusion_sites_finder import \
+from seqteleporter.partition_property_finder.fusion_sites_finder import \
     breadth_first_product, nearest_first_product, find_candidate_fusion_sites_for_a_junction, \
     refine_candidate_fusion_sites_for_a_cut, assign_fusion_sites, select_junction_by_codon_usage, \
     concat_sel_fusion_sites_to_fragments
 
-from proseqteleporter.config import CODON_TABLE, ENZYME_INFO
+from seqteleporter.config import CODON_TABLE, ENZYME_INFO
 
 FIDELITY_DATA_PATH = path.join(
     path.dirname(path.dirname(dirname(abspath(__file__)))),
-    'proseqteleporter', 'data', 'neb_fidelity_data', 'FileS01_T4_01h_25C.xlsx'
+    'seqteleporter', 'data', 'neb_fidelity_data', 'FileS01_T4_01h_25C.xlsx'
 )
 
 host = 'c_griseus'

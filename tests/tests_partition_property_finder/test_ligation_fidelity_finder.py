@@ -1,7 +1,7 @@
 from unittest import TestCase
 import pandas as pd
 
-from proseqteleporter.partition_property_finder.ligation_fidelity_finder import compute_ligation_fidelity
+from seqteleporter.partition_property_finder.ligation_fidelity_finder import compute_ligation_fidelity
 
 
 class TestComputeLigationFidelity(TestCase):

@@ -11,16 +11,16 @@ from Bio.Seq import Seq, MutableSeq
 from dnachisel import (DnaOptimizationProblem, AvoidPattern, AvoidHairpins, EnforceGCContent, CodonOptimize,
                        random_dna_sequence)
 
-from proseqteleporter.config import PLATE_FORMATS, ENZYME_INFO
-from proseqteleporter.utils.utils import (make_rev_compliment, find_best_codon_by_usage, generate_aa2codon_dict,
-                                          remove_linked_mutations_from_all_mutations,
-                                          multi_well_plate_position_generator, prepare_0idx_mutations)
-from proseqteleporter.utils.idt_tools import validate_seq_complexity_idt
-from proseqteleporter.utils.idt_config import IdtCredentials
-from proseqteleporter.utils.load_input_params import load_input_params
-from proseqteleporter.fragment_assembler.plate_mapper import load_module_sheet
-from proseqteleporter.fragment_assembler.fragment_assembler import random_fragment_combinations, assemble_fragments
-from proseqteleporter.partition_property_finder.cost_finder import find_exact_cost
+from seqteleporter.config import PLATE_FORMATS, ENZYME_INFO
+from seqteleporter.utils.utils import (make_rev_compliment, find_best_codon_by_usage, generate_aa2codon_dict,
+                                       remove_linked_mutations_from_all_mutations,
+                                       multi_well_plate_position_generator, prepare_0idx_mutations)
+from seqteleporter.utils.idt_tools import validate_seq_complexity_idt
+from seqteleporter.utils.idt_config import IdtCredentials
+from seqteleporter.utils.load_input_params import load_input_params
+from seqteleporter.fragment_assembler.plate_mapper import load_module_sheet
+from seqteleporter.fragment_assembler.fragment_assembler import random_fragment_combinations, assemble_fragments
+from seqteleporter.partition_property_finder.cost_finder import find_exact_cost
 
 
 # generated using generate_stuffer_sequence(seq_length=300)

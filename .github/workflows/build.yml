@@ -28,7 +28,7 @@ jobs:
 #        run: flake8
 #      - name: docstring coverage
 #        run: |
-#          docstr-coverage proseqteleporter/ --fail-under=100 --badge="./docs_badge.svg"
+#          docstr-coverage seqteleporter/ --fail-under=100 --badge="./docs_badge.svg"
       - name: Test with python unittest
         run: |
           coverage run -m unittest discover -s tests/

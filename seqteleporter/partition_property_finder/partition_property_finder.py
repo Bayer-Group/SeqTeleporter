@@ -2,11 +2,11 @@ import math
 from typing import Generator, Tuple, List, Optional, Any
 import pandas as pd
 
-from proseqteleporter.config import ENZYME_INFO, CODON_TABLE
-from proseqteleporter.partition_property_finder.cost_finder import find_cost
-from proseqteleporter.partition_property_finder.fragment_length_uneveness_finder import compute_fragment_length_unevenness
-from proseqteleporter.partition_property_finder.fusion_sites_finder import assign_fusion_sites
-from proseqteleporter.utils.utils import frag_in_partition_too_short_or_too_long
+from seqteleporter.config import ENZYME_INFO, CODON_TABLE
+from seqteleporter.partition_property_finder.cost_finder import find_cost
+from seqteleporter.partition_property_finder.fragment_length_uneveness_finder import compute_fragment_length_unevenness
+from seqteleporter.partition_property_finder.fusion_sites_finder import assign_fusion_sites
+from seqteleporter.utils.utils import frag_in_partition_too_short_or_too_long
 
 
 def find_partition_property(s: str, mutations_0idx: Optional[List[Any]], linked_mutations_0idx: Optional[List[Any]],

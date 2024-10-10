@@ -5,7 +5,7 @@ import re
 from os.path import dirname, abspath
 from python_codon_tables.python_codon_tables import _tables_dir
 
-from proseqteleporter.utils.utils import validate_fidelity_data, validate_enzyme_and_enzyme_info, compute_lib_complexity, \
+from seqteleporter.utils.utils import validate_fidelity_data, validate_enzyme_and_enzyme_info, compute_lib_complexity, \
     validate_codon_table, generate_aa2codon_dict, is_dna, is_aa, pretty_fragments_expression
 
 

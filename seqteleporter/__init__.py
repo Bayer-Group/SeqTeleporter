@@ -1,0 +1,2 @@
+from seqteleporter.config import *
+

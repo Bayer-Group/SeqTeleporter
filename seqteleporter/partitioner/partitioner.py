@@ -1,8 +1,8 @@
 from itertools import combinations, chain, product
 from typing import Union, List, Optional, Any, Dict
 
-from proseqteleporter.utils.utils import (include_linked_mutations_into_mutations, reformat_linked_mutations,
-                                          breadth_first_product)
+from seqteleporter.utils.utils import (include_linked_mutations_into_mutations, reformat_linked_mutations,
+                                       breadth_first_product)
 
 
 def find_cuttable_positions(s: str, mutations_0idx: Optional[List[Any]], linked_mutations_0idx: Optional[List[Any]],

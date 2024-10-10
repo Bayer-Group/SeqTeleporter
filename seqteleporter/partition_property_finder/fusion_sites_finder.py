@@ -43,10 +43,10 @@ import math
 import re
 from typing import Dict, List, Tuple, Optional, Any
 
-from proseqteleporter.utils.utils import (is_rev_compliment, frag_in_partition_too_short, is_valid_fusion_site_set,
-                                          validate_fidelity_data, validate_enzyme_and_enzyme_info, validate_codon_table,
-                                          depth_first_product, breadth_first_product, nearest_first_product)
-from proseqteleporter.partition_property_finder.ligation_fidelity_finder import compute_ligation_fidelity
+from seqteleporter.utils.utils import (is_rev_compliment, frag_in_partition_too_short, is_valid_fusion_site_set,
+                                       validate_fidelity_data, validate_enzyme_and_enzyme_info, validate_codon_table,
+                                       depth_first_product, breadth_first_product, nearest_first_product)
+from seqteleporter.partition_property_finder.ligation_fidelity_finder import compute_ligation_fidelity
 
 # @cache
 def find_candidate_fusion_sites_for_a_junction(

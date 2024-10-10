@@ -20,8 +20,8 @@ sys.path.append(os.path.dirname(os.path.dirname(SCRIPT_DIR)))
 print(f'Here is: {SCRIPT_DIR}')
 
 
-from proseqteleporter.partitioner.compute_best_partitions import compute_best_partitions, show_input_seq_info, prepare_compute_best_partitions_params
-from proseqteleporter.utils.load_input_params import validate_input_params
+from seqteleporter.partitioner.compute_best_partitions import compute_best_partitions, show_input_seq_info, prepare_compute_best_partitions_params
+from seqteleporter.utils.load_input_params import validate_input_params
 
 
 # In[2]:

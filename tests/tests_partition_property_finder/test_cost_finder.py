@@ -1,7 +1,7 @@
 from unittest import TestCase
 import math
 
-from proseqteleporter.partition_property_finder.cost_finder import find_cost
+from seqteleporter.partition_property_finder.cost_finder import find_cost
 
 
 class TestFindCost(TestCase):

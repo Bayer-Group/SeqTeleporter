@@ -10,9 +10,9 @@ from datetime import date
 from itertools import product
 from openpyxl import load_workbook, workbook
 
-from proseqteleporter.utils.utils import multi_well_plate_position_generator, find_point_mutations
-from proseqteleporter.config import PLATE_FORMATS
-from proseqteleporter.fragment_assembler.fragment_assembler import assemble_fragments
+from seqteleporter.utils.utils import multi_well_plate_position_generator, find_point_mutations
+from seqteleporter.config import PLATE_FORMATS
+from seqteleporter.fragment_assembler.fragment_assembler import assemble_fragments
 
 
 def generate_synthetic_input(mutations: list, wt_seq: str, number_of_variants: int) -> list[list]:

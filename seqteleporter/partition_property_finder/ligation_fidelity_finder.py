@@ -7,7 +7,7 @@ from os import environ, listdir
 from os.path import join, dirname, abspath, basename
 import static_frame as sf
 
-from proseqteleporter.utils.utils import make_rev_compliment, validate_fidelity_data
+from seqteleporter.utils.utils import make_rev_compliment, validate_fidelity_data
 
 
 # @cache

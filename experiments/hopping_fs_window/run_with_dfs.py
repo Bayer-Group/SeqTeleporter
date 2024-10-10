@@ -12,12 +12,12 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(os.path.dirname(SCRIPT_DIR)))
 
 
-from proseqteleporter.utils.load_input_params import (validate_input_params, transform_input_excel_sheet_to_text_input,
-                                                      show_input_seq_info)
-from proseqteleporter.post_partition_processor.post_partition_processor import post_partition_processing
-from proseqteleporter.partitioner.compute_best_partitions import (compute_best_partitions)
-from proseqteleporter.utils.load_input_params import load_input_params
-from proseqteleporter.utils.utils import (prepare_0idx_mutations)
+from seqteleporter.utils.load_input_params import (validate_input_params, transform_input_excel_sheet_to_text_input,
+                                                   show_input_seq_info)
+from seqteleporter.post_partition_processor.post_partition_processor import post_partition_processing
+from seqteleporter.partitioner.compute_best_partitions import (compute_best_partitions)
+from seqteleporter.utils.load_input_params import load_input_params
+from seqteleporter.utils.utils import (prepare_0idx_mutations)
 
 print(f'Here is: {SCRIPT_DIR}')
 max_partition_number_checked=float('inf')
