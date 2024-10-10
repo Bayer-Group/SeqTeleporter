@@ -57,7 +57,7 @@ def find_cuttable_positions(s: str, mutations_0idx: Optional[List[Any]], linked_
     return cuttable_positions
 
 
-def find_even_cuts(string, regions):
+def find_even_cuts(string: str, regions: List) -> List:
     total_length = len(string)
     n = len(regions) + 1  # Number of parts will be n
     desired_length = total_length / n  # Desired length of each part
@@ -130,13 +130,13 @@ def partitioner(s: str, cuttable_positions: list[int], number_of_cuts: int, muta
     return partitions_list
 
 
-def sort_cut_sites_by_eveness(string, regions):
+def sort_cut_sites_by_eveness(string: str, regions: List) -> List[List]:
     best_cuts = find_even_cuts(string, regions)
     sorted_cuttable_sites = sort_indices_by_distance(regions, best_cuts)
     return sorted_cuttable_sites
 
 
-def sort_indices_by_distance(regions, best_cuts):
+def sort_indices_by_distance(regions: List, best_cuts: List) -> List[List]:
     sorted_indices = []
 
     for i in range(len(regions)):
@@ -168,7 +168,7 @@ def generate_cut_ranges_from_a_mutation_distribution(mutation_distribution: dict
     return allow_cut_ranges
 
 
-def count_bases_in_a_mutation_distribution(s, distributed_mutations_0idx_lists):
+def count_bases_in_a_mutation_distribution(s: str, distributed_mutations_0idx_lists: List) -> int:
     base_counts = []
     for idx, muts in enumerate(distributed_mutations_0idx_lists):
         if idx == 0:

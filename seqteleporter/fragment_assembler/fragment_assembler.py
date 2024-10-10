@@ -60,13 +60,13 @@ class AssembledFragment:
         self.wt_aa = wt_aa
         self.translated_dna_assembly = str(Seq(self.dna)[self.coding_start:self.coding_end].translate())
 
-    def validate_seq_length(self):
+    def validate_seq_length(self) -> bool:
         if len(self.wt_aa) == len(self.aa):
             return True
         print(f'validate_seq_length() failed: len(self.wt_aa)={len(self.wt_aa)}; len(self.aa)={len(self.aa)}')
         return False
 
-    def validate_name_with_aa(self):
+    def validate_name_with_aa(self) -> bool:
         # the numbering of mutations does not consider the AAs encoded by the 5'DNA and 3'DNA, thus the offset.
         n_term_offset = len(self.n_term_aa)
         c_term_offset = len(self.c_term_aa)
@@ -92,7 +92,7 @@ class AssembledFragment:
         print(f'validate_translated_dna_with_aa() failed: {difference}')
         return False
 
-    def validate_assembled_fragment(self):
+    def validate_assembled_fragment(self) -> bool:
         validated = \
             self.validate_seq_length() & \
             self.validate_name_with_aa() & \

@@ -4,7 +4,7 @@ from os import path
 from itertools import product
 import re
 import copy
-from typing import Tuple, List, Union
+from typing import Tuple, List, Union, Dict
 import pandas as pd
 from Bio.Restriction import *
 from Bio.Seq import Seq, MutableSeq
@@ -188,7 +188,7 @@ def make_mutant_aa_fragments(fragment_n_and_c_term_dna: dict, mutations_0idx: li
                 mut_new_format.append([(d['position'], aa)])
             mutations_0idx_reformat.update({(d['position'],): mut_new_format})
 
-    linked_mutations_reformat = {}
+    linked_mutations_reformat: Dict = {}
     if linked_mutations_0idx:
         for mut_set in linked_mutations_0idx:
             key = tuple([mut[1] for mut in mut_set])
@@ -379,7 +379,7 @@ def find_enzyme_sites_in_dna(dna_seq: str, enzyme: str, print_result: bool) -> L
     biopy_enzyme = globals()[enzyme]
     fw_enzyme_site = biopy_enzyme.site
     rv_enzyme_site = make_rev_compliment(fw_enzyme_site)
-    locs = []
+    locs: List = []
     for enzyme_site in [fw_enzyme_site, rv_enzyme_site]:
         enzyme_site_count = len(re.findall(enzyme_site, dna_seq))
         if enzyme_site_count != 0:
@@ -693,41 +693,41 @@ def post_partition_processing(input_file_path: str, best_partitions_by_cut_numbe
                                                min_dna_frag_length=min_dna_frag_length,
                                                positions_include_wt_aa_0idx=positions_include_wt_aa_0idx)
 
-        if validate_partitioned_fragments_by_insilico_assembly(mutant_dna_fragments=mutant_dna_fragments,
-                                                               sample_number=validate_sample_number,
-                                                               wt_seq=input_params['s'],
-                                                               enzyme=input_params['enzyme'],
-                                                               five_prime_dna=input_params['five_prime_dna'],
-                                                               three_prime_dna=input_params['three_prime_dna'],
-                                                               coding_start=validate_coding_start):
-            mtp_format = input_params['module_plate_format']
-            if mtp_format not in PLATE_FORMATS.keys():
-                raise ValueError(f'Invalid MTP format. MTP format muts be one of these: {list(PLATE_FORMATS.keys())}')
-
-            outfile_path = path.join(path.dirname(path.dirname(best_partitions_by_cut_number_file)), 'results',
-                                     f'order_modules_{cut_number+1}fragments.xlsx')
-            export_module_ordering_sheet(
-                gene_abbreviation=input_params['gene_name'],
+        if not validate_partitioned_fragments_by_insilico_assembly(
                 mutant_dna_fragments=mutant_dna_fragments,
-                row_range=PLATE_FORMATS[mtp_format]['rows'],
-                column_range=PLATE_FORMATS[mtp_format]['columns'],
+                sample_number=validate_sample_number,
+                wt_seq=input_params['s'],
                 enzyme=input_params['enzyme'],
-                output_file=outfile_path
-            )
-
-            exact_cost = find_exact_cost(mutant_dna_fragments=mutant_dna_fragments,
-                                         price_per_base=cost_per_nt)
-            print(
-                f'\n\033[1m'
-                f'\n================================================================================================'
-                f'\n                                SUCCESSFULLY GENERATED MODULES!                       '
-                f'\n                                Number of fragments: {cut_number+1}                       '
-                f'\n                                 Estimated cost: {exact_cost} €'
-                f'\n================================================================================================'
-                f'\033[0m'
-            )
-
-            return mutant_aa_fragments, mutant_dna_fragments, outfile_path
-
-        else:
+                five_prime_dna=input_params['five_prime_dna'],
+                three_prime_dna=input_params['three_prime_dna'],
+                coding_start=validate_coding_start
+        ):
             raise ValueError('validate_partitioned_fragments_by_insilico_assembly() failed')
+
+        mtp_format = input_params['module_plate_format']
+        if mtp_format not in PLATE_FORMATS.keys():
+            raise ValueError(f'Invalid MTP format. MTP format muts be one of these: {list(PLATE_FORMATS.keys())}')
+        outfile_path = path.join(path.dirname(path.dirname(best_partitions_by_cut_number_file)), 'results',
+                                 f'order_modules_{cut_number + 1}fragments.xlsx')
+        export_module_ordering_sheet(
+            gene_abbreviation=input_params['gene_name'],
+            mutant_dna_fragments=mutant_dna_fragments,
+            row_range=PLATE_FORMATS[mtp_format]['rows'],
+            column_range=PLATE_FORMATS[mtp_format]['columns'],
+            enzyme=input_params['enzyme'],
+            output_file=outfile_path
+        )
+        exact_cost = find_exact_cost(mutant_dna_fragments=mutant_dna_fragments,
+                                     price_per_base=cost_per_nt)
+        print(
+            f'\n\033[1m'
+            f'\n================================================================================================'
+            f'\n                                SUCCESSFULLY GENERATED MODULES!                       '
+            f'\n                                Number of fragments: {cut_number + 1}                       '
+            f'\n                                 Estimated cost: {exact_cost} €'
+            f'\n================================================================================================'
+            f'\033[0m'
+        )
+
+        return mutant_aa_fragments, mutant_dna_fragments, outfile_path
+

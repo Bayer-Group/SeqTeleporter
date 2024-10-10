@@ -126,26 +126,3 @@ def compute_ligation_fidelity(all_fusion_sites_of_a_partition: tuple,
         total_lig_fidelity *= fidelity_of_this_junction
 
     return total_lig_fidelity
-
-
-if __name__ == "__main__":
-    # Example usage:
-    fidelity_data_path = r'C:\Users\GOFKV\PycharmProjects\proseqteleporter\proseqteleporter\data\neb_fidelity_data\FileS01_T4_01h_25C.xlsx'
-    fidelity_data_ = pd.read_excel(fidelity_data_path, index_col=0)
-    all_fusion_sites_of_a_partition_ = ('AAGG', 'ACTC', 'AGGA', 'AGTG', 'ATCA')
-
-    # Convert the DataFrame to a NumPy array
-    fidelity_data = fidelity_data_.values
-
-    # Create a mapping of fusion site names to their indices
-    fusion_site_indices = {site: idx for idx, site in enumerate(fidelity_data_.index)}
-    fusion_site_cols = {site: idx for idx, site in enumerate(fidelity_data_.columns)}
-    res = compute_ligation_fidelity(all_fusion_sites_of_a_partition=all_fusion_sites_of_a_partition_,
-                              fidelity_data=fidelity_data,
-                              fusion_site_indices=fusion_site_indices,
-                              fusion_site_cols=fusion_site_cols)
-
-
-    # res = compute_ligation_fidelity(all_fusion_sites_of_a_partition=all_fusion_sites_of_a_partition_,
-    #                                 fidelity_data=sf.FrameHE.from_pandas(fidelity_data_))
-    print(res)

@@ -179,7 +179,7 @@ def load_input_params(input_file_path: str, supress_output: bool) -> dict:
     return params
 
 
-def validate_input_params(input_file_path: str):
+def validate_input_params(input_file_path: str) -> None:
     print('\033[1mValidating your input file...!\033[0m')
     input_params = load_input_params(input_file_path=input_file_path, supress_output=True)
     validate_specified_dna(input_params)
@@ -187,7 +187,7 @@ def validate_input_params(input_file_path: str):
     print('\033[1mInput file passed validation!\033[0m')
 
 
-def validate_specified_dna(input_params: dict):
+def validate_specified_dna(input_params: dict) -> None:
 
     # check that the specified dna seq indeed encodes the given aa seq
     if len(input_params['fix_wt_dna_sequence']) > 0:
@@ -195,7 +195,7 @@ def validate_specified_dna(input_params: dict):
             raise ValueError('The specified dna seq (FIX_DNA_SEQUENCE) does not encode the aa seq (SEQUENCE)!')
 
 
-def check_that_no_wt_aa_is_misassigned_as_mutation(input_params: dict):
+def check_that_no_wt_aa_is_misassigned_as_mutation(input_params: dict) -> None:
     all_mutations_1idx = include_linked_mutations_into_mutations(input_params['mutations_1idx'],
                                                                  input_params["linked_mutations_1idx"])
     caught_mis_assigned_wt_aas = []
@@ -209,7 +209,7 @@ def check_that_no_wt_aa_is_misassigned_as_mutation(input_params: dict):
                          f'Please correct the mutations and try again.')
 
 
-def show_input_seq_info(input_file_path):
+def show_input_seq_info(input_file_path: str) -> None:
     input_params = load_input_params(input_file_path=input_file_path, supress_output=True)
     all_mutations_0idx, linked_mutations_0idx = prepare_0idx_mutations(
         input_params['mutations_1idx'], input_params['linked_mutations_1idx']

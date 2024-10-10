@@ -56,7 +56,7 @@ def generate_and_optimize_ready_to_click_modules(input_table_path):
     return outfile_paths
 
 
-def assemble_modules_and_generate_robot_instruction(input_table_path: str, ready_to_click_modules_path: str):
+def assemble_modules_and_generate_robot_instruction(input_table_path: str, ready_to_click_modules_path: str) -> None:
     desired_variants_input = pd.read_excel(input_table_path, sheet_name='input_desired_variants', header=0,
                                            index_col=None)
     out_file_path_, inputs_dict = transform_input_excel_sheet_to_text_input(input_table_path)

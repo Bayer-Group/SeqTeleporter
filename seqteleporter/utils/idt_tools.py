@@ -63,7 +63,7 @@ def idt_complexity_screener(dna: List[Dict[str, str]], idt_credentials: Type[Idt
     return result_list
 
 
-def get_access_token(client_id, client_secret, idt_username, idt_password):
+def get_access_token(client_id: str, client_secret: str, idt_username: str, idt_password: str) -> str:
     """
     Create the HTTP request, transmit it, and then parse the response for the
     access token.

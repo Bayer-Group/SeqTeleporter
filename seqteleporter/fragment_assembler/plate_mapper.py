@@ -278,7 +278,7 @@ def plate_mapper(desired_variant_muts_list: list[list], desired_variant_names: O
 def make_variant_mutation_notation_from_fragments(fragment_mut_notations: list[str]) -> str:
     assembled_muts_notation = [re.sub("^.+?_|wild_type", "", muts_notation) for muts_notation in fragment_mut_notations]
     assembled_muts_notation = list(filter(lambda x: x != "", assembled_muts_notation))
-    assembled_muts_notation_ls = []
+    assembled_muts_notation_ls: List = []
     for mut_notation_per_frag in assembled_muts_notation:
         assembled_muts_notation_ls = assembled_muts_notation_ls + mut_notation_per_frag.split('_')
     assembled_muts_notation_ls.sort(key=lambda x: int(x[1:-1]))
@@ -296,7 +296,7 @@ def validate_plate_mapping_sheet(plate_mapping_sheet_file: str, desired_variant_
     """
     # import data
     xl = pd.ExcelFile(plate_mapping_sheet_file)
-    sheets = xl.sheet_names
+    sheets: List[str] = xl.sheet_names
     plate_mapping_tbls = []
     readme_df = pd.DataFrame()
     for sheet in sheets:
@@ -364,10 +364,18 @@ def validate_plate_mapping_sheet(plate_mapping_sheet_file: str, desired_variant_
     return (validated_readme and validated_plate_mapping_sheet)
 
 
-def make_and_validate_plate_mapping_sheet(desired_variant_muts_list: list[list],
-                                          desired_variant_names: Optional[list[str]], fragment_sheet_path: str,
-                                          plate_format: int, aa_seq: str, backbone_len: int, enzyme: str,
-                                          five_prime_dna: str, three_prime_dna: str, start_plasmid_id: Optional[str]):
+def make_and_validate_plate_mapping_sheet(
+        desired_variant_muts_list: list[list],
+        desired_variant_names: Optional[list[str]],
+        fragment_sheet_path: str,
+        plate_format: int,
+        aa_seq: str,
+        backbone_len: int,
+        enzyme: str,
+        five_prime_dna: str,
+        three_prime_dna: str,
+        start_plasmid_id: Optional[str]
+) -> None:
     # if encounter error msg: Can't find workbook in OLE2 compound document, remove excel sensitivity label and try again.
     # ref: https://stackoverflow.com/questions/45725645/pandas-unable-to-open-this-excel-file
     output_dir = path.dirname(fragment_sheet_path)
@@ -431,7 +439,12 @@ def find_column_index_by_column_name(sheet: workbook.workbook.Workbook, column_n
     return column_index
 
 
-def add_excel_volume_calc_formula_to_target_sheet(source_module_sheet_name, target_sheet_name, workbook_, dna_size):
+def add_excel_volume_calc_formula_to_target_sheet(
+        source_module_sheet_name: str,
+        target_sheet_name: str,
+        workbook_: workbook.Workbook,
+        dna_size: int
+) -> workbook.Workbook:
 
     # identify the col_index of the Volume cells and Module name from the instruction sheets
     target_sheet = workbook_[target_sheet_name]
@@ -467,7 +480,10 @@ def add_excel_volume_calc_formula_to_target_sheet(source_module_sheet_name, targ
     return workbook_
 
 
-def add_excel_volume_calc_formula_to_source_module_sheet(source_module_sheet_name, workbook_):
+def add_excel_volume_calc_formula_to_source_module_sheet(
+        source_module_sheet_name: str,
+        workbook_: workbook.Workbook
+) -> workbook.Workbook:
 
     # identify the col_index of the Volume cells and Module name from the instruction sheets
     full_mapping_sheet_name = 'source_plt_all_target_plt_all'
@@ -496,7 +512,7 @@ def add_excel_volume_calc_formula_to_source_module_sheet(source_module_sheet_nam
     return workbook_
 
 
-def batch_add_excel_volume_calc_formula(excel_file_path: str):
+def batch_add_excel_volume_calc_formula(excel_file_path: str) -> None:
     workbook_ = load_workbook(excel_file_path)
 
     # identify DNA size

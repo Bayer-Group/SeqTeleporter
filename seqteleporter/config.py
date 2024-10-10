@@ -57,7 +57,7 @@ CODON_TABLE = {
 
 
 class DnaProviderSpec:
-    def __init__(self, provider_name, product_name, min_len, max_len):
+    def __init__(self, provider_name: str, product_name: str, min_len: int, max_len: int):
         self.provider_name = provider_name
         self.product_name = product_name
         self.min_len = min_len

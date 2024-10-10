@@ -37,7 +37,7 @@ def prepare_output_dirs(output_dir):
     return log_dir, result_dir
 
 
-def prepare_compute_best_partitions_params(input_file_path):
+def prepare_compute_best_partitions_params(input_file_path: str) -> dict:
     input_params = load_input_params(input_file_path=input_file_path, supress_output=True)
     print(input_params['mutations_1idx'])
     all_mutations_0idx, linked_mutations_0idx = prepare_0idx_mutations(
@@ -71,12 +71,21 @@ ligation fidelity. This function iterates over a specified range of cut numbers 
 the given constraints, utilizing experimental data for fusion site information."""
 
 
-def write_compute_best_partitions_log_header(s: str, mutations_0idx: Union[list, None],
-                                             linked_mutations_0idx: Union[list, None],
-                                             fusion_sites_used_by_backbone: Tuple[str, ...], min_aa_length: int,
-                                             max_cost: int, max_unevenness: float, min_ligation_fidelity: float,
-                                             satisfaction_fidelity: float, search_method: str,  host: str,
-                                             sort_by_cost: bool, compute_best_partitions_log_file_path: str):
+def write_compute_best_partitions_log_header(
+        s: str,
+        mutations_0idx: Union[list, None],
+        linked_mutations_0idx: Union[list, None],
+        fusion_sites_used_by_backbone: Tuple[str, ...],
+        min_aa_length: int,
+        max_cost: int,
+        max_unevenness: float,
+        min_ligation_fidelity: float,
+        satisfaction_fidelity: float,
+        search_method: str,
+        host: str,
+        sort_by_cost: bool,
+        compute_best_partitions_log_file_path: str
+) -> None:
 
     with open(compute_best_partitions_log_file_path, 'a') as fd:
         fd.write(f'\n Sequence: {s}'
@@ -93,12 +102,19 @@ def write_compute_best_partitions_log_header(s: str, mutations_0idx: Union[list,
                  f'\n Sort by cost: {sort_by_cost}')
 
 
-def write_compute_best_partitions_log_body(compute_best_partitions_log_file_path: str, number_of_cuts: int,
-                                           elapsed_time_number_of_cuts: float, num_of_checked_partitions: int,
-                                           num_of_checked_unique_partitions:int, hard_constraint_violations: dict,
-                                           select_top_n_partitions: int, sel_partitions: List[dict],
-                                           mutations_0idx: Union[list, None], linked_mutations_0idx: Union[list, None],
-                                           supress_output: bool):
+def write_compute_best_partitions_log_body(
+        compute_best_partitions_log_file_path: str,
+        number_of_cuts: int,
+        elapsed_time_number_of_cuts: float,
+        num_of_checked_partitions: int,
+        num_of_checked_unique_partitions: int,
+        hard_constraint_violations: dict,
+        select_top_n_partitions: int,
+        sel_partitions: List[dict],
+        mutations_0idx: Union[list, None],
+        linked_mutations_0idx: Union[list, None],
+        supress_output: bool
+) -> None:
 
     with open(compute_best_partitions_log_file_path, 'a') as fd:
         compute_best_partitions_log_header = \
@@ -135,7 +151,7 @@ def write_compute_best_partitions_log_body(compute_best_partitions_log_file_path
                 print(compute_best_partitions_log_txt)
 
 
-def validate_inputs(s: str, fusion_sites_used_by_backbone: Tuple[str, ...]):
+def validate_inputs(s: str, fusion_sites_used_by_backbone: Tuple[str, ...]) -> None:
     if not is_aa(s):
         raise ValueError(f"The provided input sequence is not a valid amino acid sequence!")
 
@@ -294,9 +310,11 @@ def compute_best_partitions(s: str, mutations_0idx: Union[list, None], linked_mu
                 if len(partition['partition']) == 0:
                     expr = s
                 else:
-                    expr = pretty_fragments_expression(fragments=partition["fragments"],
-                                                       fragment_with_fusion_sites=fragment_with_fusion_sites,
-                                                       fusion_site_len=ENZYME_INFO[enzyme]['fusion_site_length'])
+                    expr = pretty_fragments_expression(
+                        fragments=partition["fragments"],
+                        fragment_with_fusion_sites=fragment_with_fusion_sites,
+                        fusion_site_len=int(ENZYME_INFO[enzyme]['fusion_site_length'])
+                    )
                 partition.update({
                     'expression': expr,
                     'fragment_with_fusion_sites': fragment_with_fusion_sites

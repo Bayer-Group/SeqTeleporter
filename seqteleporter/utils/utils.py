@@ -61,8 +61,9 @@ def annotate_sequence_mutations(s: str, mutations_0idx: list, linked_mutations_0
     return annotated
 
 
-def annotate_mutations_in_fragments(fragments: list, mutations_0idx: Optional[List[Any]],
-                                    linked_mutations_0idx: Optional[List[Any]]) -> list:
+def annotate_mutations_in_fragments(fragments: list, mutations_0idx: List[Any],
+                                    linked_mutations_0idx: List[Any]) -> List:
+
     start_positions = [sum([len(f) for f in fragments[0:i]]) for i in range(0, len(fragments) + 1)]
     s = "".join(fragments)
     annotated_seq = annotate_sequence_mutations(s, mutations_0idx, linked_mutations_0idx)
@@ -151,7 +152,7 @@ def validate_fidelity_data(fidelity_data: pd.DataFrame) -> bool:
 
 
 def generate_target_variants_from_muts(mutations_1dx: Optional[List[Any]], linked_mutations_1dx: Optional[List[Any]],
-                                       wt_seq: str, incl_wt: bool):
+                                       wt_seq: str, incl_wt: bool) -> List:
     """
     """
     d: dict = {}
@@ -462,7 +463,7 @@ def generate_aa2codon_dict(codon_usage_tbl_path: str) -> dict:
     return codon_usage_dict_reformat
 
 
-def multi_well_plate_position_generator(row_range: Tuple[str, str], columns_range: Tuple[int, int]) -> list:
+def multi_well_plate_position_generator(row_range: Tuple[str, str], columns_range: Tuple[object, object]) -> list:
     """row will be capital alphabets
     example usage:
     multi_well_plate_position_generator(row_range=('A','D'), columns_range=(1,6))
@@ -496,7 +497,7 @@ def find_best_codon_by_usage(codon_usage_tbl_path: str, aa: str, fix_base: dict)
     return re.sub("U", "T", sel_codon)
 
 
-def expand_python_codon_tables(name: str, taxid: int):
+def expand_python_codon_tables(name: str, taxid: int) -> None:
     """
     Expand the codon usage table of the external package: python-codon-tables
     https://pypi.org/project/python-codon-tables/
@@ -556,7 +557,7 @@ def find_first_stop_codon_idx(dna: str) -> Union[Tuple[int, int], None]:
     return None
 
 
-def prepare_0idx_mutations(mutations_1idx, linked_mutations_1idx):
+def prepare_0idx_mutations(mutations_1idx: List, linked_mutations_1idx: List) -> Tuple[List, List]:
     all_mutations_1idx = include_linked_mutations_into_mutations(mutations_1idx, linked_mutations_1idx)
 
     all_mutations_0idx, linked_mutations_0idx = one_indexing_to_zero_indexing(
