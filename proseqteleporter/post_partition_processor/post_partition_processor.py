@@ -168,7 +168,7 @@ def append_enzyme_sites_and_stuffer(fragment_with_fusion_sites: dict, enzyme: st
 
 
 def make_mutant_aa_fragments(fragment_n_and_c_term_dna: dict, mutations_0idx: list, linked_mutations_0idx: list,
-                             codon_usage_tbl_dir: str, host: str, positions_include_wt_aa_0idx: List[int]) -> list:
+                             codon_usage_table_path: str, positions_include_wt_aa_0idx: List[int]) -> list:
     patterns = r"[()<>|]"
 
     # Sort the partitioned sequence by order
@@ -262,7 +262,7 @@ def make_mutant_aa_fragments(fragment_n_and_c_term_dna: dict, mutations_0idx: li
                                     idx: codon_to_mutate[idx] if idx in overlap_codon_idxes else None
                                     for idx in range(0, 3)
                                 }
-                                sel_codon = find_best_codon_by_usage(codon_usage_tbl_dir, host, aa, fix_base)
+                                sel_codon = find_best_codon_by_usage(codon_usage_table_path, aa, fix_base)
                                 if sel_codon != "Not found":
                                     new_c_term_dna = list(details['c_term_dna'])
                                     new_bases = [sel_codon[key] for key, v in fix_base.items() if v is None]
@@ -289,7 +289,7 @@ def make_mutant_aa_fragments(fragment_n_and_c_term_dna: dict, mutations_0idx: li
                                     idx: codon_to_mutate[idx] if idx in overlap_codon_idxes else None
                                     for idx in range(0, 3)
                                 }
-                                sel_codon = find_best_codon_by_usage(codon_usage_tbl_dir, host, aa, fix_base)
+                                sel_codon = find_best_codon_by_usage(codon_usage_table_path, aa, fix_base)
                                 if sel_codon != "Not found":
                                     new_n_term_dna = list(details['n_term_dna'])
                                     new_bases = [sel_codon[key] for key, v in fix_base.items() if v is None]
@@ -323,7 +323,7 @@ def make_mutant_aa_fragments(fragment_n_and_c_term_dna: dict, mutations_0idx: li
     return output
 
 
-def make_mutant_dna_fragments_from_mutant_aa_fragments(mutant_aa_fragments: list, codon_usage_tbl_dir: str, host: str,
+def make_mutant_dna_fragments_from_mutant_aa_fragments(mutant_aa_fragments: list, codon_usage_table_path: str,
                                                        specify_dna_seq: str, enzyme: str) -> list:
     patterns = r"[()<>|]"
     # Note that the dict.copy() is shallow, if there is a nested list/etc in there changes will be applied to
@@ -337,9 +337,9 @@ def make_mutant_dna_fragments_from_mutant_aa_fragments(mutant_aa_fragments: list
         middle_aa_end = middle_aa_start + len(fragment['middle_aa'])
         fix_base = {0: None, 1: None, 2: None}
         mutant_middle_dna = "".join(
-            [find_best_codon_by_usage(codon_usage_tbl_dir, host, aa, fix_base) for aa in fragment['middle_aa']]
+            [find_best_codon_by_usage(codon_usage_table_path, aa, fix_base) for aa in fragment['middle_aa']]
         )
-        mutant_middle_dna = remove_enzyme_sites_in_dna(mutant_middle_dna, enzyme, codon_usage_tbl_dir, host)
+        mutant_middle_dna = remove_enzyme_sites_in_dna(mutant_middle_dna, enzyme, codon_usage_table_path)
         mutant_middle_dna_ls = list(mutant_middle_dna)
         mutation_aa_indexes = []
         if len(specify_dna_seq) > 0:
@@ -368,7 +368,7 @@ def make_mutant_dna_fragments_from_mutant_aa_fragments(mutant_aa_fragments: list
         if not validated:
             if len(specify_dna_seq) > 0:
                 fragment = optimize_middle_dna_of_a_fragment_with_specify_dna_seq(
-                    fragment, mutation_aa_indexes, enzyme, patterns, codon_usage_tbl_dir, host
+                    fragment, mutation_aa_indexes, enzyme, patterns, codon_usage_table_path
                 )
         output.append(fragment)
     return output
@@ -392,13 +392,13 @@ def find_enzyme_sites_in_dna(dna_seq: str, enzyme: str, print_result: bool) -> L
     return locs
 
 
-def remove_enzyme_sites_in_dna(dna_seq: str, enzyme: str, codon_usage_tbl_dir: str, host: str) -> str:
+def remove_enzyme_sites_in_dna(dna_seq: str, enzyme: str, codon_usage_table_path: str) -> str:
     if len(dna_seq) % 3 != 0:
         raise ValueError('Partial codon. DNA sequence is not a multiple of three.')
 
     # assume first nt as the translation start
     locs = find_enzyme_sites_in_dna(dna_seq, enzyme, False)
-    codon_usage: dict = generate_aa2codon_dict(codon_usage_tbl_dir, host)
+    codon_usage: dict = generate_aa2codon_dict(codon_usage_table_path)
     sel_dna_seq = dna_seq
     sel_dna_seq_enzyme_locs = locs
     for loc in locs:
@@ -408,7 +408,7 @@ def remove_enzyme_sites_in_dna(dna_seq: str, enzyme: str, codon_usage_tbl_dir: s
             if optimised: break
             aa = Seq(dna_seq)[aa_idx * 3: (aa_idx + 1) * 3].translate()
             codons_sorted_by_usage = [cod for cod, frac in
-                                      sorted(zip(codon_usage[aa]['triplet'], codon_usage[aa]['fraction']),
+                                      sorted(zip(codon_usage[aa]['codon'], codon_usage[aa]['relative_frequency']),
                                              key=lambda pair: pair[0])]
 
             # Try each codon until complying constraints
@@ -432,10 +432,10 @@ def remove_enzyme_sites_in_dna(dna_seq: str, enzyme: str, codon_usage_tbl_dir: s
 
 
 def optimize_middle_dna_of_a_fragment_with_specify_dna_seq(dna_fragment: dict, mutation_aa_indexes: list, enzyme: str,
-                                                           patterns: str, codon_usage_tbl_dir: str, host: str) -> dict:
+                                                           patterns: str, codon_usage_table_path: str) -> dict:
     dna_fragment_working_copy = copy.deepcopy(dna_fragment)
     # Validate dna sequence constraints
-    codon_usage: dict = generate_aa2codon_dict(codon_usage_tbl_dir, host)
+    codon_usage: dict = generate_aa2codon_dict(codon_usage_table_path)
 
     # Try each codon for each mutation position until complying constraints
     passed = False
@@ -448,7 +448,7 @@ def optimize_middle_dna_of_a_fragment_with_specify_dna_seq(dna_fragment: dict, m
         for mut_idx in mutation_aa_indexes:
             aa = dna_fragment_working_copy['middle_aa'][mut_idx]
             codons_sorted_by_usage = [cod for cod, frac in
-                                      sorted(zip(codon_usage[aa]['triplet'], codon_usage[aa]['fraction']),
+                                      sorted(zip(codon_usage[aa]['codon'], codon_usage[aa]['relative_frequency']),
                                              key=lambda pair: pair[0])]
 
             # Try each codon until complying constraints
@@ -602,16 +602,14 @@ def process_fragment_with_fusion_sites(input_params: dict, fragment_with_fusion_
         fragment_n_and_c_term_dna=fragment_n_and_c_term_dna,
         mutations_0idx=all_mutations_0idx,
         linked_mutations_0idx=linked_mutations_0idx,
-        codon_usage_tbl_dir=input_params['codon_usage_tbl_dir'],
-        host=input_params['host'],
+        codon_usage_table_path=input_params['codon_usage_table_path'],
         positions_include_wt_aa_0idx=positions_include_wt_aa_0idx
     )
     if not supress_output:
         print(f"  Translating mutant aa fragments to dna fragments...")
     mutant_dna_fragments = make_mutant_dna_fragments_from_mutant_aa_fragments(
         mutant_aa_fragments=mutant_aa_fragments,
-        codon_usage_tbl_dir=input_params['codon_usage_tbl_dir'],
-        host=input_params['host'],
+        codon_usage_table_path=input_params['codon_usage_table_path'],
         specify_dna_seq=input_params['fix_wt_dna_sequence'],
         enzyme=input_params['enzyme']
     )

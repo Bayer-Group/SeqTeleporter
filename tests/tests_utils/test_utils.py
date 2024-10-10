@@ -1,7 +1,9 @@
 from unittest import TestCase
 import pandas as pd
-from os import path
+from os import path, listdir
+import re
 from os.path import dirname, abspath
+from python_codon_tables.python_codon_tables import _tables_dir
 
 from proseqteleporter.utils.utils import validate_fidelity_data, validate_enzyme_and_enzyme_info, compute_lib_complexity, \
     validate_codon_table, generate_aa2codon_dict, is_dna, is_aa, pretty_fragments_expression
@@ -185,32 +187,34 @@ class TestComputeLibComplexity(TestCase):
 
 class TestGenerateAa2CodonDict(TestCase):
     def test_generate_aa2codon_dict(self):
-        codon_usage_tbl_dir = path.join(dirname(dirname(dirname(abspath(__file__)))), 'proseqteleporter', 'data', 'codon_usage')
+        codon_usage_tbl_dir = _tables_dir
         host = 'c_griseus'
-        output = generate_aa2codon_dict(codon_usage_tbl_dir, host)
-        expected_output = {
-            'F': {'triplet': ['TTT', 'TTC'], 'fraction': [0.47, 0.53]},
-            'L': {'triplet': ['TTA', 'TTG', 'CTT', 'CTC', 'CTA', 'CTG'],
-                  'fraction': [0.06, 0.14, 0.13, 0.19, 0.08, 0.39]},
-            'I': {'triplet': ['ATT', 'ATC', 'ATA'], 'fraction': [0.35, 0.51, 0.14]},
-            'M': {'triplet': ['ATG'], 'fraction': [1.0]},
-            'V': {'triplet': ['GTT', 'GTC', 'GTA', 'GTG'], 'fraction': [0.18, 0.24, 0.12, 0.46]},
-            'S': {'triplet': ['TCT', 'TCC', 'TCA', 'TCG', 'AGT', 'AGC'],
-                  'fraction': [0.22, 0.22, 0.14, 0.05, 0.15, 0.22]},
-            'P': {'triplet': ['CCT', 'CCC', 'CCA', 'CCG'], 'fraction': [0.31, 0.32, 0.29, 0.08]},
-            'T': {'triplet': ['ACT', 'ACC', 'ACA', 'ACG'], 'fraction': [0.26, 0.37, 0.29, 0.08]},
-            'A': {'triplet': ['GCT', 'GCC', 'GCA', 'GCG'], 'fraction': [0.32, 0.37, 0.23, 0.07]},
-            'C': {'triplet': ['TGT', 'TGC'], 'fraction': [0.47, 0.53]},
-            '*': {'triplet': ['TGA', 'TAA', 'TAG'], 'fraction': [0.5, 0.26, 0.24]},
-            'W': {'triplet': ['TGG'], 'fraction': [1.0]},
-            'R': {'triplet': ['CGT', 'CGC', 'CGA', 'CGG', 'AGA', 'AGG'],
-                  'fraction': [0.11, 0.18, 0.14, 0.19, 0.19, 0.19]},
-            'G': {'triplet': ['GGT', 'GGC', 'GGA', 'GGG'], 'fraction': [0.2, 0.34, 0.25, 0.21]},
-            'Y': {'triplet': ['TAT', 'TAC'], 'fraction': [0.44, 0.56]},
-            'H': {'triplet': ['CAT', 'CAC'], 'fraction': [0.44, 0.56]},
-            'Q': {'triplet': ['CAA', 'CAG'], 'fraction': [0.24, 0.76]},
-            'N': {'triplet': ['AAT', 'AAC'], 'fraction': [0.45, 0.55]},
-            'K': {'triplet': ['AAA', 'AAG'], 'fraction': [0.39, 0.61]},
-            'D': {'triplet': ['GAT', 'GAC'], 'fraction': [0.47, 0.53]},
-            'E': {'triplet': ['GAA', 'GAG'], 'fraction': [0.41, 0.59]}}
+        codon_usage_tbl_path = ''
+        for f in listdir(_tables_dir):
+            if re.search(host, f):
+                codon_usage_tbl_path = path.join(codon_usage_tbl_dir, f)
+                break
+
+        output = generate_aa2codon_dict(codon_usage_tbl_path)
+        expected_output = {'*': {'codon': ['TAA', 'TAG', 'TGA'], 'relative_frequency': [0.26, 0.24, 0.5]},
+                           'A': {'codon': ['GCA', 'GCC', 'GCG', 'GCT'], 'relative_frequency': [0.23, 0.37, 0.07, 0.32]},
+                           'C': {'codon': ['TGC', 'TGT'], 'relative_frequency': [0.53, 0.47]},
+                           'D': {'codon': ['GAC', 'GAT'], 'relative_frequency': [0.53, 0.47]},
+                           'E': {'codon': ['GAA', 'GAG'], 'relative_frequency': [0.41, 0.59]},
+                           'F': {'codon': ['TTC', 'TTT'], 'relative_frequency': [0.53, 0.47]},
+                           'G': {'codon': ['GGA', 'GGC', 'GGG', 'GGT'], 'relative_frequency': [0.25, 0.34, 0.21, 0.2]},
+                           'H': {'codon': ['CAC', 'CAT'], 'relative_frequency': [0.56, 0.44]},
+                           'I': {'codon': ['ATA', 'ATC', 'ATT'], 'relative_frequency': [0.14, 0.51, 0.35]},
+                           'K': {'codon': ['AAA', 'AAG'], 'relative_frequency': [0.39, 0.61]},
+                           'L': {'codon': ['CTA', 'CTC', 'CTG', 'CTT', 'TTA', 'TTG'], 'relative_frequency': [0.08, 0.19, 0.39, 0.13, 0.06, 0.14]},
+                           'M': {'codon': ['ATG'], 'relative_frequency': [1.0]},
+                           'N': {'codon': ['AAC', 'AAT'], 'relative_frequency': [0.55, 0.45]},
+                           'P': {'codon': ['CCA', 'CCC', 'CCG', 'CCT'], 'relative_frequency': [0.29, 0.32, 0.08, 0.31]},
+                           'Q': {'codon': ['CAA', 'CAG'], 'relative_frequency': [0.24, 0.76]},
+                           'R': {'codon': ['AGA', 'AGG', 'CGA', 'CGC', 'CGG', 'CGT'], 'relative_frequency': [0.19, 0.19, 0.14, 0.18, 0.19, 0.11]},
+                           'S': {'codon': ['AGC', 'AGT', 'TCA', 'TCC', 'TCG', 'TCT'], 'relative_frequency': [0.22, 0.15, 0.14, 0.22, 0.05, 0.22]},
+                           'T': {'codon': ['ACA', 'ACC', 'ACG', 'ACT'], 'relative_frequency': [0.29, 0.37, 0.08, 0.26]},
+                           'V': {'codon': ['GTA', 'GTC', 'GTG', 'GTT'], 'relative_frequency': [0.12, 0.24, 0.46, 0.18]},
+                           'W': {'codon': ['TGG'], 'relative_frequency': [1.0]},
+                           'Y': {'codon': ['TAC', 'TAT'], 'relative_frequency': [0.56, 0.44]}}
         self.assertEqual(expected_output, output)

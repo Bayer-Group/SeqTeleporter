@@ -1,10 +1,11 @@
 import re
 from unittest import TestCase
 import pandas as pd
-from os.path import dirname, abspath
+from os.path import dirname, abspath, join
 from os import mkdir, listdir, path
 import math
 import shutil
+from python_codon_tables.python_codon_tables import _tables_dir as codon_usage_table_dir
 
 from proseqteleporter.partition_property_finder.fusion_sites_finder import \
     breadth_first_product, nearest_first_product, find_candidate_fusion_sites_for_a_junction, \
@@ -12,10 +13,18 @@ from proseqteleporter.partition_property_finder.fusion_sites_finder import \
     concat_sel_fusion_sites_to_fragments
 
 from proseqteleporter.config import CODON_TABLE, ENZYME_INFO
+
 FIDELITY_DATA_PATH = path.join(
     path.dirname(path.dirname(dirname(abspath(__file__)))),
-    'proseqteleporter','data','neb_fidelity_data','FileS01_T4_01h_25C.xlsx'
+    'proseqteleporter', 'data', 'neb_fidelity_data', 'FileS01_T4_01h_25C.xlsx'
 )
+
+host = 'c_griseus'
+codon_usage_table_path = ""
+for f in listdir(codon_usage_table_dir):
+    if re.search(host, f):
+        codon_usage_table_path = join(codon_usage_table_dir, f)
+        break
 
 
 class TestBreadthFirstProduct(TestCase):
@@ -243,7 +252,7 @@ class TestAssignFusionSites(TestCase):
                 'enzyme': 'Unable to identify enzyme info for the specified enzyme.',
                 'enzyme_info_dict': 'Unable to identify enzyme info for the specified enzyme.',
                 'fidelity_data': 'Empty fidelity data.',
-                'mutations_0idx':'No desired mutations are given'
+                'mutations_0idx': 'No desired mutations are given'
             }
             expected_outputs = {
                 's': (tuple(), float('nan'), []),
@@ -265,7 +274,6 @@ class TestAssignFusionSites(TestCase):
                     assign_fusion_sites(**inputs)
                 self.assertEqual(expected_exceptions[param], str(context.exception))
         shutil.rmtree(self.output_dir)
-
 
     def test_assign_fusion_sites_invalid_fidelity_data(self):
         inputs = self.inputs.copy()
@@ -292,44 +300,35 @@ class TestSelectJunctionByCodonUsage(TestCase):
             {'junction_dna': 'TGGTGGAAGAAG', 'i': 3, 'fusion_site': 'TGGA'},  # 1*1*0.61*0.61
 
         ]
-        self.codon_usage_tbl_dir = path.join(dirname(dirname(dirname(abspath(__file__)))), 'proseqteleporter', 'data', 'codon_usage')
 
     def test_select_junction_by_codon_usage_normal_cases(self):
 
         expected_sel_juction = {'junction_dna': 'TGGTGGAAGAAG', 'i': 3, 'fusion_site': 'TGGA'}
         sel_juction = select_junction_by_codon_usage(junctions=self.junction_dna_map_sliding_window,
-                                                     codon_usage_tbl_dir=self.codon_usage_tbl_dir,
-                                                     host='c_griseus')
+                                                     codon_usage_table_path=codon_usage_table_path)
 
         self.assertEqual(expected_sel_juction, sel_juction)
 
     def test_select_junction_by_codon_usage_edge_cases(self):
-        # edge cases: empty junction list, invalid host name
+        # edge cases: empty junction list
 
         edge_cases = [
             ('junctions', []),
-            ('host', 'et')
         ]
 
         for param, value in edge_cases:
 
             inputs = dict(junctions=self.junction_dna_map_sliding_window,
-                          codon_usage_tbl_dir=self.codon_usage_tbl_dir,
-                          host='c_griseus')
+                          codon_usage_table_path=codon_usage_table_path)
             inputs.update({param: value})
             expected_exceptions = {
-                'host': f'Unable to find a codon usage table for the provided host {value}.\n'
-                        f'Here are the available codon usage data in the codon usage data folder '
-                        f'{self.codon_usage_tbl_dir}:\n'
-                        f'{[f for f in listdir(inputs["codon_usage_tbl_dir"]) if re.match(".*csv$", f)]}',
                 'junctions': f'No junctions are provided!'
             }
 
             if param in expected_exceptions.keys():
                 with self.assertRaises(ValueError) as context:
                     select_junction_by_codon_usage(junctions=inputs['junctions'],
-                                                   codon_usage_tbl_dir=inputs['codon_usage_tbl_dir'],
-                                                   host=inputs['host'])
+                                                   codon_usage_table_path=codon_usage_table_path)
                 self.assertEqual(expected_exceptions[param], str(context.exception))
 
 
@@ -357,7 +356,6 @@ class TestConcatSelFusionSitesToFragments(TestCase):
              {'junction_dna': 'TTAAGACTGAGG', 'i': 2, 'fusion_site': 'AAGA'}]
         ]
 
-        self.codon_usage_tbl_dir = path.join(dirname(dirname(dirname(abspath(__file__)))), 'proseqteleporter', 'data', 'codon_usage')
         self.host = 'c_griseus'
 
     def test_concat_sel_fusion_sites_to_fragments_normal_cases(self):
@@ -384,7 +382,7 @@ class TestConcatSelFusionSitesToFragments(TestCase):
             fragments=self.fragments,
             fusion_sites=self.fusion_sites,
             sel_junction_dna_map_fusion_sites=self.junction_dna_map_sliding_window,
-            codon_usage_tbl_dir=self.codon_usage_tbl_dir,
-            host=self.host)
+            codon_usage_table_path=codon_usage_table_path
+        )
 
         self.assertEqual(expected_fragment_with_fusion_sites, fragment_with_fusion_sites)

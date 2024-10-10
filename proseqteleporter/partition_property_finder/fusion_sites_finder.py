@@ -281,27 +281,19 @@ def assign_fusion_sites(
     return sel_fusion_sites, ligation_fidelity_of_sel_fusion_sites, sel_junction_dna_map_sliding_window
 
 
-def select_junction_by_codon_usage(junctions: List, codon_usage_tbl_dir: str, host: str) -> dict:
+def select_junction_by_codon_usage(junctions: List, codon_usage_table_path: str) -> dict:
     """Select junction DNA based on codon usage table"""
 
     # validate inputs
     if len(junctions) == 0:
         raise ValueError("No junctions are provided!")
-    # validate inputs
-    if ''.join([host, '.csv']) not in [f for f in listdir(codon_usage_tbl_dir)]:
-        raise ValueError(f'Unable to find a codon usage table for the provided host {host}.\n'
-                         f'Here are the available codon usage data in the codon usage data folder '
-                         f'{codon_usage_tbl_dir}:\n'
-                         f'{[f for f in listdir(codon_usage_tbl_dir) if re.match(".*csv$", f)]}')
-
-    codon_usage_tbl_path = join(codon_usage_tbl_dir, ''.join([host, '.csv']))
-    codon_usage_dict = pd.read_csv(codon_usage_tbl_path, index_col='triplet').to_dict(orient='index')
+    codon_usage_dict = pd.read_csv(codon_usage_table_path, index_col='codon').to_dict(orient='index')
     max_score = -float('inf')
     sel_juction = {}
     for junction in junctions:
         junction_dna = junction['junction_dna']
         codon_usage_score = np.prod(
-            [codon_usage_dict[junction_dna[i:i + 3]]['fraction'] for i in range(0, len(junction_dna), 3)])
+            [codon_usage_dict[junction_dna[i:i + 3]]['relative_frequency'] for i in range(0, len(junction_dna), 3)])
         if codon_usage_score > max_score:
             sel_juction = junction
     return sel_juction
@@ -311,8 +303,7 @@ def concat_sel_fusion_sites_to_fragments(
         fragments: List,
         fusion_sites: List,
         sel_junction_dna_map_fusion_sites: List,
-        codon_usage_tbl_dir: str,
-        host: str
+        codon_usage_table_path: str
 ) -> dict:
 
     output_dict: dict = {}
@@ -321,7 +312,7 @@ def concat_sel_fusion_sites_to_fragments(
         return output_dict
 
     for junction_idx, (fusion_site, junctions) in enumerate(zip(fusion_sites, sel_junction_dna_map_fusion_sites)):
-        junction = select_junction_by_codon_usage(junctions, codon_usage_tbl_dir, host)
+        junction = select_junction_by_codon_usage(junctions, codon_usage_table_path)
         fs_start = junction['i']
         junction_dna = junction['junction_dna']
         cut_site = int(len(junction_dna) / 2)
@@ -380,40 +371,3 @@ def concat_sel_fusion_sites_to_fragments(
                 }
             })
     return output_dict
-
-
-if __name__ == "__main__":
-    from proseqteleporter.config import CODON_TABLE, ENZYME_INFO
-    # Example usage - find_candidate_fusion_sites_for_a_junction()
-    fidelity_data_path = r'C:\Users\GOFKV\PycharmProjects\proseqteleporter\proseqteleporter\data\neb_fidelity_data\FileS01_T4_01h_25C.xlsx'
-    junction_aa_ = 'GGVV'
-    len_fusion_site_ = 4
-    unique_candidate_fusion_sites_for_this_junction_, junction_dna_map_sliding_window_ = \
-        find_candidate_fusion_sites_for_a_junction(junction_aa=junction_aa_, len_fusion_site=len_fusion_site_,
-                                                   codon_table=CODON_TABLE)
-    fusion_sites_ = ('GTGT', 'GTGG')
-    junction_dna_map_sliding_window_all_ = [junction_dna_map_sliding_window_, junction_dna_map_sliding_window_]
-    print([i for j, f in zip(junction_dna_map_sliding_window_all_, fusion_sites_) for i in j if i['fusion_site'] == f])
-    print(unique_candidate_fusion_sites_for_this_junction_)
-
-    # Example usage - assign_fusion_sites():
-    fidelity_data_ = pd.read_excel(fidelity_data_path, index_col=0)
-    partition_ = (6, 10)
-    seq = 'SAEWTVEQDGMAIC'
-    mutations_0idx_ = [
-        {'position': 6, 'aa': ['P']},
-        {'position': 10, 'aa': ['P']}
-    ]
-    output_dir = join(dirname(abspath('__file__')), 'output_secret')
-    log_dir_ = join(output_dir, 'logs')
-    sel_fusion_sites_, ligation_fidelity_of_sel_fusion_sites_, sel_junction_dna_map_sliding_window_ = \
-        assign_fusion_sites(s=seq, partition=partition_, mutations_0idx=mutations_0idx_, fidelity_data=fidelity_data_,
-                            satisfaction_fidelity=0.95, enzyme='BsaI', enzyme_info_dic=ENZYME_INFO,
-                            fusion_sites_used_by_backbone=('CCAT', 'TGTC', 'TAAT'), search_method="BFS",
-                            codon_table=CODON_TABLE)
-
-    # Example usage - select_junction_by_codon_usage():
-    junctions_ = sel_junction_dna_map_sliding_window_[0]
-    codon_usage_tbl_dir_ = join(dirname(dirname(fidelity_data_path)), 'codon_usage')
-    host_ = 'cho'
-    select_junction_by_codon_usage(junctions_, codon_usage_tbl_dir_, host_)

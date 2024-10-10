@@ -2,7 +2,6 @@
 from os import path, listdir
 import os
 import itertools
-from functools import cache
 import pandas as pd
 import numpy as np
 import math
@@ -109,9 +108,8 @@ def print_available_resources():
     print('\033[1m===========================================================================================\033[0m')
     print(f'                                           AVAILABLE HOSTS                                              ')
     print('\033[1m===========================================================================================\033[0m')
-    for f in listdir(path.join(path.dirname(path.dirname(__file__)), 'data', 'codon_usage')):
-        if re.match(".*csv$", f):
-            print(re.sub('[.]csv', '', f))
+    # PRINT THE LIST OF NAMES OF ALL AVAILABLE TABLES
+    print(*pct.available_codon_tables_names, sep='\n')
 
     print('\033[1m===========================================================================================\033[0m')
     print(f'                                  AVAILABLE ASSEMBLY CONDITIONS                                         ')
@@ -445,22 +443,21 @@ def include_linked_mutations_into_mutations(mutations: list, linked_mutations: l
     return combined_mutations
 
 
-def generate_aa2codon_dict(codon_usage_tbl_dir: str, host: str) -> dict:
+def generate_aa2codon_dict(codon_usage_tbl_path: str) -> dict:
     """"""
-    codon_usage_tbl_path = path.join(codon_usage_tbl_dir, ''.join([host, '.csv']))
     codon_usage_tbl = pd.read_csv(codon_usage_tbl_path)
     codon_usage_dict_reformat = {}
     for idx, row in codon_usage_tbl.iterrows():
-        if row['amino acid'] not in codon_usage_dict_reformat:
+        if row['amino_acid'] not in codon_usage_dict_reformat:
             codon_usage_dict_reformat.update({
-                row['amino acid']: {
-                    'triplet': [row['triplet']],
-                    'fraction': [row['fraction']]
+                row['amino_acid']: {
+                    'codon': [row['codon']],
+                    'relative_frequency': [row['relative_frequency']]
                 }
             })
         else:
-            codon_usage_dict_reformat[row['amino acid']]['triplet'].append(row['triplet'])
-            codon_usage_dict_reformat[row['amino acid']]['fraction'].append(row['fraction'])
+            codon_usage_dict_reformat[row['amino_acid']]['codon'].append(row['codon'])
+            codon_usage_dict_reformat[row['amino_acid']]['relative_frequency'].append(row['relative_frequency'])
 
     return codon_usage_dict_reformat
 
@@ -484,18 +481,19 @@ def multi_well_plate_position_generator(row_range: Tuple[str, str], columns_rang
     return wells
 
 
-def find_best_codon_by_usage(codon_usage_tbl_dir: str, host: str, aa: str, fix_base: dict) -> str:
-    codon_usage_dict = generate_aa2codon_dict(codon_usage_tbl_dir, host)
+def find_best_codon_by_usage(codon_usage_tbl_path: str, aa: str, fix_base: dict) -> str:
+    codon_usage_dict = generate_aa2codon_dict(codon_usage_tbl_path)
     max_fraction = -float('inf')
     sel_codon = "Not found"
-    for codon, fraction in zip(codon_usage_dict[aa]['triplet'], codon_usage_dict[aa]['fraction']):
+    for codon, fraction in zip(codon_usage_dict[aa]['codon'], codon_usage_dict[aa]['relative_frequency']):
         passed = True
         for idx, base in fix_base.items():
             if base and codon[idx] != base:
                 passed = False
         if passed and fraction > max_fraction:
+            max_fraction = fraction
             sel_codon = codon
-    return sel_codon
+    return re.sub("U", "T", sel_codon)
 
 
 def expand_python_codon_tables(name: str, taxid: int):

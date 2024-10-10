@@ -7,6 +7,7 @@ import pandas as pd
 import re
 import math
 from typing import Tuple
+from python_codon_tables.python_codon_tables import _tables_dir as codon_usage_tbl_dir
 
 from proseqteleporter.utils.utils import (include_linked_mutations_into_mutations, annotate_sequence_mutations,
                                           prepare_0idx_mutations)
@@ -137,6 +138,18 @@ def load_input_params(input_file_path: str, supress_output: bool) -> dict:
         print(f'MODULE_PLATE_FORMAT={module_plate_format}')
         print(f'ENZYME={enzyme}')
 
+    # validate inputs
+    codon_usage_table_path = ""
+    for f in listdir(codon_usage_tbl_dir):
+        if re.search(host, f):
+            codon_usage_table_path = join(codon_usage_tbl_dir, f)
+            break
+    if codon_usage_table_path == "":
+        raise ValueError(f'Unable to find a codon usage table for the provided host {host}.\n'
+                         f'Here are the available codon usage data in the codon usage data folder '
+                         f'{codon_usage_tbl_dir}:\n'
+                         f'{[f for f in listdir(codon_usage_tbl_dir) if re.match(".*csv$", f)]}')
+
     params = dict(
         s=sequence,
         mutations_1idx=mutations_1idx,
@@ -149,7 +162,7 @@ def load_input_params(input_file_path: str, supress_output: bool) -> dict:
         max_unevenness=max_length_unevenness,
         min_ligation_fidelity=min_ligation_fidelity,
         satisfaction_fidelity=satisfaction_ligation_fidelity,
-        codon_usage_tbl_dir=join(dirname(dirname(fidelity_data_path)), 'codon_usage'),
+        codon_usage_table_path=codon_usage_table_path,
         host=host,
         allowed_cut_positions_1idx=allowed_cut_positions_1idx,
         five_prime_dna=five_prime_dna,

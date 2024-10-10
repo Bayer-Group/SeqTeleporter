@@ -1,11 +1,11 @@
+# lib data
+/proseqteleporter/data
+
 # Sequencing
 *sequencing*
 
 # Pycharm
 .idea/
-
-# code snippets shared by Dr.Jonas Kuegler
-jk_code_snippets/
 
 # output_secret
 */output/

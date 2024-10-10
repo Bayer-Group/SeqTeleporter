@@ -174,7 +174,7 @@ def compute_best_partitions(s: str, mutations_0idx: Union[list, None], linked_mu
                             fusion_sites_used_by_backbone: Tuple[str, ...], min_aa_length: int,
                             max_cost: int, max_unevenness: float,
                             min_ligation_fidelity: float, satisfaction_fidelity: float, output_dir: str,
-                            supress_output: bool, search_method: str, codon_usage_tbl_dir: str, host: str,
+                            supress_output: bool, search_method: str, codon_usage_table_path: str, host: str,
                             sort_by_cost: bool, enzyme: str, allowed_cut_positions_1idx: list,
                             partition_search_mode: str, select_top_n_partitions: int,
                             cost_per_nt: float, provider_min_frag_len: int, provider_max_frag_len: int,
@@ -288,8 +288,7 @@ def compute_best_partitions(s: str, mutations_0idx: Union[list, None], linked_mu
                     fragments=partition["fragments"],
                     fusion_sites=partition["fusion_sites"],
                     sel_junction_dna_map_fusion_sites=partition['sel_junction_dna_map_fusion_sites'],
-                    codon_usage_tbl_dir=codon_usage_tbl_dir,
-                    host=host
+                    codon_usage_table_path=codon_usage_table_path
                 )
                 # create easy-to-read expression of fragments and fusion sites
                 if len(partition['partition']) == 0:
