@@ -57,24 +57,26 @@ def draw_a_moclo_design_with_overlap_number(presentation: Presentation,
 
         if overlap5_len == 0:
             design_df.loc[i, 'fusion_site_5_no_overlap'] = fs_5
+            design_df.loc[i, 'fusion_site_5_overlap'] = ''
         else:
             design_df.loc[i, 'fusion_site_5_no_overlap'] = fs_5[:-overlap5_len]
-        design_df.loc[i, 'fusion_site_5_overlap'] = fs_5[:overlap5_len]
+            design_df.loc[i, 'fusion_site_5_overlap'] = fs_5[-overlap5_len:]
 
         fs_3 = design_df.loc[i, "3' Fusion Site"]
         overlap3_len = int(design_df.loc[i, "3' Fusion Site - Base Overlap No."])
         if overlap3_len == 0:
             design_df.loc[i, 'fusion_site_3_no_overlap'] = fs_3
+            design_df.loc[i, 'fusion_site_3_overlap'] = ''
         else:
-            design_df.loc[i, 'fusion_site_3_no_overlap'] = fs_3[:-overlap3_len]
-        design_df.loc[i, 'fusion_site_3_overlap'] = fs_3[:overlap3_len]
+            design_df.loc[i, 'fusion_site_3_no_overlap'] = fs_3[overlap3_len:]
+            design_df.loc[i, 'fusion_site_3_overlap'] = fs_3[:overlap3_len]
 
         # dynamic Widths
         fusion_site_5_overlap_width = 0.1 * overlap5_len
         fusion_site_5_no_overlap_width = 0.1 * (len(fs_5) - overlap5_len)
         fusion_site_3_overlap_width = 0.1 * overlap3_len
         fusion_site_3_no_overlap_width = 0.1 * (len(fs_3) - overlap3_len)
-        function_label_width = slot_width - fusion_site_5_no_overlap_width - fusion_site_3_no_overlap_width - 0.5
+        function_label_width = slot_width - fusion_site_5_no_overlap_width - fusion_site_3_no_overlap_width - 0.2
 
         # Lefts
         fusion_site_5_no_overlap_left = slots_left_most + slot_width * (i - 1)
@@ -116,7 +118,7 @@ def draw_a_moclo_design_with_overlap_number(presentation: Presentation,
             {'field': 'fusion_site_3_overlap', 'shape': fusion_site_3_overlap_txbox,
              'fill': ('rgb', RGBColor(38, 234, 234)), 'line': 'None', 'font_size': 8},
             {'field': 'Function(s)', 'shape': function_label_txbox, 'fill': ('rgb', RGBColor(173, 223, 245)),
-             'line': ('rgb', RGBColor(0, 0, 0)), 'font_size': 12}
+             'line': ('rgb', RGBColor(0, 0, 0)), 'font_size': 8}
         ]
 
         for slot_element in slot_elements:
@@ -145,7 +147,8 @@ def draw_moclo_designs_with_overlap_number(input_xlsx: str, output_pptx_path: st
     design_names = []
     for idx_, df in design_df.groupby('Chain Design'):
         cleaned_df = df.loc[:, df.columns != 'Protein Complex Design'].drop_duplicates()
-        design_name = '_'.join(list(cleaned_df['Function(s)']))
+        design_name = idx_
+        # design_name = '_'.join(list(cleaned_df['Function(s)']))
         draw_a_moclo_design_with_overlap_number(presentation=prs, design_name=design_name, design_df=cleaned_df)
         design_names.append(design_name)
 
