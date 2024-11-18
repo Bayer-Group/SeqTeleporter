@@ -23,7 +23,7 @@ def find_point_mutations(wt_seq: str, mut_seq: str) -> list[str]:
                          f'Mutant seq length: {len(mut_seq)},\n'
                          f'Wild type seq:\n'
                          f'{wt_seq}\n'
-                         f'Wild type seq:\n'
+                         f'Mutant seq:\n'
                          f'{mut_seq}\n')
     muts = []
     for i in range(0, len(wt_seq)):
@@ -403,7 +403,7 @@ def reformat_mutations(lst_of_tup_mutations: list) -> list:
     return reformat_muts
 
 
-def include_linked_mutations_into_mutations(mutations: list, linked_mutations: list) -> list:
+def include_linked_mutations_into_mutations(mutations: list, linked_mutations: Optional[List[Any]]) -> list:
     """
     :param mutations: example: [
     {'position': 13, 'aa': ['P']},
@@ -429,7 +429,10 @@ def include_linked_mutations_into_mutations(mutations: list, linked_mutations: l
     {'position': 79, 'aa': ['L']}
     ]
     """
-    reformatted_linked_mutations = reformat_linked_mutations(linked_mutations)
+    if not linked_mutations:
+        reformatted_linked_mutations = []
+    else:
+        reformatted_linked_mutations = reformat_linked_mutations(linked_mutations)
     seen_positions = []
     combined_mutations = []
     for mut in mutations + reformatted_linked_mutations:

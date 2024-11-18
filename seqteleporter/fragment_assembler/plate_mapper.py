@@ -296,7 +296,7 @@ def validate_plate_mapping_sheet(plate_mapping_sheet_file: str, desired_variant_
     """
     # import data
     xl = pd.ExcelFile(plate_mapping_sheet_file)
-    sheets: List[str] = xl.sheet_names
+    sheets: List[Union[int, str]] = xl.sheet_names
     plate_mapping_tbls = []
     readme_df = pd.DataFrame()
     for sheet in sheets:
@@ -332,7 +332,9 @@ def validate_plate_mapping_sheet(plate_mapping_sheet_file: str, desired_variant_
                       f"desired variant is not feasible using provided modules, "
                       f"but the desired variant iss not listed in the 'not_feasible_variants' tab.")
             continue
-        assembled_variant_notation = make_variant_mutation_notation_from_fragments(plate_mapping_per_variant['Module'])
+        assembled_variant_notation = make_variant_mutation_notation_from_fragments(
+            plate_mapping_per_variant['Module'].tolist()
+        )
         if '_'.join(desired_variant_muts) != assembled_variant_notation:
             validated_plate_mapping_sheet = False
             print(f"Validation of desired variant {desired_variant_notation} failed!\n"

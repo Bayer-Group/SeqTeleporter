@@ -49,7 +49,17 @@ def random_fragment_combinations(mutant_dna_fragments: list) -> list:
 
 
 class AssembledFragment:
-    def __init__(self, name, dna, aa, coding_start, coding_end, wt_aa, n_term_aa, c_term_aa):
+    def __init__(
+            self,
+            name: str,
+            dna: str,
+            aa: str,
+            coding_start: int,
+            coding_end: int,
+            wt_aa: str,
+            n_term_aa: str,
+            c_term_aa: str
+    ):
         self.name = name
         self.dna = dna
         self.aa = aa
@@ -85,7 +95,7 @@ class AssembledFragment:
         print(self.name, self.wt_aa, self.aa)
         return False
 
-    def validate_translated_dna_with_aa(self):
+    def validate_translated_dna_with_aa(self) -> bool:
         difference = find_point_mutations(wt_seq=self.aa, mut_seq=self.translated_dna_assembly)
         if len(difference) == 0:
             return True

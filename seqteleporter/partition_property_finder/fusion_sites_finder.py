@@ -192,7 +192,9 @@ def assign_fusion_sites(
     """
     # In case of no cuts, just return default
     if len(partition) == 0:
-        sel_fusion_sites, ligation_fidelity_of_sel_fusion_sites, sel_junction_dna_map_sliding_window = tuple(), float('nan'), []
+        sel_fusion_sites: tuple = tuple()
+        ligation_fidelity_of_sel_fusion_sites = float('nan')
+        sel_junction_dna_map_sliding_window: list[list] = []
         return sel_fusion_sites, ligation_fidelity_of_sel_fusion_sites, sel_junction_dna_map_sliding_window
 
     validate_fidelity_data(fidelity_data)

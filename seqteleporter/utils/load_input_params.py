@@ -73,9 +73,9 @@ def transform_input_excel_sheet_to_text_input(input_table_path: str) -> Tuple[st
     inputs_dict.update({'MUTATIONS': mutations, 'LINKED_MUTATIONS': linked_mut_sets_1dx})
 
     out_file_path = join(dirname(input_table_path), f'{re.sub("xlsx","txt",basename(input_table_path))}')
-    with open(out_file_path, 'w') as f:
+    with open(out_file_path, 'w') as file:
         for k, v in inputs_dict.items():
-            f.write(f'{k}={v}\n')
+            file.write(f'{k}={v}\n')
 
     return out_file_path, inputs_dict
 
@@ -89,20 +89,32 @@ def check_that_the_wt_aa_in_input_muts_are_correct(input_mutation_table: pd.Data
 
 
 def load_input_params(input_file_path: str, supress_output: bool) -> dict:
+
     load_dotenv(input_file_path, override=True)
     gene_name = environ.get("GENE_NAME")
-    allowed_cut_positions_1idx = ast.literal_eval(environ.get("ALLOWED_CUT_POSITIONS"))
+    allowed_cut_positions_1idx = environ.get("ALLOWED_CUT_POSITIONS")
+    if allowed_cut_positions_1idx is not None:
+        allowed_cut_positions_1idx = ast.literal_eval(allowed_cut_positions_1idx)
     five_prime_dna = environ.get("DNA_5_PRIME")
     three_prime_dna = environ.get("DNA_3_PRIME")
     fix_wt_dna_sequence = environ.get("FIX_DNA_SEQUENCE")
-    fusion_sites_used_by_backbone = ast.literal_eval(environ.get("FUSION_SITES_USED_BY_BACKBONE"))
+    fusion_sites_used_by_backbone = environ.get("FUSION_SITES_USED_BY_BACKBONE")
+    if fusion_sites_used_by_backbone is not None:
+        fusion_sites_used_by_backbone = ast.literal_eval(fusion_sites_used_by_backbone)
     host = environ.get("HOST")
     fidelity_data = environ.get("FIDELITY_DATA")
-    fidelity_data_path = join(dirname(dirname(abspath(__file__))), 'data', 'neb_fidelity_data', fidelity_data)
+    if fidelity_data is not None:
+        fidelity_data_path = join(dirname(dirname(abspath(__file__))), 'data', 'neb_fidelity_data', fidelity_data)
     sequence = environ.get("SEQUENCE")
-    mutations_1idx = ast.literal_eval(environ.get("MUTATIONS"))
-    linked_mutations_1idx = ast.literal_eval(environ.get("LINKED_MUTATIONS"))
-    cut_number_range = ast.literal_eval(environ.get("CUT_NUMBER_RANGE"))
+    mutations_1idx = environ.get("MUTATIONS")
+    if mutations_1idx is not None:
+        mutations_1idx = ast.literal_eval(str(mutations_1idx))
+    linked_mutations_1idx = environ.get("LINKED_MUTATIONS")
+    if linked_mutations_1idx is not None:
+        linked_mutations_1idx = ast.literal_eval(linked_mutations_1idx)
+    cut_number_range = environ.get("CUT_NUMBER_RANGE")
+    if cut_number_range is not None:
+        cut_number_range = ast.literal_eval(cut_number_range)
     min_aa_length = int(environ.get("MIN_AA_LENGTH"))
     max_cost = float(environ.get("MAX_COST"))
     max_length_unevenness = float(environ.get("MAX_LENGTH_UNEVENNESS"))
