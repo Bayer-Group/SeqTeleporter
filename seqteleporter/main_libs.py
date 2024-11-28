@@ -13,7 +13,50 @@ from seqteleporter.fragment_assembler.plate_mapper import make_and_validate_plat
 from seqteleporter.fragment_assembler.fragment_assembler import generate_all_possible_variants_from_modules
 
 
-def generate_and_optimize_ready_to_click_modules(input_table_path):
+"""
+This script contains functions to generate and optimize modules for a sequencing project, as well as to assemble those modules and generate robot instructions for further processing.
+
+The main functionalities include:
+1. `generate_and_optimize_ready_to_click_modules`: 
+   - Takes an input Excel file containing sequencing data, processes it to validate parameters, and computes the best partitions based on specified cut numbers.
+   - Generates mutant amino acid and DNA fragments, saves them in JSON format, and copies the original input file to the output directory for reference.
+   - Returns a list of output file paths for the generated modules.
+
+2. `assemble_modules_and_generate_robot_instruction`: 
+   - Reads desired variants from an input Excel file and processes them to create a plate mapping sheet.
+   - Generates possible variants based on module names or specified mutations and names.
+   - Validates the generated plate mapping sheet against the provided parameters such as plate format and plasmid IDs.
+
+Dependencies:
+- `datetime`: For handling date-related functionalities.
+- `json`: For saving data in JSON format.
+- `os.path`: For file path manipulations.
+- `pandas`: For data handling and processing.
+- `shutil`: For file operations such as copying files.
+- Custom utility functions from `seqteleporter` package for input validation, partition computation, and fragment assembly.
+
+Usage:
+- Call `generate_and_optimize_ready_to_click_modules` with the path to the input Excel file to generate modules.
+- Call `assemble_modules_and_generate_robot_instruction` with paths to the input Excel file and the generated modules to create a mapping sheet for robotic processing.
+
+Note: Ensure all necessary input files are in the correct format as expected by the utility functions to avoid runtime errors.
+"""
+
+
+def generate_and_optimize_ready_to_click_modules(input_table_path: str) -> list[str]:
+    """
+    Generates and optimizes modules for a sequencing project based on the input Excel file.
+
+    This function processes the input data to validate parameters, computes the best partitions
+    for the specified cut numbers, and generates mutant amino acid and DNA fragments. The results
+    are saved in JSON format, and the original input file is copied to the output directory for reference.
+
+    Args:
+        input_table_path (str): The file path to the input Excel file containing sequencing data.
+
+    Returns:
+        list: A list of output file paths for the generated modules.
+    """
     print('\033[1m=============================================================================================\033[0m')
     print('                               \033[1m RUN STARTED! \033[0m ')
     print('\033[1m=============================================================================================\033[0m')
@@ -57,6 +100,20 @@ def generate_and_optimize_ready_to_click_modules(input_table_path):
 
 
 def assemble_modules_and_generate_robot_instruction(input_table_path: str, ready_to_click_modules_path: str) -> None:
+    """
+    Assembles modules and generates a plate mapping sheet for robotic processing.
+
+    This function reads desired variants from the input Excel file, generates possible variants
+    based on module names or specified mutations, and validates the generated plate mapping sheet
+    against the provided parameters such as plate format and plasmid IDs.
+
+    Args:
+        input_table_path (str): The file path to the input Excel file containing desired variants.
+        ready_to_click_modules_path (str): The file path to the generated modules for mapping.
+
+    Returns:
+        None
+    """
     desired_variants_input = pd.read_excel(input_table_path, sheet_name='input_desired_variants', header=0,
                                            index_col=None)
     out_file_path_, inputs_dict = transform_input_excel_sheet_to_text_input(input_table_path)
@@ -88,3 +145,4 @@ def assemble_modules_and_generate_robot_instruction(input_table_path: str, ready
         three_prime_dna=inputs_dict['DNA_3_PRIME'],
         start_plasmid_id=start_plasmid_id
     )
+
