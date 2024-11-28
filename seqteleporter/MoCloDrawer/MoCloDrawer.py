@@ -5,11 +5,23 @@ from pptx import Presentation
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.dml.color import RGBColor
 from pptx.util import Inches, Pt
+from datetime import date
 
 
 def draw_a_moclo_design_with_overlap_number(presentation: Presentation,
                                             design_name: str,
                                             design_df: pd.DataFrame) -> None:
+    """
+    Draws a MoClo design with overlapping base numbers on a PowerPoint slide.
+
+    Parameters:
+    presentation (Presentation): The PowerPoint presentation object add the slide to.
+    design_name (str): The name of the design to be displayed on the slide.
+    design_df (pd.DataFrame): DataFrame containing design details including fusion sites and overlaps.
+
+    Returns:
+    None: This function modifies the presentation in place.
+    """
 
     blank_slide_layout = presentation.slide_layouts[6]
     presentation.slide_height = Inches(2.5)
@@ -141,8 +153,18 @@ def draw_a_moclo_design_with_overlap_number(presentation: Presentation,
                 line.color.rgb = slot_element['line'][1]
 
 
-def draw_moclo_designs_with_overlap_number(input_xlsx: str, output_pptx_path: str, output_image_dir: str) -> None:
-    design_df = pd.read_excel(input_xlsx, index_col='Position')
+def draw_moclo_designs_with_overlap_number(input_xlsx: str, output_image_dir: str) -> None:
+    """
+    Draws multiple MoClo designs with overlapping base numbers and saves them as a PowerPoint presentation.
+
+    Parameters:
+    input_xlsx (str): Path to the input Excel file containing design data.
+    output_image_dir (str): Directory where the output PowerPoint file and images will be saved.
+
+    Returns:
+    None: This function modifies the PowerPoint presentation in place and saves it.
+    """
+    design_df = pd.read_excel(input_xlsx, sheet_name="chain_designs", index_col='Position')
     prs = Presentation()
     design_names = []
     for idx_, df in design_df.groupby('Chain Design'):
@@ -152,6 +174,7 @@ def draw_moclo_designs_with_overlap_number(input_xlsx: str, output_pptx_path: st
         draw_a_moclo_design_with_overlap_number(presentation=prs, design_name=design_name, design_df=cleaned_df)
         design_names.append(design_name)
 
+    output_pptx_path = os.path.join(output_image_dir, f"chain_designs_figures_{date.today()}.pptx")
     if os.path.isfile(output_pptx_path):  # file exists
         os.remove(output_pptx_path)
     prs.save(output_pptx_path)
