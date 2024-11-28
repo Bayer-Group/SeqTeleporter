@@ -5,6 +5,39 @@ from seqteleporter.utils.utils import (include_linked_mutations_into_mutations, 
                                        breadth_first_product)
 
 
+"""
+This module contains functions for partitioning sequences into fragments based on specified cut positions, mutations, and other criteria. It provides utilities for finding cuttable positions and managing the distribution of mutations across fragments.
+
+Functions:
+1. `find_cuttable_positions(...)`: 
+   - Computes and returns a list of positions in a sequence where cuts can be made while respecting minimum and maximum fragment lengths and avoiding cuts at mutation sites.
+
+2. `find_even_cuts(string: str, regions: List) -> List`: 
+   - Determines optimal cut positions within specified regions to create evenly sized fragments.
+
+3. `partitioner(s: str, cuttable_positions: list[int], number_of_cuts: int, mutations_0idx: list, linked_mutations_0idx: list, pre_distribute_mutations: bool, one_dist: bool) -> Union[list, str]`: 
+   - Generates partitions of a sequence based on cuttable positions and specified mutation distributions.
+
+4. `sort_cut_sites_by_eveness(string: str, regions: List) -> List[List]`: 
+   - Sorts cut sites based on their evenness to optimize fragment sizes.
+
+5. `generate_cut_ranges_from_a_mutation_distribution(mutation_distribution: dict) -> list`: 
+   - Generates allowable cut ranges based on a given mutation distribution.
+
+6. `count_bases_in_a_mutation_distribution(s: str, distributed_mutations_0idx_lists: List) -> int`: 
+   - Counts the number of bases in a sequence based on a specified mutation distribution.
+
+7. `distribute_mutations(s: str, mutations_0idx: list, linked_mutations_0idx: Optional[list], n_fragments: int) -> List[dict]`: 
+   - Distributes mutations across specified fragments and checks for constraints.
+
+8. `generate_n_set_of_cut_ranges_from_a_list_of_mutation_distributions(mutation_distribution_dicts: list) -> list`: 
+   - Generates a set of cut ranges from a list of mutation distributions.
+
+Dependencies:
+- Utilizes various utility functions and types from the `seqteleporter` package and standard libraries for handling sequences and combinations.
+"""
+
+
 def find_cuttable_positions(s: str, mutations_0idx: Optional[List[Any]], linked_mutations_0idx: Optional[List[Any]],
                             min_aa_length: int, provider_max_dna_len: int, enzyme: str,
                             allowed_cut_positions_1idx: list, enzyme_info_dic: Dict[str, dict]) -> list[int]:
@@ -246,9 +279,4 @@ def generate_n_set_of_cut_ranges_from_a_list_of_mutation_distributions(mutation_
         )
         set_of_cut_ranges.append(allow_cut_ranges)
     return set_of_cut_ranges
-
-
-
-
-
 
