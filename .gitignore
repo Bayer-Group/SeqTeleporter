@@ -3,6 +3,8 @@
 
 # Sequencing
 */sequencing/*
+experiments/fluorescence_protein/sequencing/
+experiments/fluorescence_protein/input_ecoli2/input_AzR_2024-09-09output/results/
 
 # Pycharm
 .idea/
