@@ -7,12 +7,10 @@ import math
 import shutil
 from python_codon_tables.python_codon_tables import _tables_dir as codon_usage_table_dir
 
-from seqteleporter.partition_property_finder.fusion_sites_finder import \
-    breadth_first_product, nearest_first_product, find_candidate_fusion_sites_for_a_junction, \
-    refine_candidate_fusion_sites_for_a_cut, assign_fusion_sites, select_junction_by_codon_usage, \
-    concat_sel_fusion_sites_to_fragments
-
+from seqteleporter.partition_property_finder.fusion_sites_finder import FusionSitesFinder
+from seqteleporter.utils.utils import breadth_first_product, nearest_first_product
 from seqteleporter.config import CODON_TABLE, ENZYME_INFO
+
 
 FIDELITY_DATA_PATH = path.join(
     path.dirname(path.dirname(dirname(abspath(__file__)))),
@@ -80,8 +78,11 @@ class TestFindCandidateFusionSitesForAJunction(TestCase):
         junction_aa = 'WWKK'
         len_fusion_site = 4
         unique_candidate_fusion_sites_for_this_junction, junction_dna_map_sliding_window = \
-            find_candidate_fusion_sites_for_a_junction(junction_aa=junction_aa, len_fusion_site=len_fusion_site,
-                                                       codon_table=CODON_TABLE)
+            FusionSitesFinder.find_candidate_fusion_sites_for_a_junction(
+                junction_aa=junction_aa,
+                len_fusion_site=len_fusion_site,
+                codon_table=CODON_TABLE
+            )
         expected_output_unique_candidate_fusion_sites = {'GTGG', 'TGGA', 'GGAA', 'GAAA', 'AAAA', 'GAAG', 'AAGA'}
         expected_output = (expected_output_unique_candidate_fusion_sites,
                            self.expected_output_junction_dna_map_sliding_window)
@@ -94,8 +95,11 @@ class TestFindCandidateFusionSitesForAJunction(TestCase):
         junction_aa = 'MDHM'
         len_fusion_site = 4
         unique_candidate_fusion_sites_for_this_junction, junction_dna_map_sliding_window = \
-            find_candidate_fusion_sites_for_a_junction(junction_aa=junction_aa, len_fusion_site=len_fusion_site,
-                                                       codon_table=CODON_TABLE)
+            FusionSitesFinder.find_candidate_fusion_sites_for_a_junction(
+                junction_aa=junction_aa,
+                len_fusion_site=len_fusion_site,
+                codon_table=CODON_TABLE
+            )
         expected_output_unique_candidate_fusion_sites = {'GGAT', 'ATCA', 'TCAT', 'CATA', 'TCAC', 'CCAT', 'GGAC',
                                                          'GACC', 'ACCA', 'CCAC', 'CACA'}
         expected_output_junction_dna_map_sliding_window = [
@@ -169,7 +173,7 @@ class TestRefineCandidateFusionSitesForAPartition(TestCase):
             )
 
             candidate_fusion_sites_for_this_junction_out, junction_dna_map_sliding_window_out = \
-                refine_candidate_fusion_sites_for_a_cut(
+                FusionSitesFinder.refine_candidate_fusion_sites_for_a_cut(
                     cut,
                     mutations_0idx,
                     self.junction_dna_map_sliding_window,
@@ -229,9 +233,9 @@ class TestAssignFusionSites(TestCase):
             {'junction_dna': 'TGGTGGAAAAAA', 'i': 5, 'fusion_site': 'GAAA'},
             {'junction_dna': 'TGGTGGAAAAAG', 'i': 5, 'fusion_site': 'GAAA'}
         ]]
-
+        fusion_sites_finder = FusionSitesFinder()
         sel_fusion_sites_, ligation_fidelity_of_sel_fusion_sites_, sel_junction_dna_map_sliding_window_ = \
-            assign_fusion_sites(**self.inputs)
+            fusion_sites_finder.assign_fusion_sites(**self.inputs)
 
         self.assertEqual(expected_sel_fusion_sites, sel_fusion_sites_)
         self.assertEqual(expected_ligation_fidelity_of_sel_fusion_sites,
@@ -260,8 +264,9 @@ class TestAssignFusionSites(TestCase):
             }
 
             if param in expected_outputs.keys():
+                fusion_sites_finder = FusionSitesFinder()
                 sel_fusion_sites, ligation_fidelity_of_sel_fusion_sites, sel_junction_dna_map_sliding_window = \
-                    assign_fusion_sites(**inputs)
+                    fusion_sites_finder.assign_fusion_sites(**inputs)
                 self.assertEqual(expected_outputs[param][0], sel_fusion_sites)
                 ligation_fidelity_of_sel_fusion_sites = round(ligation_fidelity_of_sel_fusion_sites, 3)
                 if math.isnan(expected_outputs[param][1]):
@@ -271,7 +276,8 @@ class TestAssignFusionSites(TestCase):
                 self.assertEqual(expected_outputs[param][2], sel_junction_dna_map_sliding_window)
             if param in expected_exceptions.keys():
                 with self.assertRaises(ValueError) as context:
-                    assign_fusion_sites(**inputs)
+                    fusion_sites_finder = FusionSitesFinder()
+                    fusion_sites_finder.assign_fusion_sites(**inputs)
                 self.assertEqual(expected_exceptions[param], str(context.exception))
         shutil.rmtree(self.output_dir)
 
@@ -286,7 +292,8 @@ class TestAssignFusionSites(TestCase):
             }, index=['GGGC', 'TACT', 'GCCC'])
         inputs.update({'fidelity_data': invalid_fidelity_data})
         with self.assertRaises(ValueError) as context:
-            assign_fusion_sites(**inputs)
+            fusion_sites_finder = FusionSitesFinder()
+            fusion_sites_finder.assign_fusion_sites(**inputs)
         self.assertEqual("fidelity_data.shape[0] != fidelity_data.shape[1]", str(context.exception))
 
 
@@ -304,8 +311,10 @@ class TestSelectJunctionByCodonUsage(TestCase):
     def test_select_junction_by_codon_usage_normal_cases(self):
 
         expected_sel_juction = {'junction_dna': 'TGGTGGAAGAAG', 'i': 3, 'fusion_site': 'TGGA'}
-        sel_juction = select_junction_by_codon_usage(junctions=self.junction_dna_map_sliding_window,
-                                                     codon_usage_table_path=codon_usage_table_path)
+        sel_juction = FusionSitesFinder.select_junction_by_codon_usage(
+            junctions=self.junction_dna_map_sliding_window,
+            codon_usage_table_path=codon_usage_table_path
+        )
 
         self.assertEqual(expected_sel_juction, sel_juction)
 
@@ -327,8 +336,10 @@ class TestSelectJunctionByCodonUsage(TestCase):
 
             if param in expected_exceptions.keys():
                 with self.assertRaises(ValueError) as context:
-                    select_junction_by_codon_usage(junctions=inputs['junctions'],
-                                                   codon_usage_table_path=codon_usage_table_path)
+                    FusionSitesFinder.select_junction_by_codon_usage(
+                        junctions=inputs['junctions'],
+                        codon_usage_table_path=codon_usage_table_path
+                    )
                 self.assertEqual(expected_exceptions[param], str(context.exception))
 
 
@@ -377,8 +388,8 @@ class TestConcatSelFusionSitesToFragments(TestCase):
                 "middle_aa": "LSCAASGFTFSRYTIHWVRQA"
             }
         }
-
-        fragment_with_fusion_sites = concat_sel_fusion_sites_to_fragments(
+        fusion_sites_finder = FusionSitesFinder()
+        fragment_with_fusion_sites = fusion_sites_finder.concat_sel_fusion_sites_to_fragments(
             fragments=self.fragments,
             fusion_sites=self.fusion_sites,
             sel_junction_dna_map_fusion_sites=self.junction_dna_map_sliding_window,

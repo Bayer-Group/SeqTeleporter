@@ -11,7 +11,7 @@ from typing import Tuple, Union, List
 import pandas as pd
 
 from seqteleporter.config import ENZYME_INFO, PARTITION_SEARCH_MODES
-from seqteleporter.partition_property_finder.fusion_sites_finder import concat_sel_fusion_sites_to_fragments
+from seqteleporter.partition_property_finder.fusion_sites_finder import FusionSitesFinder
 from seqteleporter.partition_property_finder.partition_property_finder import find_partition_property
 from seqteleporter.partitioner.partitioner import find_cuttable_positions, partitioner
 from seqteleporter.utils.load_input_params import load_input_params
@@ -446,8 +446,9 @@ def compute_best_partitions(s: str, mutations_0idx: Union[list, None], linked_mu
 
             # concat fusion sites back to amino acid after selecting best partitions to avoid running this process in
             # each and every loop of "partitioner()"
+            fusion_sites_finder = FusionSitesFinder()
             for partition in sel_partitions:
-                fragment_with_fusion_sites = concat_sel_fusion_sites_to_fragments(
+                fragment_with_fusion_sites = fusion_sites_finder.concat_sel_fusion_sites_to_fragments(
                     fragments=partition["fragments"],
                     fusion_sites=partition["fusion_sites"],
                     sel_junction_dna_map_fusion_sites=partition['sel_junction_dna_map_fusion_sites'],
