@@ -1,6 +1,7 @@
 from itertools import product
 import numpy as np
 import pandas as pd
+import re
 import math
 from typing import Dict, List, Tuple, Optional, Any
 
@@ -411,6 +412,7 @@ class FusionSitesFinder:
         if len(junctions) == 0:
             raise ValueError("No junctions are provided!")
         codon_usage_dict = pd.read_csv(codon_usage_table_path, index_col='codon').to_dict(orient='index')
+        codon_usage_dict = {re.sub('U','T',key):val for key, val in codon_usage_dict.items()}
         max_score = -float('inf')
         sel_juction = {}
         for junction in junctions:

@@ -377,7 +377,7 @@ def make_and_validate_plate_mapping_sheet(
         five_prime_dna: str,
         three_prime_dna: str,
         start_plasmid_id: Optional[str]
-) -> None:
+) -> str:
     # if encounter error msg: Can't find workbook in OLE2 compound document, remove excel sensitivity label and try again.
     # ref: https://stackoverflow.com/questions/45725645/pandas-unable-to-open-this-excel-file
     output_dir = path.dirname(fragment_sheet_path)
@@ -395,22 +395,28 @@ def make_and_validate_plate_mapping_sheet(
         start_plasmid_id=start_plasmid_id,
         output_dir=output_dir
     )
+    out_file_path = plate_mapping_res['out_file_path']
     # validate plate mapping sheet
-    if not validate_plate_mapping_sheet(plate_mapping_sheet_file=plate_mapping_res['out_file_path'],
-                                        desired_variant_muts_list=desired_variant_muts_list, wt_seq=aa_seq,
-                                        desired_variant_names=desired_variant_names):
-        remove(plate_mapping_res['out_file_path'])
+    if not validate_plate_mapping_sheet(
+            plate_mapping_sheet_file=out_file_path,
+            desired_variant_muts_list=desired_variant_muts_list,
+            wt_seq=aa_seq,
+            desired_variant_names=desired_variant_names
+    ):
+        remove(out_file_path)
         raise ValueError('Failed to validate plate mapping sheet')
 
     # add excel formula to allow automatic volume calculation by users
-    batch_add_excel_volume_calc_formula(excel_file_path=plate_mapping_res['out_file_path'])
+    batch_add_excel_volume_calc_formula(excel_file_path=out_file_path)
 
-    print(f"\nPlate mapping sheet is exported to:\n {plate_mapping_res['out_file_path']}")
+    print(f"\nPlate mapping sheet is exported to:\n {out_file_path}")
     print(f"\nPreview of mapping sheet: \n {plate_mapping_res['plate_map'].head(3)}")
     if plate_mapping_res['not_found'].shape[0] > 0:
         print(f"Some desired variants can not be assembled from the fragments in the provided list:\n"
               f"{fragment_sheet_path} \n"
               f"{plate_mapping_res['not_found']}")
+
+    return out_file_path
 
 
 def make_desired_variant_list_from_a_list_of_mutations(mutations_1idx: List[dict], s: str,

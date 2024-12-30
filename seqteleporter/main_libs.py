@@ -99,7 +99,7 @@ def generate_and_optimize_ready_to_click_modules(input_table_path: str) -> list[
     return outfile_paths
 
 
-def assemble_modules_and_generate_robot_instruction(input_table_path: str, ready_to_click_modules_path: str) -> None:
+def assemble_modules_and_generate_robot_instruction(input_table_path: str, ready_to_click_modules_path: str) -> str:
     """
     Assembles modules and generates a plate mapping sheet for robotic processing.
 
@@ -133,7 +133,7 @@ def assemble_modules_and_generate_robot_instruction(input_table_path: str, ready
         desired_variant_muts_list = [variant['mutations'].split(',') for variant in desired_variants]
         desired_variant_names = [variant['names'] for variant in desired_variants]
 
-    make_and_validate_plate_mapping_sheet(
+    out_file_path = make_and_validate_plate_mapping_sheet(
         desired_variant_muts_list=desired_variant_muts_list,
         desired_variant_names=desired_variant_names,
         fragment_sheet_path=ready_to_click_modules_path,
@@ -145,4 +145,5 @@ def assemble_modules_and_generate_robot_instruction(input_table_path: str, ready
         three_prime_dna=inputs_dict['DNA_3_PRIME'],
         start_plasmid_id=start_plasmid_id
     )
+    return out_file_path
 

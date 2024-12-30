@@ -7,7 +7,6 @@ from itertools import chain
 from os import makedirs, listdir, remove
 from os.path import join, exists
 from typing import Tuple, Union, List
-
 import pandas as pd
 
 from seqteleporter.config import ENZYME_INFO, PARTITION_SEARCH_MODES
@@ -109,7 +108,8 @@ def prepare_compute_best_partitions_params(input_file_path: str) -> dict:
         supress_output=False,
         search_method="BFS",
         sort_by_cost=True,
-        partition_search_mode='dist_mut_1',
+        # partition_search_mode='dist_mut_1',
+        partition_search_mode='exhaustive',
         select_top_n_partitions=3,
         max_partition_number_checked=100000
     ))
