@@ -1,7 +1,7 @@
 numpy==1.26.4
 pandas==2.2.0
 pandas-stubs~=2.2.0
-python-dotenv==1.0.1
+python-dotenv==1.2.2
 pyarrow==15.0.0
 openpyxl==3.1.2
 coverage~=7.1.0
